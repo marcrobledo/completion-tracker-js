@@ -54,6 +54,8 @@ header img{
 	box-sizing:border-box;
 	padding: 2px 4px;
 	outline:none;
+	font-family:inherit;
+	font-size:inherit;
 }
 #select-filter:focus, #input-search:focus{
 	border-color: #96ff96;
@@ -132,7 +134,12 @@ optgroup {
 option::checkmark {
 	order: 1;
 	margin-left: auto;
-	content: "☑️";
+	content: "";
+	width: 12px;
+	height: 12px;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+PHBhdGggZD0iTTYgMGE2IDYgMCAxIDEgMCAxMkE2IDYgMCAwIDEgNiAwbS0uNyA4Ljc0TDkuNjMgNC40IDguMzkgMy4xN2wtMy4xIDMuMS0xLjctMS43TDIuMzYgNS44eiIgZmlsbD0iYmxhY2siLz48L3N2Zz4=);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 ::picker(select) {
 	opacity: 0;
