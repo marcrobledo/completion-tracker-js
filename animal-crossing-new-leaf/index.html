@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Catálogo interactivo - Animal Crossing: New Leaf</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Guía interactiva del catálogo de Animal Crossing: New Leaf adaptada a smartphones.">
+	<meta name="keywords" content="guia, nintendo, 3ds, animal crossing, animal crossing new leaf, catalogo, muebles, ropa, objetos, lista, listado">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="./resources/style.css" media="all"/>
+	<script type="text/javascript" src="./resources/items.js"></script>
+	<script type="text/javascript" src="./resources/script.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+</head>
+<body>
+
+<header>
+	<h1>
+		<img src="resources/logo_header.png" />
+		<span>Catálogo interactivo - Animal Crossing: New Leaf</span>
+	</h1>
+
+	<div id="container-filter">
+		<select id="select-filter">
+			<button><selectedcontent></selectedcontent></button>
+			<option value="none">Filtrar por...</option>
+			<optgroup label="Tipo">
+				<legend>Tipo</legend>
+				<option value="category:furniture"><span class="item-category furniture"></span> Muebles</option>
+				<option value="category:wallpapers"><span class="item-category wallpapers"></span> Paredes</option>
+				<option value="category:carpets"><span class="item-category carpets"></span> Suelos</option>
+				<option value="category:shirts"><span class="item-category shirts"></span> Camisetas</option>
+				<option value="category:trousers"><span class="item-category trousers"></span> Pantalones</option>
+				<option value="category:dresses"><span class="item-category dresses"></span> Vestidos</option>
+				<option value="category:hats"><span class="item-category hats"></span> Sombreros</option>
+				<option value="category:accessories"><span class="item-category accessories"></span> Accesorios</option>
+				<option value="category:shoes"><span class="item-category shoes"></span> Zapatos</option>
+				<option value="category:umbrellas"><span class="item-category umbrellas"></span> Paraguas</option>
+				<option value="category:wetsuits"><span class="item-category wetsuits"></span> Trajes de buceo</option>
+				<option value="category:songs"><span class="item-category songs"></span> Canciones</option>
+				<option value="category:fossils"><span class="item-category fossils"></span> Fósiles</option>
+				<option value="category:gyroids"><span class="item-category gyroids"></span> Giroides</option>
+				<option value="category:stationery"><span class="item-category stationery"></span> Papeles</option>
+				<option value="category:art"><span class="item-category art"></span> Obras de arte</option>
+				<option value="category:pwps"><span class="item-category pwps"></span> Proyectos municipales</option>
+			</optgroup>
+			<optgroup label="Visitantes especiales">
+				<legend>Visitantes especiales</legend>
+				<option value="method:saharah"><span class="item-method method_saharah"></span> Alcatifa</option>
+				<option value="method:katie"><span class="item-method method_katie"></span> Cati</option>
+				<option value="method:tourney_fish"><span class="item-method method_tourney_fish"></span> Martín</option>
+				<option value="method:tourney_bug"><span class="item-method method_tourney_bug"></span> Papilo</option>
+				<option value="method:gulliver"><span class="item-method method_gulliver"></span> Gulliver</option>
+				<option value="method:pascal"><span class="item-method method_pascal"></span> Pascal</option>
+			</optgroup>
+			<optgroup label="Tiendas especiales">
+				<legend>Tiendas especiales</legend>
+				<option value="method:museum"><span class="item-method method_museum_shop"></span> Museo</option>
+				<option value="method:fortune_cookie"><span class="item-method method_fortune_cookie"></span> Galletas de la suerte</option>
+				<option value="method:gracie"><span class="item-method method_gracie sale"></span> Graciela</option>
+				<option value="method:tortimer"><span class="item-method method_tortimer_island"></span> Isla Tórtimer</option>
+				<option value="method:cafe"><span class="item-method method_cafe"></span> Cafetería</option>
+				<option value="method:(shop_fortune|resetti)">Ptros</option>
+			</optgroup>
+			<optgroup label="Eventos temporales">
+				<legend>Eventos temporales</legend>
+				<option value="method:(calendar february|festivale)"><span class="item-method method_festivale"></span> Día de Carnaval</option>
+				<option value="method:bunny_day"><span class="item-method method_bunny_day"></span> Caza del huevo</option>
+				<option value="method:weeding_day"><span class="item-method method_weeding_day"></span> Día del hierbajo</option>
+				<option value="method:august_fireworks">Fuegos artificiales de agosto</option>
+				<option value="method:calendar november mushrooming_season">Recolecta de setas de noviembre</option>
+				<option value="method:(calendar october|halloween)"><span class="item-method method_halloween"></span> Halloween</option>
+				<option value="method:snow"><span class="item-method method_snowman"></span> Muñecos de nieve</option>
+				<option value="method:(calendar november turkey|turkey_day)"><span class="item-method method_turkey_day"></span> Día del Pavo</option>
+				<option value="method:(calendar december|toy_day)"><span class="item-method method_toy_day"></span> Navidad</option>
+				<option value="method:(new_years_eve|new_years_day)">Cambio de año</option>
+				<option value="method:isabelle"><span class="item-method method_isabelle"></span> Entregado por Canela</option>
+				<option value="method:(birthday_day|shop_tt|shop_labelle|valentines_day)">Otros</option>
+				<option value="method:dlc">Contenido descargable</option>
+			</optgroup>
+			<optgroup label="Welcome amiibo">
+				<legend>Welcome amiibo</legend>
+				<option value="method:welcome_amiibo"><span class="item-method method_welcome_amiibo"></span> Welcome amiibo</option>
+				<option value="method:hhd"><span class="item-method method_hhd"></span> Happy Home Designer</option>
+				<option value="method:campground"><span class="item-method method_campground"></span> Zona de autocaravanas</option>
+				<option value="method:rv"><span class="item-method method_rv"></span> Autocaravanas</option>
+				<option value="method:wisp"><span class="item-method method_wisp"></span> Buh</option>
+				<option value="method:minigame">Minijuegos</option>
+			</optgroup>
+		</select>
+		<input type="search" id="input-search" placeholder="Buscar..." />
+		<button type="button" id="btn-transfer"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg></button>
+	</div>
+</header>
+
+<section>
+	<div id="loading">Cargando...</div>
+	<div id="content">
+		<div id="current-totals">
+			<span id="span-count"></span><small>/<span id="span-total"></span></small>
+		</div>
+		<ul id="list"></ul>
+	</div>
+</section>
+
+<div popover id="popover-item-info">
+	<span id="item-info-name"></span>
+	<span id="item-info-name-en"></span>
+	<span id="item-info-category"></span>
+	<span id="item-info-method"></span>
+	<span id="item-info-orderable"></span>
+</div>
+
+
+</body></html>

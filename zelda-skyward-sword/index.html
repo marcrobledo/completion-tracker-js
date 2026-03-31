@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+	<title>The legend of Zelda: Skyward Sword - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de The legend of Zelda: Skyward Sword en esta webapp." />
+	<meta name="keywords" content="zelda, skyward, sword, hearts, seashells, corazones, caracolas, map, mapa, nintendo, wii, switch, checklist" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+.item-icon{float:right; height:48px;}
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/zelda-skyward-sword/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+	<script type="text/javascript"><!--
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('zelda-skyward-sword');
+		});
+	--></script>
+</head>
+
+<body>
+	<header>
+		<h1>The legend of Zelda: Skyward Sword - Progress Tracker App</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/hylian_shield.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#cubes"><img src="resources/goddess_cube.png" class="icon" loading="lazy" /> Cubos divinos</a></li>
+				<li><a href="#crystals"><img src="resources/gratitude_crystal.png" class="icon" loading="lazy" /> Gemas de gratitud</a></li>
+				<li><a href="#hearts"><img src="resources/piece_of_heart.png" class="icon" loading="lazy" /> Piezas de corazón</a></li>
+				<li><a href="#equipment"><img src="resources/pouch.png" class="icon" loading="lazy" /> Equipo</a></li>
+				<li><a href="#collection"><img src="resources/collection.png" class="icon" loading="lazy" /> Colección</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>The legend of Zelda: Skyward Sword</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+			<div id="tab-cubes" class="tab">
+				<h2 class="hide-for-mobile">Cubos divinos</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="0" data-category="cubes" />Cubo divino 1</label>
+						<div class="item-description"><span class="location">Confines del bosque, junto a Marcogoro</span> Desbloquea cofre en Calabia, al lado de Calabarza's. (Recompensa: Expansión de alforja)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="1" data-category="cubes" />Cubo divino 2</label>
+						<div class="item-description"><span class="location">Confines del bosque: Umbral del templo</span> Desbloquea cofre en Isla flotante al sur de Celéstea. (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="2" data-category="cubes" />Cubo divino 3</label>
+						<div class="item-description"><span class="location">Manantial de la contemplación</span> Desbloquea cofre en Calabia, sobre la entrada de Calabarza's. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="3" data-category="cubes" />Cubo divino 4</label>
+						<div class="item-description"><span class="location">Volcán de Eldin: Pie del volcán</span> Desbloquea cofre en Isla flotante al noroeste de Isla Fortuna. (Recompensa: Bolsa de semillas pequeña)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="4" data-category="cubes" />Cubo divino 5</label>
+						<div class="item-description"><span class="location">Volcán de Eldin: Cara este del pie del volcán</span> Desbloquea cofre en Isla flotante al noroeste de la isla de Terry. (Recompensa: 100 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="5" data-category="cubes" />Cubo divino 6</label>
+						<div class="item-description"><span class="location">Bajo el volcán de Eldin</span> Desbloquea cofre en Isla de los cantares del interior del cúmulo. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="6" data-category="cubes" />Cubo divino 7</label>
+						<div class="item-description"><span class="location">Volcán de Eldin: Oeste de la Cima del volcán</span> Desbloquea cofre en Isla Bambú. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="7" data-category="cubes" />Cubo divino 8</label>
+						<div class="item-description"><span class="location">Volcán de Eldin: Este de la Cima del volcán</span> Desbloquea cofre en Isla flotante al nordeste de Celéstea. (Recompensa: Medallón de tesoro)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="8" data-category="cubes" />Cubo divino 9</label>
+						<div class="item-description"><span class="location">Volcán de Eldin, cerca de la cuarta pieza de la llave que abre el templo terrenal</span> Desbloquea cofre en Altárea. (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="9" data-category="cubes" />Cubo divino 10</label>
+						<div class="item-description"><span class="location">Minas de Lanayru: Entrada a las minas</span> Desbloquea cofre en Isla flotante al nordeste de Celéstea. (Recompensa: 100 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="10" data-category="cubes" />Cubo divino 11</label>
+						<div class="item-description"><span class="location">Desierto de Lanayru: Zona oeste del desierto</span> Desbloquea cofre en Isla flotante al este de la entrada a Lanayru. (Recompensa: Medallón de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="11" data-category="cubes" />Cubo divino 12</label>
+						<div class="item-description"><span class="location">Desierto de Lanayru, cerca de la entrada al Templo del Tiempo</span> Desbloquea cofre en Isla de Terry. (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="12" data-category="cubes" />Cubo divino 13</label>
+						<div class="item-description"><span class="location">Bosque de Farone, tras salir del árbol gigante por primera vez</span> Desbloquea cofre en Isla flotante al oeste de Altárea. (Recompensa: 100 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="13" data-category="cubes" />Cubo divino 14</label>
+						<div class="item-description"><span class="location">Bosque de Farone, debajo de Copa del árbol</span> Desbloquea cofre en Isla flotante al nordeste del Interior del cúmulo. (Recompensa: Medallón de rupia)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="14" data-category="cubes" />Cubo divino 15</label>
+						<div class="item-description"><span class="location">Lago Faroria: Profundidades del lago</span> Desbloquea cofre en Isla flotante al este de Altárea. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="15" data-category="cubes" />Cubo divino 16</label>
+						<div class="item-description"><span class="location">Plataforma elevada al sur de la refinería de Lanayru</span> Desbloquea cofre en Isla flotante al noroeste de Isla Fortuna. (Recompensa: Medallón de vida)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="16" data-category="cubes" />Cubo divino 17</label>
+						<div class="item-description"><span class="location">Nordeste del desierto de Lanayru</span> Desbloquea cofre en Isla flotante al noroeste de la isla de Terry. (Recompensa: Medallón de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="17" data-category="cubes" />Cubo divino 18</label>
+						<div class="item-description"><span class="location">Mar de arena de Lanayru: Antiguo atracadero</span> Desbloquea cofre en Bazar de Altárea. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="18" data-category="cubes" />Cubo divino 19</label>
+						<div class="item-description"><span class="location">Suroeste de la casa del almirante: Lanayru</span> Desbloquea cofre en Isla flotante al noroeste de Isla Fortuna. (Recompensa: Medallón duradero)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="19" data-category="cubes" />Cubo divino 20</label>
+						<div class="item-description"><span class="location">Escondrijo pirata: Lanayru</span> Desbloquea cofre en Isla flotante más alta de Altárea. (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="20" data-category="cubes" />Cubo divino 21</label>
+						<div class="item-description"><span class="location">Sudeste del árbol central del bosque de Farone</span> Desbloquea cofre en Isla flotante al este de la entrada a Lanayru. (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="21" data-category="cubes" />Cubo divino 22</label>
+						<div class="item-description"><span class="location">Bosque de Farone: Catarata de Faroria</span> Desbloquea cofre en Isla flotante debajo de Isla Fortuna. (Recompensa: 300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="22" data-category="cubes" />Cubo divino 23</label>
+						<div class="item-description"><span class="location">Confines del bosque: Umbral del templo</span> Desbloquea cofre en Isla de Terry. (Recompensa: Medallón de rupia)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="23" data-category="cubes" />Cubo divino 24</label>
+						<div class="item-description"><span class="location">Oeste de la cima del volcán de Eldin</span> Desbloquea cofre en Insectia (interior del cúmulo). (Recompensa: Pieza de corazón)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="24" data-category="cubes" />Cubo divino 25</label>
+						<div class="item-description"><span class="location">Norte de la cima del volcán de Eldin</span> Desbloquea cofre en Isla de los cantares del interior del cúmulo. (Recompensa: Saco de bombas pequeño)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="25" data-category="cubes" />Cubo divino 26</label>
+						<div class="item-description"><span class="location">Este de la cima del volcán de Eldin</span> Desbloquea cofre en Isla flotante al oeste del interior del cúmulo. (Recompensa: Botella vacía)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="26" data-category="cubes" />Cubo divino 27</label>
+						<div class="item-description"><span class="location">Nordeste del desfiladero de Lanayru</span> Desbloquea cofre en Isla flotante al oeste del interior del cúmulo. (Recompensa: Carcaj pequeño)</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-crystals" class="tab">
+				<h3>Gemas de gratitud (diurnas)</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="27" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Entrada de la efigie de la Diosa: Madre de Cuqui</span> Hacer que su hija vuelva a casa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="28" data-category="crystals" />Gemas de gratitud &times;10</label>
+						<div class="item-description"><span class="location">Gran plaza: Golondro</span> Encontrar a Corina, su hermana pequeña</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="29" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Gran plaza: Corina</span> Curar su pelícaro</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="30" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Casa de Paula, la de la consigna: Paula</span> Enamorar o desengañar a Paula</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="31" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Casa de Coocker: Madre de Coocker</span> Limpiar su casa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="32" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Academia de caballeros: Corvy</span> Entregar la carta de Corvy</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="33" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Isla Fortuna: Encargado de la isla</span> Devolverle su ruleta</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="34" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Casa de Alfred, el de las pociones: Alfred, el de las pociones</span> Encontrar un sonajero para su hijo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="35" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Cuarto de Gruyo: Gruyo</span> Regalarle dos resistones</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="36" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Calabia: Calabelle</span> Presentarle al jefe de los mogumas</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="37" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Casa de Gorronte, el vidente: Gorronte, el vidente</span> Conseguirle una bola de cristal nueva</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="38" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Cuarto de Buhel: Maestro Buhel</span> Llevarle un Kyu de Farone</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="39" data-category="crystals" />Gemas de gratitud &times;5</label>
+						<div class="item-description"><span class="location">Isla de Terry: Terry</span> Devolverle su escarabero rex</div>
+					</li>
+				</ul>
+
+				<h3>Gemas de gratitud (nocturnas)</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="40" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Dentro de la academia de caballeros, en tu habitación.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="41" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Dentro de la academia de caballeros, junto a la salida del Nv. 1</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="42" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Dentro de Calabarza's</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="43" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Al este de Calabia</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="44" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Sobre la tienda de Terry</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="45" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Dentro del gimnasio</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="46" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Cerca de la casa de Golondro y Corina</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="47" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">Dentro de la casa de Golondro y Corina</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="48" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En la torre de la luz</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="49" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En unas pasarelas de madera al norte del bazar</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="50" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">A la salida de la gruta de la cascada</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="51" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En la cueva en la que estaba encerrado tu pelícaro</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="52" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En un huerto de calabazas</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="53" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En la isla flotante más alta de todas</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="54" data-category="crystals" />Gema de gratitud</label>
+						<div class="item-description"><span class="location">En el cuarto de Zelda</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-hearts" class="tab">
+				<h2 class="hide-for-mobile">Piezas de corazón</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="55" data-category="hearts" />Pieza de corazón 1</label>
+						<div class="item-description"><span class="location">Celéstea: Calabia</span> En la lámpara de Calabarza's.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="56" data-category="hearts" />Pieza de corazón 2</label>
+						<div class="item-description"><span class="location">Farone: Bosque de Farone</span> Al final de una cuerda.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="57" data-category="hearts" />Pieza de corazón 3</label>
+						<div class="item-description"><span class="location">Celéstea: Isla flotante al sur de Altárea</span> Activando un cubo divino en los confines del bosque.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="58" data-category="hearts" />Pieza de corazón 4</label>
+						<div class="item-description"><span class="location">Farone: Templo de la contemplación</span> Dentro del templo de la contemplación.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="59" data-category="hearts" />Pieza de corazón 5</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea (casa de Batolo)</span> A cambio de 10 gemas de gratitud.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="60" data-category="hearts" />Pieza de corazón 6</label>
+						<div class="item-description"><span class="location">Eldin: Volcán de Eldin</span> Al nordeste de la "Cara este del pie del volcán".</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="61" data-category="hearts" />Pieza de corazón 7</label>
+						<div class="item-description"><span class="location">Farone: Bosque de Farone</span> Derribando una pared con flores bomba.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="62" data-category="hearts" />Pieza de corazón 8</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea</span> En la tienda de Terry.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="63" data-category="hearts" />Pieza de corazón 9</label>
+						<div class="item-description"><span class="location">Celéstea: Isla de Terry</span> Activando un cubo divino cerca del Templo del Tiempo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="64" data-category="hearts" />Pieza de corazón 10</label>
+						<div class="item-description"><span class="location">Lanayru: Desierto de Lanayru</span> Destruyendo con bombas una pared al nordeste del desierto.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="65" data-category="hearts" />Pieza de corazón 11</label>
+						<div class="item-description"><span class="location">Celéstea: Calabia</span> Tocando la lira en Calabarza's.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="66" data-category="hearts" />Pieza de corazón 12</label>
+						<div class="item-description"><span class="location">Celéstea: Isla Fortuna</span> Consiguiendo la máxima puntuación en La gran ruleta.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="67" data-category="hearts" />Pieza de corazón 13</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea</span> Dentro de un cobertizo al que se llega buceando.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="68" data-category="hearts" />Pieza de corazón 14</label>
+						<div class="item-description"><span class="location">Farone: Tierra del presidio</span> Dibujando lo que te pida Marcogoro en un muro divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="69" data-category="hearts" />Pieza de corazón 15</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea (academia de caballeros)</span> Dentro del cuarto de Zelda.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="70" data-category="hearts" />Pieza de corazón 16</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea (en la isla flotante más alta de todas)</span> Activando un cubo divino en el escondrijo pirata.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="71" data-category="hearts" />Pieza de corazón 17</label>
+						<div class="item-description"><span class="location">Lanayru: Galeón de las arenas</span> En la popa del galeón de las arenas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="72" data-category="hearts" />Pieza de corazón 18</label>
+						<div class="item-description"><span class="location">Celéstea: Altárea</span> Consiguiendo 600 puntos o más en el Tiro a la calabaza.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="73" data-category="hearts" />Pieza de corazón 19</label>
+						<div class="item-description"><span class="location">Celéstea: Isla flotante al este de la entrada a Lanayru</span> Activando un cubo divino en el bosque de Farone.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="74" data-category="hearts" />Pieza de corazón 20</label>
+						<div class="item-description"><span class="location">Celéstea: Interior del cúmulo (Insectia)</span> Activando un cubo divino en la región de Eldin.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="75" data-category="hearts" />Pieza de corazón 21</label>
+						<div class="item-description"><span class="location">Lanayru: Gran santuario antiguo</span> Atrapando a un moguma dentro del gran santuario antiguo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="76" data-category="hearts" />Pieza de corazón 22</label>
+						<div class="item-description"><span class="location">Eldin: Al sur del Cráter del volcán de Eldin</span> Cavando frente a una piedra chismosa.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="77" data-category="hearts" />Pieza de corazón 23</label>
+						<div class="item-description"><span class="location">Lanayru: Mar de arena de Lanayru (astillero)</span> Completando el recorrido experto de La vertiginosa montaña rusa en menos de 1:05.00.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="78" data-category="hearts" />Pieza de corazón 24</label>
+						<div class="item-description"><span class="location">Lanayru: Desfiladero de Lanayru</span> Ganando 4 combates seguidos en el Duelo atronador.</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-equipment" class="tab">
+				<h3>Botellas</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="79" data-category="equipment" />Botella 1</label>
+						<div class="item-description">En la tienda de pociones del bazar de Altárea (gratis).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="80" data-category="equipment" />Botella 2</label>
+						<div class="item-description">Dentro del templo del presidio (cofre).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="81" data-category="equipment" />Botella 3</label>
+						<div class="item-description">Curando al pelícaro de Corina (gemas de gratitud).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="82" data-category="equipment" />Botella 4</label>
+						<div class="item-description">Gran santuario antiguo (cofre).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="83" data-category="equipment" />Botella 5</label>
+						<div class="item-description">Cofre misterioso en el interior del cúmulo (cubo divino).</div>
+					</li>
+				</ul>
+
+				<h3>Zurrón</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="84" data-category="equipment" />Zurrón suplementario (+300 rupias)</label>
+						<div class="item-description">En la tienda de Terry (100 rupias cada uno).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="85" data-category="equipment" />Zurrón suplementario (+300 rupias)</label>
+						<div class="item-description">En la tienda de Terry (100 rupias cada uno).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="86" data-category="equipment" />Zurrón suplementario (+300 rupias)</label>
+						<div class="item-description">En la tienda de Terry (100 rupias cada uno).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="87" data-category="equipment" />Zurrón mediano (máx. 500 rupias)</label>
+						<div class="item-description">Te lo da Batolo a cambio de las cinco primeras gemas de gratitud.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="88" data-category="equipment" />Zurrón grande (máx. 1000 rupias)</label>
+						<div class="item-description">Te lo da Batolo cuando le lleves 30 gemas de gratitud.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="89" data-category="equipment" />Zurrón gigante (máx. 5000 rupias)</label>
+						<div class="item-description">Te lo da Batolo cuando le lleves 50 gemas de gratitud.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="90" data-category="equipment" />Zurrón de ricachón (máx. 9000 rupias)</label>
+						<div class="item-description">Te lo da Batolo cuando le lleves 80 gemas de gratitud.</div>
+					</li>
+				</ul>
+
+				<h3>Alforja</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="91" data-category="equipment" />Alforja (expansión)</label>
+						<div class="item-description">En un cofre misterioso de Calabia.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="92" data-category="equipment" />Alforja (expansión)</label>
+						<div class="item-description">Tienda de Terry (300 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="93" data-category="equipment" />Alforja (expansión)</label>
+						<div class="item-description">Tienda de Terry (600 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="94" data-category="equipment" />Alforja (expansión)</label>
+						<div class="item-description">Tienda de Terry (1200)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="95" data-category="equipment" />Bolsa de semillas pequeña (+10)</label>
+						<div class="item-description">Comprar en el bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="96" data-category="equipment" />Bolsa de semillas mediana (+20)</label>
+						<div class="item-description">Mejorando la bolsa de semillas pequeña en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="97" data-category="equipment" />Bolsa de semillas grande (+30)</label>
+						<div class="item-description">Mejorando la bolsa de semillas mediana en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="98" data-category="equipment" />Carcaj pequeño (+5)</label>
+						<div class="item-description">Comprar en el bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="99" data-category="equipment" />Carcaj mediano (+10)</label>
+						<div class="item-description">Mejorando el carcaj pequeño en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="100" data-category="equipment" />Carcaj grande (+15)</label>
+						<div class="item-description">Mejorando el carcaj mediano en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="101" data-category="equipment" />Saco de bombas pequeño (+5)</label>
+						<div class="item-description">Comprar en el bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="102" data-category="equipment" />Saco de bombas mediano (+10)</label>
+						<div class="item-description">Mejorando el saco de bombas pequeño en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="103" data-category="equipment" />Saco de bombas grande (+15)</label>
+						<div class="item-description">Mejorando el saco de bombas mediano en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="104" data-category="equipment" />Escudo de madera macizo</label>
+						<div class="item-description">Mejorando el escudo de madera en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="105" data-category="equipment" />Escudo de madera robusto</label>
+						<div class="item-description">Mejorando el escudo de madera macizo en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="106" data-category="equipment" />Escudo de hierro macizo</label>
+						<div class="item-description">Mejorando el escudo de hierro en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="107" data-category="equipment" />Escudo de hierro sólido</label>
+						<div class="item-description">Mejorando el escudo de hierro macizo en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="108" data-category="equipment" />Escudo sagrado superior</label>
+						<div class="item-description">Mejorando el escudo sagrado en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="109" data-category="equipment" />Escudo sagrado supremo</label>
+						<div class="item-description">Mejorando el escudo sagrado superior en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="110" data-category="equipment" />Escudo hyliano</label>
+						<div class="item-description">Ganando 8 combates seguidos en el Duelo atronador.</div>
+					</li>
+				</ul>
+
+				<h3>Medallones</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="111" data-category="equipment" />Medallón de corazón</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="112" data-category="equipment" />Medallón de corazón</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="113" data-category="equipment" />Medallón de insecto</label>
+						<div class="item-description">En la tienda de Terry (1000 rupias).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="114" data-category="equipment" />Medallón de tesoro</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="115" data-category="equipment" />Medallón de rupia</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="116" data-category="equipment" />Medallón de rupia</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="117" data-category="equipment" />Medallón de vida</label>
+						<div class="item-description">En la tienda de Terry (800 rupias)</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="118" data-category="equipment" />Medallón de vida</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="119" data-category="equipment" />Medallón duradero</label>
+						<div class="item-description">Dentro de un cofre tras activar un cubo divino.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="120" data-category="equipment" />Medallón maligno</label>
+						<div class="item-description">En un cofre que aparecerá en la casa de Batolo cuando le lleves 30 gemas de gratitud.</div>
+					</li>
+				</ul>
+
+				<h3>Objetos</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="121" data-category="equipment" />Cazamariposas</label>
+						<div class="item-description">En la tienda de Terry (50 rupias).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="122" data-category="equipment" />Cazamariposas grande</label>
+						<div class="item-description">Mejorando el cazamariposas en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="123" data-category="equipment" />Tirachinas múltiple</label>
+						<div class="item-description">Mejorando el tirachinas en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="124" data-category="equipment" />Arco de hierro</label>
+						<div class="item-description">Mejorando el arco en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="125" data-category="equipment" />Arco sagrado</label>
+						<div class="item-description">Mejorando el arco de hierro en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="126" data-category="equipment" />Telescarabajo veloz</label>
+						<div class="item-description">Mejorando el telescarabajo con gancho en la chatarrería del bazar de Altárea.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="127" data-category="equipment" />Telescarabajo tenaz</label>
+						<div class="item-description">Mejorando el telescarabajo veloz en la chatarrería del bazar de Altárea.</div>
+					</li>
+				</ul>
+
+				<h3>Rastreadores</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="128" data-category="equipment" />Rastreador de corazones</label>
+						<div class="item-description">Quedarse con menos de tres corazones de vida y hablar con Fay.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="129" data-category="equipment" />Rastreador de gemas de gratitud</label>
+						<div class="item-description">Al conseguir la Espada divina alba, entregar suficientes gemas de gratitud a Batolo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="130" data-category="equipment" />Rastreador de cubos divinos</label>
+						<div class="item-description">Hablar con Marcogoro cerca de la entrada al volcán.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="131" data-category="equipment" />Rastreador de tesoros</label>
+						<div class="item-description">Al conseguir la Espada divina alba, mejorar algunos objetos en la chatarrería.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="132" data-category="equipment" />Rastreador de rupias</label>
+						<div class="item-description">Al conseguir la Espada divina alba, hablar con un Moguma en el interior de la estructura cónica bajo el volcán de Eldin.</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-collection" class="tab">
+				<h3>Insectos</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="133" data-category="collection" />Abeja deku</label>
+						<div class="item-description">
+							<img src="resources/bug01.png" class="item-icon item-icon-bug" loading="lazy" />
+							En los panales de abejas de los confines del bosque (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="134" data-category="collection" />Sacraliposa</label>
+						<div class="item-description">
+							<img src="resources/bug02.png" class="item-icon item-icon-bug" loading="lazy" />
+							En muchos puntos del juego (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="135" data-category="collection" />Gerúdula</label>
+						<div class="item-description">
+							<img src="resources/bug03.png" class="item-icon item-icon-bug" loading="lazy" />
+							En las minas y el desierto de Lanayru.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="136" data-category="collection" />Cielérnaga</label>
+						<div class="item-description">
+							<img src="resources/bug04.png" class="item-icon item-icon-bug" loading="lazy" />
+							En algunos lugares de Celéstea y solo por la noche: isla de Terry, huerto de calabazas de Calabia, río en Altárea, etc. (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="137" data-category="collection" />Escaracorno de Farone</label>
+						<div class="item-description">
+							<img src="resources/bug05.png" class="item-icon item-icon-bug" loading="lazy" />
+							En ciertos lugares de la tierra del presidio, del bosque de Farone y de los confines del bosque.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="138" data-category="collection" />Magmariquita</label>
+						<div class="item-description">
+							<img src="resources/bug06.png" class="item-icon item-icon-bug" loading="lazy" />
+							En algunos lugares del volcán de Eldin.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="139" data-category="collection" />Cigardunera</label>
+						<div class="item-description">
+							<img src="resources/bug07.png" class="item-icon item-icon-bug" loading="lazy" />
+							En el desierto de Lanayru.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="140" data-category="collection" />Celestarabajo</label>
+						<div class="item-description">
+							<img src="resources/bug08.png" class="item-icon item-icon-bug" loading="lazy" />
+							En muchos puntos de Altárea.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="141" data-category="collection" />Saltabosques</label>
+						<div class="item-description">
+							<img src="resources/bug09.png" class="item-icon item-icon-bug" loading="lazy" />
+							En ciertos lugares de la tierra del presidio, del bosque de Farone y de los confines del bosque (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="142" data-category="collection" />Mantis entrenubosa</label>
+						<div class="item-description">
+							<img src="resources/bug10.png" class="item-icon item-icon-bug" loading="lazy" />
+							En muchos puntos de Altárea (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="143" data-category="collection" />Hormiga de Lanayru</label>
+						<div class="item-description">
+							<img src="resources/bug11.png" class="item-icon item-icon-bug" loading="lazy" />
+							En las minas y el desierto de Lanayru.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="144" data-category="collection" />Eldinabajo pelotero</label>
+						<div class="item-description">
+							<img src="resources/bug12.png" class="item-icon item-icon-bug" loading="lazy" />
+							En algunos lugares del volcán de Eldin.
+						</div>
+					</li>
+				</ul>
+
+				<h3>Tesoros</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="145" data-category="collection" />Larvas de abeja</label>
+						<div class="item-description">
+							<img src="resources/treasure01.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Derribando panales de abejas con ayuda del tirachinas en los confines del bosque.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="146" data-category="collection" />Pluma de ave </label>
+						<div class="item-description">
+							<img src="resources/treasure02.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Atrapando pajarillos con el cazamariposas (en la tierra del presidio, por ejemplo).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="147" data-category="collection" />Planta rodadora</label>
+						<div class="item-description">
+							<img src="resources/treasure03.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En el desierto de Lanayru (usando cazamariposas).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="148" data-category="collection" />Cola de lagarto</label>
+						<div class="item-description">
+							<img src="resources/treasure04.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Eliminando lizalfos en el templo terrenal.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="149" data-category="collection" />Mineral de Eldin</label>
+						<div class="item-description">
+							<img src="resources/treasure05.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En algunos cofres o cavando en agujeros del volcán de Eldin (con los guantes de cavar).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="150" data-category="collection" />Flor arcana</label>
+						<div class="item-description">
+							<img src="resources/treasure06.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En las minas y el desierto de Lanayru.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="151" data-category="collection" />Alhaja ambarina</label>
+						<div class="item-description">
+							<img src="resources/treasure07.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En diversos lugares de todas las regiones inferiores.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="152" data-category="collection" />Alhaja tenebrosa</label>
+						<div class="item-description">
+							<img src="resources/treasure08.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En Hypneas durante los juicios del espíritu y también dentro de algunos cofres, aunque muy rara vez.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="153" data-category="collection" />Ectoplasma viscoso</label>
+						<div class="item-description">
+							<img src="resources/treasure09.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Eliminando enemigos gelatinosos (chuchus, babarillas deku, etc.).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="154" data-category="collection" />Garra de monstruo</label>
+						<div class="item-description">
+							<img src="resources/treasure10.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Eliminando enemigos con forma de murciélago (keese).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="155" data-category="collection" />Cuerno de monstruo</label>
+						<div class="item-description">
+							<img src="resources/treasure11.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Usando el látigo contra bokoblin, y también como premio al lograr entre 20 y 27 tajos en el juego Mil pedazos de bambú.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="156" data-category="collection" />Broche calavérico</label>
+						<div class="item-description">
+							<img src="resources/treasure12.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Eliminando bokoblins.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="157" data-category="collection" />Cristal maléfico</label>
+						<div class="item-description">
+							<img src="resources/treasure13.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Como premio al lograr entre 20 y 27 tajos en el juego Mil pedazos de bambú.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="158" data-category="collection" />Pluma de ave azul</label>
+						<div class="item-description">
+							<img src="resources/treasure14.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En diversos lugares, aunque hay pocos. También como premio al lograr 28 tajos o más en el juego Mil pedazos de bambú.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="159" data-category="collection" />Broche calavérico de oro</label>
+						<div class="item-description">
+							<img src="resources/treasure15.png" class="item-icon item-icon-treasure" loading="lazy" />
+							Eliminando bokoblins, y también como premio al lograr 28 tajos o más en el juego Mil pedazos de bambú.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-skyward-sword" data-index="160" data-category="collection" />Objeto perdido de la Diosa</label>
+						<div class="item-description">
+							<img src="resources/treasure16.png" class="item-icon item-icon-treasure" loading="lazy" />
+							En diversos lugares, aunque hay pocos. También como premio al lograr 28 tajos o más en el juego Mil pedazos de bambú.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>The legend of Zelda: Twilight Princess - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de The legend of Zelda: Twilight Princess en esta webapp." />
+	<meta name="keywords" content="zelda, wind, waker, corazones, botellas, figuritas, mapas, coleccionables, guia, checklist, nintendo, game, cube, wii u" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+.location {
+	background-color: #eae7e0;
+	color: #595038;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+span.gc, span.hd{
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:80%;
+	padding: 1px 4px;
+	border-radius:3px;
+	display:inline-block;
+	vertical-align:middle;
+}
+span.gc{
+	background-color:#6540e8;
+	color:white;
+}
+span.hd{
+	background-color:#299bff;
+	color:white;
+}
+sup.gc, sup.hd{
+	font-weight:bold;
+}
+sup.gc{
+	color:#6540e8;
+}
+sup.hd{
+	color:#299bff;
+}
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/zelda-twilight-princess/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript">
+		const TWILIGHT_HYRULE_REGION_NAMES=[
+			'Región de Latoan',
+			'Región de Farone',
+			'Región de Eldin',
+			'Región de Lanayru',
+			'Desierto de Gerudo',
+			'Cima Nevada',
+			'Celestia',
+			'Palacio del Crepúsculo',
+			'Castillo de Hyrule',
+			'Todo Hyrule'
+		];
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('zelda-twilight-princess', [
+				{category: 'hearts', group:'location', label:'Agrupar por región', groupNames:TWILIGHT_HYRULE_REGION_NAMES}
+			]);
+		});
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>The legend of Zelda: Twilight Princess - Guía checklist interactiva de progreso</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/midna.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#bottles"><img src="resources/bottle.png" class="icon" loading="lazy" /> Botellas</a></li>
+				<li><a href="#hearts"><img src="resources/piece_of_heart.png" class="icon"loading="lazy"  /> Piezas de corazón</a></li>
+				<li><a href="#bugs"><img src="resources/bug.png" class="icon"loading="lazy"  /> Insectos dorados</a></li>
+				<li><a href="#fishes"><img src="resources/fish_journal.png" class="icon"loading="lazy"  /> Peces</a></li>
+				<li><a href="#poes"><img src="resources/ghost_lantern.png" class="icon"loading="lazy"  /> Espectros</a></li>
+				<li><a href="#equipment"><img src="resources/wallet_upgrade.png" class="icon" loading="lazy" /> Mejoras equipo</a></li>
+				<li><a href="#skills"><img src="resources/hidden_skill_scroll.png" class="icon" loading="lazy" /> Técnicas secretas</a></li>
+				<li><a href="#stamps"><img src="resources/stamp.png" class="icon" loading="lazy" /> Sellos</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>The legend of Zelda: Twilight Princess</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+
+
+			<div id="tab-bottles" class="tab">
+				<h2 class="hide-for-mobile">Botellas</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="0" data-category="bottles" data-group-location="1" /> Botella #2</label>
+						<div class="item-description">
+							<span class="location">Farone - Bosque de Farone</span>: (requisito: volver a forma humana) comprar a Palomo por 100 Rupias
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="1" data-category="bottles" data-group-location="3" /> Botella #3</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: pescar en el puente de madera cerca del cartel de &quot;Prohibido tirar basura&quot; en el Muelle de pesca
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="2" data-category="bottles" data-group-location="3" /> Botella #4</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Giovanni</span>: entregar 20 almas de espectro a Giovanni
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<div id="tab-hearts" class="tab">
+				<h2 class="hide-for-mobile">Piezas de corazón</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="3" data-category="hearts" data-group-location="1" /> Pieza de corazón #01</label>
+						<div class="item-description">
+							<span class="location">Farone - Bosque de Farone</span>: encender dos farolillos con el Candil en la cueva que lleva a la entrada del Templo del bosque
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="4" data-category="hearts" data-group-location="1" /> Pieza de corazón #02</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del bosque</span>: en un cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="5" data-category="hearts" data-group-location="1" /> Pieza de corazón #03</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del bosque</span>: en un cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="6" data-category="hearts" data-group-location="1" /> Pieza de corazón #04</label>
+						<div class="item-description">
+							<span class="location">Farone - Llanura de Hyrule</span>: en lo alto de un árbol al lado de un árbol, lanzar bumerán
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="7" data-category="hearts" data-group-location="2" /> Pieza de corazón #05</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Bumerán) en lo alto de una roca, lanzando el Bumerán
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="8" data-category="hearts" data-group-location="0" /> Pieza de corazón #06</label>
+						<div class="item-description">
+							<span class="location">Latoan - Granja de Ordon</span>: (requisito: completar Montaña de la Muerte) completar el minijuego de meter 20 cabras en el establo en menos de tres minutos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="9" data-category="hearts" data-group-location="2" /> Pieza de corazón #07</label>
+						<div class="item-description">
+							<span class="location">Eldin - Minas de los Goron</span>: en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="10" data-category="hearts" data-group-location="2" /> Pieza de corazón #08</label>
+						<div class="item-description">
+							<span class="location">Eldin - Minas de los Goron</span>: en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="11" data-category="hearts" data-group-location="2" /> Pieza de corazón #09</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: completar minijuego de tiro al blanco de Talo con el arco del héroe (no se puede usar el Ojo de águila)
+							<div class="spoiler">
+								Para encontrar a Talo, subir hasta lo más alto de la torre de vigilancia del pueblo (se accede por dentro del Taller de Don Mechas).
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="12" data-category="hearts" data-group-location="2" /> Pieza de corazón #10</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: (requisito: Bombas y Botas de hierro) poner bomba en roca a la derecha de la entrada de Kakariko y sumergirse en el pozo que hay dentro
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="13" data-category="hearts" data-group-location="2" /> Pieza de corazón #11</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: (requisito: Bombas + Arco del héroe) explotar las rocas (combinando el Arco del héroe con las Bombas) encima de la entrada de la cueva de la Pieza de corazón #10 y recoger con el Bumerán
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="14" data-category="hearts" data-group-location="2" /> Pieza de corazón #12</label>
+						<div class="item-description">
+							<span class="location">Eldin - Montaña de la Muerte</span>: (requisito: completar Minas de los Goron) subirse a la espalda del segundo Goron desde la entrada para impulsarse a las rocas elevadas detrás suyo, continuar por la zona elevada hasta encontrar una cueva con un agujero donde está el cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="15" data-category="hearts" data-group-location="2" /> Pieza de corazón #13</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Bombas) poner Bomba en roca para entrar en cueva en el sur, cerca de la entrada a Farone
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="16" data-category="hearts" data-group-location="2" /> Pieza de corazón #14</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Bombas y Arco del héroe) poner Bomba en roca en el sur (cerca de la entrada de Kakariko), trepar por las rocas y lanzar flecha explosiva a otra roca para cruzar al otro lado y encontrar el cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="17" data-category="hearts" data-group-location="3" /> Pieza de corazón #15</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba/abajo)</span> ganar primer premio en minijuego Periperiplo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="18" data-category="hearts" data-group-location="3" /> Pieza de corazón #16</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia</span>: (requisito: Bombas) completar la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="19" data-category="hearts" data-group-location="3" /> Pieza de corazón #17</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: pescar en el Muelle de pesca (está encima de las rocas del centro del lago)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="20" data-category="hearts" data-group-location="3" /> Pieza de corazón #18</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule (oeste)</span>: donar 1000 rupias al mendigo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="21" data-category="hearts" data-group-location="3" /> Pieza de corazón #19</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Santuario del Lago</span>: (requisito: Zarpa) en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="22" data-category="hearts" data-group-location="3" /> Pieza de corazón #20</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Santuario del Lago</span>: (requisito: Zarpa) en un cofre (planta B1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="23" data-category="hearts" data-group-location="1" /> Pieza de corazón #21</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: (requisito: Bombas) derrotar todos los enemigos en la cueva que se accede escarbando como Link Lobo en el lugar donde está la roca destructible en la sala circular donde se lucha contra a Skullkid
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="24" data-category="hearts" data-group-location="3" /> Pieza de corazón #22</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: (requisito: Zarpa) encender farolillos con Candil en la sala que hay al fondo de la estancia de la fuente del espíritu Lanayru
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="25" data-category="hearts" data-group-location="3" /> Pieza de corazón #23</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: (requisito: transformarse a voluntad) conseguir 10000 puntos en el minijuego del loro Ciruela (aullar como Link Lobo la melodía en una zona de tierra al este)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="26" data-category="hearts" data-group-location="2" /> Pieza de corazón #24</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Zarpa y Botas de Hierro) superar la cueva secreta que se accede con la Zarpa al norte del Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="27" data-category="hearts" data-group-location="2" /> Pieza de corazón #25</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: haber donado rupias en el Lalomercado de Kakariko para reparar el puente) hablar con el anciano Goron fuera del Lalomercado y llevar el barril de agua termal (sin que se rompa ni se enfríe) al Goron que hay en el puente al oeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="28" data-category="hearts" data-group-location="4" /> Pieza de corazón #26</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Campamento Bulblin</span>: romper la carne en la hoguera con la espada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="29" data-category="hearts" data-group-location="4" /> Pieza de corazón #27</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (requisito: Zarpa) en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="30" data-category="hearts" data-group-location="4" /> Pieza de corazón #28</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (requisito: Aerodisco) en un cofre (planta B2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="31" data-category="hearts" data-group-location="3" /> Pieza de corazón #29</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (oeste)</span>: (requisito: Aerodisco) usar Aerodisco en raíl al noroeste de la llanura (cerca del camino tapado por rocas)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="32" data-category="hearts" data-group-location="2" /> Pieza de corazón #30</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Aerodisco) derrotar enemigos en cueva que se accede con el Aerodisco en el raíl cerca del puente de madera del norte y escarbando en el círculo de piedras como Link Lobo 
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="33" data-category="hearts" data-group-location="5" /> Pieza de corazón #31</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: (requisito: Mangual) en un cofre (planta N1 accediendo desde el suelo de N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="34" data-category="hearts" data-group-location="5" /> Pieza de corazón #32</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: (requisito: Mangual) en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="35" data-category="hearts" data-group-location="5" /> Pieza de corazón #33</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: (requisito: completar Ruinas de Cima Nevada) vencer en una carrera a Yeto y Yeta desde el punto de salida (en el portal de teletransporte) hasta la entrada a las Ruinas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="36" data-category="hearts" data-group-location="3" /> Pieza de corazón #34</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: (requisito: Mangual) completar los puzles de empujar bloques de hielo en la cueva al norte de la llanura, en la zona rocosa
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="37" data-category="hearts" data-group-location="1" /> Pieza de corazón #35</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: (requisito: Cetro del Dominio) en un cofre (planta N5)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="38" data-category="hearts" data-group-location="1" /> Pieza de corazón #36</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: (requisito: Cetro del Dominio) en un cofre (planta N5)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="39" data-category="hearts" data-group-location="1" /> Pieza de corazón #37</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo (entrada)</span>: (requisito: Cetro del Dominio) mover una de las dos estatuas al sur con el Cetro del Dominio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="40" data-category="hearts" data-group-location="2" /> Pieza de corazón #38</label>
+						<div class="item-description">
+							<span class="location">Eldin - Pueblo Olvidado</span>: (requisito: recuperar memoria de Ilia) completar el minijuego de hablar con los 20 gatos del pueblo (se inicia hablando con el cuco en el patio trasero de una casa que se accede rompiendo ventanas)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="41" data-category="hearts" data-group-location="1" /> Pieza de corazón #39</label>
+						<div class="item-description">
+							<span class="location">Farone - Bosque de Farone</span>: (requisito: Cetro del Dominio) mover la estatua detrás de la casa de Palomo y colocarla en el hueco cercano, subir como Link Lobo y la ayuda de Midna
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="42" data-category="hearts" data-group-location="2" /> Pieza de corazón #40</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Cetro del Dominio y reparar Gran Puente de Eldin) mover la estatua en la entrada sur del Gran Puente de Eldin hacia la entrada norte y tirarla por el hueco para poder saltar sobre ella
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="43" data-category="hearts" data-group-location="6" /> Pieza de corazón #41</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: (requisito: Doble Zarpa) en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="44" data-category="hearts" data-group-location="6" /> Pieza de corazón #42</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: (requisito: Doble Zarpa) en un cofre (planta N3)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="45" data-category="hearts" data-group-location="2" /> Pieza de corazón #43</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Doble Zarpa) usar Doble Zarpa en la roca del precipicio del suroeste de la llanura (la misma roca de la pieza #05)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="46" data-category="hearts" data-group-location="7" /> Pieza de corazón #44</label>
+						<div class="item-description">
+							<span class="location">Palacio del Crepúsculo</span>: (requisito: primer Taiyo y Doble Zarpa) en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="47" data-category="hearts" data-group-location="7" /> Pieza de corazón #45</label>
+						<div class="item-description">
+							<span class="location">Palacio del Crepúsculo</span>: (requisito: segundo Taiyo) en un cofre (planta N1)
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<div id="tab-bugs" class="tab">
+				<h2 class="hide-for-mobile">Insectos dorados</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="48" data-category="bugs" data-group-location="2" /> Hormiga ♂</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: al pie de un árbol al fondo del cementerio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="49" data-category="bugs" data-group-location="2" /> Hormiga ♀</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: dentro de la casa enfrente del hotel
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="50" data-category="bugs" data-group-location="4" /> Efímera ♂</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: al sur del desierto
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="51" data-category="bugs" data-group-location="4" /> Efímera ♀</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: al suroeste del desierto, en una de las zanjas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="52" data-category="bugs" data-group-location="1" /> Escarabajo ♂</label>
+						<div class="item-description">
+							<span class="location">Farone - Llanura de Hyrule</span>: cerca de un árbol al sur de la laguna pequeña
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="53" data-category="bugs" data-group-location="1" /> Escarabajo ♀</label>
+						<div class="item-description">
+							<span class="location">Farone - Llanura de Hyrule</span>: (requisito: Bumerán) en un árbol al noroeste de la laguna grande
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="54" data-category="bugs" data-group-location="3" /> Mantis ♂</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba)</span>: (requisito: Bumerán) en el arco de piedra dextremo norte del Gran Puente de Hylia
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="55" data-category="bugs" data-group-location="3" /> Mantis ♀</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba)</span>: (requisito: Bumerán) antes de llegar al puente de madera que hay al sur del Gran Puente de Hylia, en la pared oeste cercana al árbol gigante del que caen Chuchus
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="56" data-category="bugs" data-group-location="3" /> Ciervo volante ♂</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: en un árbol al oeste del puente de madera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="57" data-category="bugs" data-group-location="3" /> Ciervo volante ♀</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: (requisito: Bumerán) encima de la cueva taponada por una roca en la zona rocosa elevada al norte de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="58" data-category="bugs" data-group-location="2" /> Cochinilla ♂</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: en un árbol cerca del puente de madera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="59" data-category="bugs" data-group-location="2" /> Cochinilla ♀</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: en un árbol a mano derecha despues de cruzar el puente de madera en dirección a Kakariko
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="60" data-category="bugs" data-group-location="3" /> Mariposa ♂</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (oeste)</span>: en unas flores en el suroeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="61" data-category="bugs" data-group-location="3" /> Mariposa ♀</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (oeste)</span>: (requisito: Bumerán o Zarpa) en una plataforma elevada al noroeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="62" data-category="bugs" data-group-location="3" /> Mariquita ♂</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (sur)</span>: en las flores al lado de la torre de piedra en el este de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="63" data-category="bugs" data-group-location="3" /> Mariquita ♀</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (sur)</span>: en un árbol cerca de una de las escaleras de la entrada a la ciudadela
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="64" data-category="bugs" data-group-location="1" /> Caracol ♂</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: (requisito: Bumerán) en la sala del puzle del tablero y las estatuas, entrando por las ruinas que hay al sureste, en la columna a mano izquierda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="65" data-category="bugs" data-group-location="1" /> Caracol ♀</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo (entrada)</span>: cerca de las escaleras de la entrada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="66" data-category="bugs" data-group-location="2" /> Insecto palo ♂</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Bumerán) en una columna en un lado del punto sur del Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="67" data-category="bugs" data-group-location="2" /> Insecto palo ♀</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Bumerán) en la pared en el norte del Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="68" data-category="bugs" data-group-location="2" /> Saltamontes ♂</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: cerca de la entrada a Kakariko
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="69" data-category="bugs" data-group-location="2" /> Saltamontes ♀</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: en el noroeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="70" data-category="bugs" data-group-location="3" /> Libélula ♂</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: en la zona de tierra firme del este
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="71" data-category="bugs" data-group-location="3" /> Libélula ♀</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: (requisito: Bumerán) en el puente que cruza el río en la cabaña de Flora
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<div id="tab-fishes" class="tab">
+				<h2 class="hide-for-mobile">Peces</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="72" data-category="fishes" data-group-location="9" /> Agalla verde</label>
+						<div class="item-description">
+							<span class="location">Localización</span>: en cualquier zona
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="73" data-category="fishes" data-group-location="2" /> Lubina de Hyrule</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: en el pozo que hay detrás de la roca destructible a la entrada del pueblo (el de la Pieza de corazón #10)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="74" data-category="fishes" data-group-location="0" /> Siluro de Ordon</label>
+						<div class="item-description">
+							<span class="location">Latoan - Ordon</span>: en el norte
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="75" data-category="fishes" data-group-location="3" /> Barbo oloroso</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: (requisito: Caña con pendiente) junto a las rocas Madre e Hija, al oeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="76" data-category="fishes" data-group-location="3" /> Lucio de Hylia</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Curso alto del río Zora</span>: delante de la puerta de entrada del Embarcadero
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="77" data-category="fishes" data-group-location="2" /> Locha de Hyrule</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: en el lago al fondo del cementerio de Kakariko
+						</div>
+					</li>
+				</ul>
+				<p>* todos los peces salvo el Barbo oloroso pueden pescarse también en el Muelle de pesca</p>
+			</div>
+
+
+
+			<div id="tab-poes" class="tab">
+				<h2 class="hide-for-mobile">Espectros</h2>
+				<!-- <p>...</p> -->
+				<h3>Región de Farone</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="78" data-category="poes" data-group-location="1" /> Espectro #02</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: poner bomba en roca en la sala circular donde se lucha contra a Skullkid
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="79" data-category="poes" data-group-location="1" /> Espectro #28</label>
+						<div class="item-description">
+							<span class="location">Farone - Llanura de Hyrule</span>: al norte del puente de madera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="80" data-category="poes" data-group-location="1" /> Espectro #29</label>
+						<div class="item-description">
+							<span class="location">Farone - Bosque de Farone</span>: (requisito: transformarse a voluntad) saltar como Link Lobo y la ayuda de Midna en el área con el gas lila
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="81" data-category="poes" data-group-location="1" /> Espectro #50</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: en una zona elevada de los bosques perdidos que se accede por un camino tras una cascada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="82" data-category="poes" data-group-location="1" /> Espectro #51</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: (requisito: Cetro del Dominio) en la planta N7
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="83" data-category="poes" data-group-location="1" /> Espectro #52</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: (requisito: Cetro del Dominio) en la planta N3
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="84" data-category="poes" data-group-location="1" /> Espectro #53</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo (entrada)</span>: (requisito: Cetro del Dominio) mover una de las dos estatuas al sur con el Cetro del Dominio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="85" data-category="poes" data-group-location="1" /> Espectro #54</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: (requisito: completar el Templo del Tiempo) en el área donde se consigue la Espada Maestra
+						</div>
+					</li>
+				</ul>
+
+				<h3>Región de Eldin</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="86" data-category="poes" data-group-location="2" /> Espectro #21</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: en el almacén en ruinas de Don Mechas
+							<div class="spoiler">
+								Para acceder, salir por la escalera de mano dentro del Taller de Don Mechas.
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="87" data-category="poes" data-group-location="2" /> Espectro #22</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: en la parte de abajo de la Torre de vigilancia del pueblo
+							<div class="spoiler">
+								Para acceder, salir por la escalera de mano dentro del Taller de Don Mechas.
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="88" data-category="poes" data-group-location="2" /> Espectro #23</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: en el centro del cementerio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="89" data-category="poes" data-group-location="2" /> Espectro #24</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: empujar una de las dos lápidas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="90" data-category="poes" data-group-location="2" /> Espectro #25</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: subirse a la espalda del segundo Goron desde la entrada para impulsarse a las rocas elevadas detrás suyo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="91" data-category="poes" data-group-location="2" /> Espectro #26</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: cerca de un árbol en una zona elevata al oeste del puente de madera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="92" data-category="poes" data-group-location="2" /> Espectro #27</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Bombas) poner Bomba en roca para entrar en cueva en el sur, cerca de la entrada a Farone
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="93" data-category="poes" data-group-location="2" /> Espectro #55</label>
+						<div class="item-description">
+							<span class="location">Eldin - Pueblo Olvidado</span>: (requisito: recuperar memoria de Ilia) en un balcón
+						</div>
+					</li>
+				</ul>
+
+				<h3>Región de Lanayru</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="94" data-category="poes" data-group-location="3" /> Espectro #01</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Giovanni</span>: en la casa de Giovanni, es el primer especto y es obligado.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="95" data-category="poes" data-group-location="3" /> Espectro #03</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: dentro de la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="96" data-category="poes" data-group-location="3" /> Espectro #04</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: dentro de la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="97" data-category="poes" data-group-location="3" /> Espectro #05</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: dentro de la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="98" data-category="poes" data-group-location="3" /> Espectro #06</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba/abajo)</span> caer, como mínimo, en la cuarta plataforma más alta del minijuego de Periperiplo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="99" data-category="poes" data-group-location="3" /> Espectro #07</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: en la zona de tierra al este del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="100" data-category="poes" data-group-location="3" /> Espectro #08</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: en la zona de tierra al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="101" data-category="poes" data-group-location="3" /> Espectro #09</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba)</span>: planear hacia atrás con un cuco desde la plataforma de salida del minijuego de Periperiplo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="102" data-category="poes" data-group-location="3" /> Espectro #10</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: al pie de la torre de vigilancia de piedra
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="103" data-category="poes" data-group-location="3" /> Espectro #11</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: en la zona de tierra al sur de la cabaña de Flora (la barquera)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="104" data-category="poes" data-group-location="3" /> Espectro #12</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: en la zona de tierra firme en el este
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="105" data-category="poes" data-group-location="3" /> Espectro #13</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: en la zona de tierra firma en el oeste, saltar con la ayuda de Midna como Link Lobo para trepar a un camino detrás de la cascada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="106" data-category="poes" data-group-location="3" /> Espectro #14</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: en el puente
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="107" data-category="poes" data-group-location="3" /> Espectro #15</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: cofre en agujero que se accede escarbando como Link Lobo en un círculo de hierba al oeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="108" data-category="poes" data-group-location="3" /> Espectro #16</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: junto al espectro #15 
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="109" data-category="poes" data-group-location="3" /> Espectro #17</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (oeste)</span>: en las ruinas del sur
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="110" data-category="poes" data-group-location="3" /> Espectro #18</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (sur)</span>: en las escaleras de la entrada a la ciudadela
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="111" data-category="poes" data-group-location="3" /> Espectro #19</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule</span>: en el puente de la entrada este de la Ciudadela de Hyrule
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="112" data-category="poes" data-group-location="3" /> Espectro #20</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba)</span>: (requisito: Flechas explosivas y Gancho) destruir las rocas elevadas al sur del puente de madera y trepar con el Gancho
+						</div>
+					</li>
+				</ul>
+
+				<h3>Desierto de Gerudo</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="113" data-category="poes" data-group-location="4" /> Espectro #30</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: en el sureste, cerca de unas calaveras
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="114" data-category="poes" data-group-location="4" /> Espectro #31</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: Zarpa) en el trozo de puente de piedra que se usa para reparar el Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="115" data-category="poes" data-group-location="4" /> Espectro #32</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: Zarpa) al oeste de la valla del Campamento Bulblin, sobre una plataforma elevada que se accede usando la Zarpa en una palmera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="116" data-category="poes" data-group-location="4" /> Espectro #33</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: Zarpa) en una cueva que se accede escarbando como Link Lobo en un círculo de calaveras cerca del Espectro #32
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="117" data-category="poes" data-group-location="4" /> Espectro #34</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: junto al Espectro #33
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="118" data-category="poes" data-group-location="4" /> Espectro #35</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: tomar el camino oeste en la bifurcación que lleva al Campamento Bulblin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="119" data-category="poes" data-group-location="4" /> Espectro #36</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: derrotar el Bulbin del garrote en la casa en llamas) volver a la casa donde se lucha contra el Bulblin, ahora en ruinas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="120" data-category="poes" data-group-location="4" /> Espectro #37</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: a la izquierda de la entrada del Patíbulo del Desierto
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="121" data-category="poes" data-group-location="4" /> Espectro #38</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (obligado)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="122" data-category="poes" data-group-location="4" /> Espectro #39</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (obligado)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="123" data-category="poes" data-group-location="4" /> Espectro #40</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (obligado)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="124" data-category="poes" data-group-location="4" /> Espectro #41</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: (obligado)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="125" data-category="poes" data-group-location="4" /> Espectro #58</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 17
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="126" data-category="poes" data-group-location="4" /> Espectro #59</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 33
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="127" data-category="poes" data-group-location="4" /> Espectro #60</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 44
+						</div>
+					</li>
+				</ul>
+
+				<h3>Cima Nevada</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="128" data-category="poes" data-group-location="5" /> Espectro #42</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: despues de cruzar las plataformas de hielo al oeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="129" data-category="poes" data-group-location="5" /> Espectro #43</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: cerca de un árbol
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="130" data-category="poes" data-group-location="5" /> Espectro #44</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: en una esplanada grande cerca de un árbol
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="131" data-category="poes" data-group-location="5" /> Espectro #45</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: en la montaña elevada que se accede subiendo en espiral, antes del puente que lleva a la Ruinas de Cima Nevada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="132" data-category="poes" data-group-location="5" /> Espectro #46</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: en la planta N1
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="133" data-category="poes" data-group-location="5" /> Espectro #47</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: (requisito: Mangual) en la planta N1
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="134" data-category="poes" data-group-location="5" /> Espectro #48</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: (requisito: Mangual) en la planta N2
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="135" data-category="poes" data-group-location="5" /> Espectro #49</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: (requisito: Mangual) destruir rocas de hielo con el Mangual en la cueva de la cima y encender farolillos
+						</div>
+					</li>
+				</ul>
+
+				<h3>Celestia</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="136" data-category="poes" data-group-location="6" /> Espectro #56</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: (requisito: Doble Zarpa) en la planta N2
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="137" data-category="poes" data-group-location="6" /> Espectro #57</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: (requisito: Doble Zarpa) en la planta N4
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+
+
+			<div id="tab-equipment" class="tab">
+				<h2 class="hide-for-mobile">Mejoras equipo</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="206" data-category="equipment" data-group-location="2" /> Escudo Hyliano</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: comprar por 200 Rupias en Lalomercado
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="138" data-category="equipment" data-group-location="3" /> Bolsa de rupias grande</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Maripola</span>: donar un bicho dorado a Maripola
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="139" data-category="equipment" data-group-location="3" /> Bolsa de rupias gigante</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Maripola</span>: donar los 24 bichos dorados a Maripola
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="208" data-category="equipment" data-group-location="4" /> Bolsa de rupias sin fondo</label>
+						<div class="item-description">
+							<span class="location">Cueva de las Sombras</span>: (requisito: Amiibo Link Lobo) planta 40
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="140" data-category="equipment" data-group-location="3" /> Carcaj grande</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Carpa de las Estrellas</span>: (requisito: Zarpa) completar minijuego Juego de las Estrellas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="141" data-category="equipment" data-group-location="3" /> Carcaj gigante</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Carpa de las Estrellas</span>: (requisito: Doble Zarpa) completar minijuego Juego de las Estrellas por segunda vez
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="142" data-category="equipment" data-group-location="2" /> Saco de bombas #1</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: comprar por 120 Rupias en el Taller de bombas de Don Mechas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="143" data-category="equipment" data-group-location="3" /> Saco de bombas #2</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: salvar a Flora (la barquera) de los enemigos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="144" data-category="equipment" data-group-location="3" /> Saco de bombas #3</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: destruir la roca que descongeló la fuente con una Bomba submarina
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="145" data-category="equipment" data-group-location="3" /> Sacos de bombas gigantes</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Región de los Zora</span>: conseguir al menos 25 puntos en el minijuego de Flora (la barquera) de disparar a las dianas bajando el río
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="146" data-category="equipment" data-group-location="2" /> Bombas submarinas</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: comprar en el Taller de bombas de Don Mechas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="147" data-category="equipment" data-group-location="2" /> Bombinsectos</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: (requisito: completar Patíbulo del Desierto) comprar en el Taller de bombas de Don Mechas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="148" data-category="equipment" data-group-location="3" /> Candil espectral</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Giovanni</span>: entregar 20 almas de espectro a Giovanni
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="149" data-category="equipment" data-group-location="2" /> Ojo de águila</label>
+						<div class="item-description">
+							<span class="location">Eldin - Kakariko</span>: comprar por 100 Rupias en Lalomercado
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="150" data-category="equipment" data-group-location="3" /> Armadura mágica</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Lalomercado</span>: (requisito: donar 2000 rupias para la construcción del Lalomercado en Kakariko) comprar por 598 rupias en Lalomercado
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="207" data-category="equipment" data-group-location="4" /> Rocío de la Gran Hada</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 50
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<div id="tab-skills" class="tab">
+				<h2 class="hide-for-mobile">Técnicas secretas del arte de la espada</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="151" data-category="skills" data-group-location="2" /> Técnica secreta #2: Ataque de escudo</label>
+						<div class="item-description">
+							<span class="location">Eldin - Montaña de la Muerte</span>: en el camino que sube la Montaña de la Muerte
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="152" data-category="skills" data-group-location="3" /> Técnica secreta #3: Tajo trasero</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Curso alto del río Zora</span>: cerca del Embarcadero
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="153" data-category="skills" data-group-location="1" /> Técnica secreta #4: Rompeyelmos</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: entrada a la Arboleda Sagrada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="154" data-category="skills" data-group-location="3" /> Técnica secreta #5: Tajo relámpago</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia</span>: cerca de la torre de vigilancia de piedra
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="155" data-category="skills" data-group-location="5" /> Técnica secreta #6: Mandoble volador</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada</span>: subiendo la Cima Nevada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="156" data-category="skills" data-group-location="2" /> Técnica secreta #7: Gran ataque circular</label>
+						<div class="item-description">
+							<span class="location">Eldin - Poblado Olvidado</span>: romper ventanas de una casa al oeste para acceder al patio trasero
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<div id="tab-stamps" class="tab">
+				<h2 class="hide-for-mobile">Sellos</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="157" data-category="stamps" data-group-location="1" /> Página 1 - Alfabeto hyliano "A"</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del bosque</span>: en un cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="158" data-category="stamps" data-group-location="1" /> Página 2 - Alfabeto hyliano "N"</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del bosque</span>: en un cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="159" data-category="stamps" data-group-location="2" /> Página 1 - Alfabeto hyliano "H"</label>
+						<div class="item-description">
+							<span class="location">Eldin - Minas de los Goron</span>: en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="160" data-category="stamps" data-group-location="2" /> Página 2 - Alfabeto hyliano "O"</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Bombas) poner Bomba en roca para entrar en cueva en el sur, cerca de la entrada a Farone
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="161" data-category="stamps" data-group-location="3" /> Página 5 - Cuco</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba/abajo)</span> ganar tercer premio en minijuego Periperiplo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="162" data-category="stamps" data-group-location="3" /> Página 3 - Alfabeto hyliano "W"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: (requisito: Botas de hierro) hundirse en la zona sur del agua y abrir cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="163" data-category="stamps" data-group-location="3" /> Página 1 - Alfabeto hyliano "J"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: dentro de la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="164" data-category="stamps" data-group-location="3" /> Página 3 - Cofre</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: dentro de la cueva-laberinto que se accede colocando una Bomba en una roca al sur del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="165" data-category="stamps" data-group-location="3" /> Página 1 - Alfabeto hyliano "F"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: (requisito: Botas de hierro) hundirse en la parte con rejas en el sur
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="166" data-category="stamps" data-group-location="3" /> Página 5 - Maripola</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Maripola</span>: donar 12 bichos dorados a Maripola
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="167" data-category="stamps" data-group-location="3" /> Página 3 - Alfabeto hyliano "Y"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Santuario del lago</span>: (requisito: Zarpa) en un cofre (planta B1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="168" data-category="stamps" data-group-location="3" /> Página 2 - Alfabeto hyliano "K"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Santuario del lago</span>: en un cofre (planta N4)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="169" data-category="stamps" data-group-location="3" /> Página 5 - Lalomercado</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Lalomercado</span>: (requisito: donar 2000 rupias para la construcción del Lalomercado en Kakariko) comprar por 50 rupias en Lalomercado
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="170" data-category="stamps" data-group-location="3" /> Página 4 - Link enfadado</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (oeste)</span>: (requisito: Zarpa) derrotar los enemigos en una cueva que se accede escarbando como Link Lobo en un círculo de piedras, en una plataforma elevada al noroeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="171" data-category="stamps" data-group-location="3" /> Página 1 - Alfabeto hyliano "I"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: cofre en agujero que se accede escarbando como Link Lobo en un círculo de hierba al sureste de la llanura</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="172" data-category="stamps" data-group-location="3" /> Página 2 - Alfabeto hyliano "P"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (norte)</span>: encender tres farolillos con el Candil en una cueva que se accede escarbando como Link Lobo en un círculo de piedras cerca de la salida norte del canal de agua
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="173" data-category="stamps" data-group-location="3" /> Página 2 - Alfabeto hyliano "M"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (arriba)</span>: (requisito: Flechas explosivas y Gancho) destruir las rocas elevadas al sur del puente de madera, trepar con el Gancho, entrar en cueva como Link Lobo y derrotar los enemigos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="174" data-category="stamps" data-group-location="3" /> Página 2 - Alfabeto hyliano "S"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Lago de Hylia (abajo)</span>: derrotar todos los enemigos en la cueva que se accede escarbando como Link Lobo en el círculo de hierba al sur del lago (cerca de la torre de piedra)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="175" data-category="stamps" data-group-location="2" /> Página 3 - Pieza de corazón</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Zarpa y Botas de Hierro) en un cofre en la cueva secreta que se accede con la Zarpa al norte del Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="176" data-category="stamps" data-group-location="2" /> Página 1 - Alfabeto hyliano "C"</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: (requisito: Candil) encender farolillos en cueva secreta que se accede escarbando como Link Lobo al noroeste de la laguna del suroeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="177" data-category="stamps" data-group-location="2" /> Página 4 - Link triste</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (norte)</span>: en un cofre en la cueva secreta que se accede escarbando como Link Lobo al oeste del extremo sur del Gran Puente de Eldin
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="178" data-category="stamps" data-group-location="2" /> Página 3 - Alfabeto hyliano "U"</label>
+						<div class="item-description">
+							<span class="location">Eldin - Minas de los Goron</span>: (requisito: Zarpa) en un cofre (planta N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="179" data-category="stamps" data-group-location="1" /> Página 4 - Link Lobo</label>
+						<div class="item-description">
+							<span class="location">Farone - Llanura de Hyrule</span>: en un cofre en la cueva secreta que se accede escarbando como Link Lobo en el sureste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="180" data-category="stamps" data-group-location="0" /> Página 4 - Link alegre</label>
+						<div class="item-description">
+							<span class="location">Latoan</span>: (requisito: Candil) encender los tres farolillos en cueva secreta que se accede escarbando como Link Lobo dentro del establo de la granja de Ordon (solo de día)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="181" data-category="stamps" data-group-location="4" /> Página 4 - Midna triste</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: Zarpa) encender tres farolillos en cueva que se accede escarbando como Link Lobo en un círculo de calaveras cerca del Espectro #32
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="182" data-category="stamps" data-group-location="4" /> Página 2 - Alfabeto hyliano "R"</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo</span>: (requisito: Zarpa) en un cofre aislado en el suroeste del desierto que se accede colgándose en un Peahat con la Zarpa
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="183" data-category="stamps" data-group-location="4" /> Página 4 - Midna sorprendida</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="184" data-category="stamps" data-group-location="4" /> Página 1 - Alfabeto hyliano "D"</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Patíbulo del Desierto</span>: en un cofre (planta B1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="185" data-category="stamps" data-group-location="3" /> Página 5 - Zelda sorprendida</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (sur)</span>: (requisito: Gancho y Aerodisco) el cofre en la plataforma de piedra blanca delante de la salida de la ciudadela, se accede usando el Gancho en una columna y el Aerodisco en el raíl a continuación, saltando a mitad de camino para caer en el cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="186" data-category="stamps" data-group-location="5" /> Página 1 - Alfabeto hyliano "B"</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: en un cofre (planta N1, la sala con vigas)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="187" data-category="stamps" data-group-location="5" /> Página 2 - Alfabeto hyliano "Q"</label>
+						<div class="item-description">
+							<span class="location">Cima Nevada - Ruinas de Cima Nevada</span>: (requisito: Mangual) en un cofre (planta N1, la primera sala)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="188" data-category="stamps" data-group-location="1" /> Página 3 - Alfabeto hyliano "X"</label>
+						<div class="item-description">
+							<span class="location">Farone - Arboleda Sagrada</span>: (requisito: Aerodisco) usar Aerodisco en la sala circular donde se lucha contra a Skullkid para llegar al cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="189" data-category="stamps" data-group-location="1" /> Página 2 - Alfabeto hyliano "L"</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: en un cofre (planta N5)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="190" data-category="stamps" data-group-location="1" /> Página 2 - Alfabeto hyliano "T"</label>
+						<div class="item-description">
+							<span class="location">Farone - Templo del Tiempo</span>: en un cofre (planta N7)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="191" data-category="stamps" data-group-location="2" /> Página 1 - Alfabeto hyliano "E"</label>
+						<div class="item-description">
+							<span class="location">Eldin - Llanura de Hyrule (sur)</span>: (requisito: Cetro del Dominio) mover la estatua que hay al norte de la llanura para formar camino y llegar al cofre
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="192" data-category="stamps" data-group-location="6" /> Página 4 - Ucayaya</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="193" data-category="stamps" data-group-location="6" /> Página 1 - Alfabeto hyliano "G"</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: (requisito: Doble Zarpa) en un cofre (planta N3 &rarr; N2)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="194" data-category="stamps" data-group-location="6" /> Página 3 - Alfabeto hyliano "Z"</label>
+						<div class="item-description">
+							<span class="location">Celestia</span>: en un cofre (planta N4)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="195" data-category="stamps" data-group-location="4" /> Página 4 - Link sorprendido</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 10
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="196" data-category="stamps" data-group-location="4" /> Página 5 - Zelda enfadada</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 20
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="197" data-category="stamps" data-group-location="4" /> Página 4 - Midna alegre</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 30
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="198" data-category="stamps" data-group-location="4" /> Página 3 - Contenedor de corazón</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 40
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="199" data-category="stamps" data-group-location="4" /> Página 5 - Hada</label>
+						<div class="item-description">
+							<span class="location">Desierto de Gerudo - Caverna de las Pruebas</span>: planta 49
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="200" data-category="stamps" data-group-location="3" /> Página 3 - Rupia</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Ciudadela de Hyrule - Casa de Giovanni</span>: entregar todas las 60 almas de espectro a Giovanni
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="201" data-category="stamps" data-group-location="3" /> Página 3 - Alfabeto hyliano "V"</label>
+						<div class="item-description">
+							<span class="location">Lanayru - Llanura de Hyrule (sur)</span>: (requisito: Doble Zarpa) usar Doble Zarpa en precipicio al oeste de la llanura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="202" data-category="stamps" data-group-location="7" /> Página 4 - Midna enfadada</label>
+						<div class="item-description">
+							<span class="location">Palacio del Crepúsculo</span>: (requisito: Doble Zarpa) en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="203" data-category="stamps" data-group-location="7" /> Página 5 - Zant</label>
+						<div class="item-description">
+							<span class="location">Palacio del Crepúsculo</span>: (requisito: Doble Zarpa) en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="204" data-category="stamps" data-group-location="8" /> Página 5 - Zelda triste</label>
+						<div class="item-description">
+							<span class="location">Castillo de Hyrule</span>: en un cofre (planta N1)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-twilight-princess" data-index="205" data-category="stamps" data-group-location="8" /> Página 5 - Zelda alegre</label>
+						<div class="item-description">
+							<span class="location">Castillo de Hyrule</span>: en un cofre (planta N4)
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

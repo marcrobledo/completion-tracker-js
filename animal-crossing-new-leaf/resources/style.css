@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+:root{
+	--site-width: 360px;
+}
+body{
+	background-color:#1bae5e;
+	user-select:none;
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+}
+h1 span{display:none}
+
+header{
+	margin:0 auto 8px;
+	text-align:center;
+}
+header img{
+	max-height:24px;
+}
+
+
+.progress-transfer-dialog{
+	border:none;
+	border-radius:4px;
+	padding:16px;
+	box-shadow: rgba(0,0,0,.1) 0 0 4px 4px;
+}
+
+.progress-transfer-dialog::backdrop{
+	background-color:rgba(0,0,0,.6);
+}
+
+
+
+
+
+#container-filter{
+	display:none;
+	
+	box-sizing:border-box;
+	gap:4px;
+	max-width:var(--site-width);
+	margin:0 auto;
+}
+#container-filter.show{
+	display:flex;
+}
+#select-filter, #input-search{
+	width:45%;
+	background-color:white;
+	border-radius:3px;
+	border:1px solid white;
+	box-sizing:border-box;
+	padding: 2px 4px;
+	outline:none;
+}
+#select-filter:focus, #input-search:focus{
+	border-color: #96ff96;
+	box-shadow: #66e9a2 0 0 4px;
+}
+
+#btn-transfer{
+	color: white;
+	border: none;
+	background-color: transparent;
+	border-radius: 4px;
+	outline: none;
+	line-height:0;
+}
+#btn-transfer:hover{
+	cursor:pointer;
+	background-color:#4fda8e;
+}
+
+
+
+#loading{
+	min-height:calc(100vh - 200px);
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	font-size:150%;
+	font-weight:bold;
+	color:#555;
+}
+
+section{
+	background-color:white;
+	width:var(--site-width);
+	max-width: calc(100% - 16px);
+	margin:0 auto;
+	border-radius: 4px;
+	padding: 8px;
+	box-sizing: border-box;
+}
+#content{display:none;} /* will show when all its loaded */
+
+
+select, ::picker(select) {
+	appearance: base-select;
+}
+select::picker-icon {
+	color: #999999;
+	transition: 0.4s rotate;
+}
+select:open::picker-icon {
+	rotate: 180deg;
+}
+::picker(select) {
+	border: none;
+	border-radius: 4px;
+}
+option {
+	display: flex;
+	gap: 4px;
+
+	background: #fff;
+	padding: 6px;
+	transition: 0.35s;
+}
+option:not(:last-child){
+	border-bottom: 1px solid #dfdfdf;
+}
+option:hover {
+	background: #e1ffed;
+	cursor:pointer;
+}
+optgroup {
+	background: #87928c;
+}
+option::checkmark {
+	order: 1;
+	margin-left: auto;
+	content: "☑️";
+}
+::picker(select) {
+	opacity: 0;
+	transition: all .35s allow-discrete;
+}
+:open::picker(select) {
+	opacity: 1;
+}
+@starting-style {
+	:open::picker(select) {
+		opacity: 0;
+	}
+}
+select optgroup legend{
+	padding: 6px 4px;
+}
+
+
+#list{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+#list li{
+	padding: 5px 0;
+	border-bottom: 1px solid #d8e8db;
+	display:flex;
+	justify-content: space-between;
+}
+#list li:last-child{
+	border-bottom: none;
+}
+label span{
+	vertical-align:middle;
+}
+label:has(input[type=checkbox]:checked) span{
+	color: #ccc;
+	text-decoration:line-through;
+}
+
+#list li>div:last-child:hover{
+	cursor:help;
+}
+
+
+label:has(input[type=checkbox][data-tracker][data-index]):hover{
+	cursor:pointer;
+}
+input[type=checkbox][data-tracker]{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	appearance:none;
+	width: 20px;
+	height: 20px;
+	background-color:transparent;
+	border-radius:12px;
+	display:inline-block;
+	vertical-align:middle;
+	position:relative;
+	border: 2px solid #8ca285;
+	box-sizing:border-box;
+	margin:0 4px 0 0;
+	outline:none;
+
+	background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIgZmlsbD0ibm9uZSIgZD0iTSAxLjE5LDcuMTAgNi4wNywxMi4wNiAxNC44OCwzLjMyIi8+PC9zdmc+');
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:0px;
+	transition: background-color .2s, background-size .3s;
+	flex-shrink:0;
+}
+
+input[type=checkbox][data-tracker]:hover{
+	cursor:pointer;
+	border-color:#00c81f;
+}
+input[type=checkbox][data-tracker]:hover:not(:checked),
+input[type=checkbox][data-tracker]:focus{
+	box-shadow: #bbd2b7 0 0 0 2px;
+}
+input[type=checkbox][data-tracker]:checked{
+	background-size:12px;
+	background-color:#1bae5e;
+	border-color: #1bae5e;
+}
+input[type=checkbox][data-tracker]:hover:checked{
+	background-color:#00c81f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+li:has(input[type=checkbox]:checked) .item-category,
+li:has(input[type=checkbox]:checked) .item-method{
+	filter:saturate(50%);
+	opacity:.5;
+}
+
+
+/* categories */
+.item-category, .item-method{
+	display:inline-block;
+	width:24px;
+	height:24px;
+	border-radius:12px;
+	box-sizing:border-box;
+	background-size:100%;
+	vertical-align:middle;
+	margin-right:2px;
+}
+.item-category.furniture{background-color: #783f04; color: #ffe599; background-image:url(category_furniture.png)}
+.item-category.wallpapers{background-color: #d9ead3; color: #38761d; background-image:url(category_wallpapers.png)}
+.item-category.carpets{background-color: #a61c00; color: #fff2cc; background-image:url(category_carpets.png)}
+.item-category.shirts{background-color: #c27ba0; color: #ffffff; background-image:url(category_shirts.png)}
+.item-category.trousers{background-color: #45818e; color: #f3f3f3; background-image:url(category_trousers.png)}
+.item-category.dresses{background-color: #674ea7; color: #f3f3f3; background-image:url(category_dresses.png)}
+.item-category.hats{background-color: #d9d2e9; color: #674ea7; background-image:url(category_hats.png)}
+.item-category.accessories{background-color: #ead1dc; color: #a64d79; background-image:url(category_accessories.png)}
+.item-category.shoes{background-color: #b45f06; color: #f6b26b; background-image:url(category_shoes.png)}
+.item-category.umbrellas{background-color: #d0e0e3; color: #45818e; background-image:url(category_umbrellas.png)}
+.item-category.wetsuits{background-color: #338bbe; color: #cae3f2; background-image:url(category_wetsuits.png)}
+.item-category.songs{background-color: #fffbdd; color: #cc9500; background-image:url(category_songs.png)}
+.item-category.fossils{background-color: #ececec; color: #575757; background-image:url(category_fossils.png)}
+.item-category.gyroids{background-color: #d49f2f; color: #f4e8b2; background-image:url(category_gyroids.png)}
+.item-category.stationery{background-color: #efefef; color: #3c78d8; background-image:url(category_stationery.png)}
+.item-category.art{background-color: #898370; color: white; background-image:url(category_art.png)}
+.item-category.pwps{background-color: #c9c3b0; color: #834b1e; background-image:url(category_pwps.png)}
+
+
+
+
+
+
+
+/* methods */
+.item-method.method_welcome_amiibo{background-color: #ffffff; background-image:url(method_welcome_amiibo.png)}
+.item-method.method_hhd{background-color: #990000; background-image:url(special_villager_lottie.png)}
+
+
+
+.item-method.method_fortune_cookie{background-color: #f6e9c1; background-image:url(method_cookie.png)}
+.item-method.method_bank{background-color: #fff497; background-image:url(method_bank.png)}
+.item-method.method_hha{background-color: #fff497; background-image:url(special_villager_lyle.png)}
+.item-method.method_saharah{background-color: #e1d09d; background-image:url(special_villager_saharah.png)}
+.item-method.method_kk_slider{background-color: #7c7c7c; background-image:url(special_villager_kk_slider.png)}
+.item-method.method_pascal{background-color: #ffa8ac; background-image:url(special_villager_pascal.png)}
+.item-method.method_gulliver{background-color: #cfe2f3; background-image:url(special_villager_gulliver.png)}
+.item-method.method_katie{background-color: #ffc990; background-image:url(special_villager_katie.png)}
+.item-method.method_wisp{background-color: #f6e9c1; background-image:url(special_villager_wisp.png)}
+.item-method.method_snowtyke{background-color: #e9eef5; color: #1155cc; background-image:url(special_villager_snowtyke.png)}
+.item-method.method_snowboy{background-color: #e9eef5; color: #1155cc; background-image:url(special_villager_snowboy.png)}
+.item-method.method_snowmam{background-color: #e9eef5; color: #1155cc; background-image:url(special_villager_snowmam.png)}
+.item-method.method_snowman{background-color: #e9eef5; color: #1155cc; background-image:url(special_villager_snowman.png)}
+.item-method.method_tourney_fish{background-color: #f6b26b; background-image:url(special_villager_chip.png)}
+.item-method.method_tourney_fish.group_a{background-color: #90f66b; background-image:url(special_villager_chip.png)}
+.item-method.method_tourney_fish.group_b{background-color: #9db5ff; background-image:url(special_villager_chip.png)}
+.item-method.method_tourney_bug{background-color: #d2f7cd; background-image:url(special_villager_nat.png)}
+.item-method.method_tourney_bug.group_a{background-color: #ffbbbb; background-image:url(special_villager_nat.png)}
+.item-method.method_tourney_bug.group_b{background-color: #bbe9ff; background-image:url(special_villager_nat.png)}
+.item-method.method_gracie.sale{background-color: #ecebc1; background-image:url(special_villager_gracie.png)}
+.item-method.method_gracie.winter{background-color: #d0deff; background-image:url(special_villager_gracie.png)}
+.item-method.method_gracie.spring{background-color: #ffa1df; background-image:url(special_villager_gracie.png)}
+.item-method.method_gracie.summer{background-color: #92f951; background-image:url(special_villager_gracie.png)}
+.item-method.method_gracie.autumn{background-color: #ff8d6a; background-image:url(special_villager_gracie.png)}
+.item-method.method_cyrus{background-color: #ffa8ac; background-image:url(special_villager_cyrus.png)}
+.item-method.method_cyrus_fossil{background-color: #aaaaaa; background-image:url(special_villager_cyrus.png)}
+.item-method.method_garden_shop{background-color: #00ff00; background-image:url(special_villager_leif.png)}
+.item-method.method_museum_shop{background-color: #ffcff5; background-image:url(special_villager_celeste.png)}
+.item-method.method_museum_reward{background-color: #a0ff9d; background-image:url(special_villager_blathers.png)}
+.item-method.method_shop_retail{background-color: #d1c9bf; background-image:url(special_villager_reese.png)}
+.item-method.method_shop_tt{background-color: #d1c9bf; background-image:url(special_villager_timmy.png)}
+.item-method.method_shop_fortune{background-color: #bfc2d1; background-image:url(special_villager_katrina.png)}
+.item-method.method_shop_labelle{background-color: #bfc2d1; background-image:url(special_villager_label.png)}
+.item-method.method_cafe{background-color: #fff1e1; background-image:url(special_villager_brewster.png)}
+.item-method.method_resetti{background-color: #ffd8f3; background-image:url(special_villager_resetti.png)}
+.item-method.method_redd{background-color: #ffeed8; background-image:url(special_villager_redd.png)}
+
+.item-method.method_tortimer_island{background-color: #87b2f8; background-image:url(special_villager_tortimer.png)}
+.item-method.method_tortimer_club{background-color: #96ffff; background-image:url(special_villager_tortimer.png)}
+
+.item-method.method_birthday_day{background-color: #ffffff; background-image:url(method_birthday.png)}
+.item-method.method_festivale{background-color: #45818e; background-image:url(special_villager_pave.png)}
+.item-method.method_bunny_day{background-color: #f1c232; background-image:url(special_villager_zipper.png)}
+.item-method.method_turkey_day{background-color: #695763; background-image:url(special_villager_franklin.png)}
+.item-method.method_weeding_day{background-color: #778560; background-image:url(special_villager_leif.png)}
+.item-method.method_halloween{background-color: #dd9fff; background-image:url(special_villager_jack.png)}
+.item-method.method_toy_day{background-color: #4c835e; background-image:url(special_villager_jingle.png)}
+
+.item-method.method_isabelle{background-color: #f9ff9f; background-image:url(special_villager_isabelle.png)}
+.item-method.method_blanca{background-color: #ffcfeb; background-image:url(special_villager_blanca.png)}
+.item-method.method_dr_shrunk{background-color: #ffe6cf; background-image:url(special_villager_dr_shrunk.png)}
+
+.item-method.method_campground{background-color: #ffdd9f; background-image:url(special_villager_harvey.png)}
+.item-method.method_rv{background-color: #ff6a40; background-image:url(method_rv.png)}
+
+
+.item-method.method_calendar{
+	background-color: #990000;
+	border-radius:3px;
+	border-top:6px solid red;
+	background-color:#f8e8e8 !important;
+	text-align:center;
+}
+.item-method.method_calendar:before{
+	display:inline-block;
+	letter-spacing:-1px;
+	font-size:12px;
+	font-weight:bold;
+}
+.item-method.method_calendar.february:before{content:'2'}
+.item-method.method_calendar.october:before{content:'10'}
+.item-method.method_calendar.november:before{content:'11'}
+.item-method.method_calendar.december:before{content:'12'}
+
+
+.item-method.method_campground{background-color: #eeaaaa; background-image:url(special_villager_harvey.png)}
+
+
+
+
+div#popover-item-info{
+	border:none;
+	outline:none;
+	padding: 12px;
+	border-radius: 8px;
+
+	max-width: 320px;
+	box-sizing:border-box;
+
+	top: anchor(bottom);
+	right: anchor(right);
+	justify-self: anchor-center;
+	margin: 0 0 0 0;
+	box-shadow: rgba(0,0,0,.1) 0px 1px 2px 1px;
+
+	background-color:#ecffec;
+	opacity: 0;
+	transition: opacity 200ms ease-out, display 300ms allow-discrete;
+	z-index:9001;
+}
+div#popover-item-info span{
+	display:block;
+}
+div#popover-item-info::backdrop{
+	background-color:transparent;
+}
+div#popover-item-info:popover-open {
+	opacity: 1;
+
+	@starting-style {
+		opacity: 0;
+	}
+}
+#item-info-name-en{
+	font-size:90%;
+	color:#a4bca4;
+}
+#item-info-orderable{
+	color:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* desktop */
+@media only screen and (min-width:640px){
+	:root{
+		--site-width: 420px;
+	}
+
+	body{
+		font-size:14px;
+	}
+	header img{
+		max-height:40px;
+	}
+	#list li {
+		padding: 7px 0;
+	}
+	input[type="checkbox"][data-tracker] {
+		width: 22px;
+		height: 22px;
+		border-radius: 12px;
+		margin-right: 8px;
+	}
+}
+
+/* Print version */
+@media only print {
+	ul{max-width: 100%;}
+	li[data-cat="0"]{border-right: 20px solid #d7b2b2;}
+	li[data-cat="1"]{background-image: none; border-right: 20px solid #bfe4bf;}
+}

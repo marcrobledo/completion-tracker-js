@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+	<title>Super Mario Sunshine - Guía interactiva Monedas azules</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de las monedas azules de Super Mario Sunshine en esta webapp." />
+	<meta name="keywords" content="super mario sunshine, monedas azules, guia, nintendo, gamecube, switch, checklist" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+		.availability{
+			padding: 1px 6px;
+			border-radius:3px;
+			font-size:12px;
+			font-weight:bold;
+			background-color: #e0e0e0; color: #5f5f5f;
+		}
+		.availability-ep1{background-color: #a4a3ee; color: #2e2262;}
+		.availability-ep2{background-color: #e1a3ee; color: #622259;}
+		.availability-ep3{background-color: #eea3b9; color: #622232;}
+		.availability-ep4{background-color: #eeb8a3; color: #623422;}
+		.availability-ep5{background-color: #e6eea3; color: #626122;}
+		.availability-ep6{background-color: #bbeea3; color: #296222;}
+		.availability-ep7{background-color: #a3eee1; color: #226257;}
+		.availability-ep8{background-color: #a3c1ee; color: #224562;}
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/super-mario-sunshine/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+	<script type="text/javascript"><!--
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('mario-sunshine');
+		});
+	--></script>
+</head>
+
+<body>
+	<header>
+		<h1>Super Mario Sunshine - Progress Tracker App</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/total.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#delfino-plaza"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Ciudad Delfino</a></li>
+				<li><a href="#bianco-hills"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Monte Bianco</a></li>
+				<li><a href="#ricco-harbor"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Puerto Espresso</a></li>
+				<li><a href="#gelato-beach"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Playa Gelato</a></li>
+				<li><a href="#pinna-park"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Parque Mamma-mia</a></li>
+				<li><a href="#sirena-beach"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Playa Paradiso</a></li>
+				<li><a href="#noki-bay"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Cala del Sole</a></li>
+				<li><a href="#pianta-village"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Aldea Foresta</a></li>
+				<li><a href="#corona-mountain"><img src="resources/blue_coin.png" class="icon" loading="lazy" /> Montaña de Fuoco</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de las monedas azules en <strong>Super Mario Sunshine</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todas las monedas azules y completar el juego al 100%.
+				</p>
+			</div>
+
+
+			<div id="tab-delfino-plaza" class="tab">
+				<h2>Ciudad Delfino</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="0" data-category="delfino-plaza" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás de la caja del embarcadero central.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="1" data-category="delfino-plaza" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás de la caja del tejado sobre el canal.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="2" data-category="delfino-plaza" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás de la torre cercana al cañón que te lleva al Parque Mamma-mia.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="3" data-category="delfino-plaza" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en el lado derecho de la estatua del forestano en la plaza central.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="4" data-category="delfino-plaza" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: detrás de la base del campanario a la izquierda de la plaza.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="5" data-category="delfino-plaza" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Pasadizo subterráneo</span>: entrada cerca del mercado
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="6" data-category="delfino-plaza" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Pasadizo subterráneo</span>: entrada antes de cruzar el canal por el lado izquierdo de la ciudad
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="7" data-category="delfino-plaza" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Pasadizo subterráneo</span>: entrada en la isla del forestano al que hay que entregarle cocos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="8" data-category="delfino-plaza" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Prisión</span>: debajo del campanario derecho
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="9" data-category="delfino-plaza" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: desde el edificio cercano al centro del canal.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="10" data-category="delfino-plaza" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: cerca de la plaza (cerca de la entrada a Playa Paradiso).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="11" data-category="delfino-plaza" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">Apagar fuego</span>: mochila de un forestano del lado derecho del pueblo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="12" data-category="delfino-plaza" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">Entregar frutas</span>: entregar 3 plátanos al forestano.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="13" data-category="delfino-plaza" />Moneda 14</label>
+						<div class="item-description">
+							<span class="location">Entregar frutas</span>: entregar 3 cocos al forestano.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="14" data-category="delfino-plaza" />Moneda 15</label>
+						<div class="item-description">
+							<span class="location">Entregar frutas</span>: entregar 3 durianes al forestano (hay que chutarlos).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="15" data-category="delfino-plaza" />Moneda 16</label>
+						<div class="item-description">
+							<span class="location">Entregar frutas</span>: entregar 3 piñas al forestano.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="16" data-category="delfino-plaza" />Moneda 17</label>
+						<div class="item-description">
+							<span class="location">Limpiar masa con zumo de Yoshi</span>: detrás de una torre cercana al faro.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="17" data-category="delfino-plaza" />Moneda 18</label>
+						<div class="item-description">
+							<span class="location">Limpiar masa con zumo de Yoshi</span>: en una ventana de la parte superior de la torre en la zona izquierda de la ciudad.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="18" data-category="delfino-plaza" />Moneda 19</label>
+						<div class="item-description">
+							<span class="location">Romper puerta doble con turborreactor</span>: plataforma cercana al faro.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="19" data-category="delfino-plaza" />Moneda 20</label>
+						<div class="item-description">
+							<span class="availability">Tras completar el juego</span> <span class="location">Derretir bloque de hielo</span>: en un edificio con puertas dobles del aeropuerto.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-bianco-hills" class="tab">
+				<h2>Monte Bianco</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="20" data-category="bianco-hills" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la pared blanca que separa el pueblo de las palmeras.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="21" data-category="bianco-hills" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la pared blanca que separa el pueblo de las palmeras.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="22" data-category="bianco-hills" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás del edificio de dos torretas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="23" data-category="bianco-hills" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: siguiendo el camino del molino, en la parte de arriba, donde te puedes subir a las aspas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="24" data-category="bianco-hills" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en la pared blanca, mirando a las palmeras
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="25" data-category="bianco-hills" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en la pared blanca, mirando al pueblo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="26" data-category="bianco-hills" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Rociar ventanas</span>: en el balcón de la casa arcada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="27" data-category="bianco-hills" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: en el río, por la izquierda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="28" data-category="bianco-hills" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Entre dos edificios</span>: flotando en uno de los dos artefactos de viento del pueblo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="29" data-category="bianco-hills" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">En un balcón</span>: en el balcón derecho del edificio de las dos torretas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="30" data-category="bianco-hills" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Hacer girar molino</span>: cerca del campanario
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="31" data-category="bianco-hills" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: se ve mirando desde las palmeras al lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="32" data-category="bianco-hills" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">Rociar hierba</span>: alrededor de una roca a la derecha subiendo al molino
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="33" data-category="bianco-hills" />Moneda 14</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">En un saliente de la montaña</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="34" data-category="bianco-hills" />Moneda 15</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Rociar palmera</span>: la más cercana a la noria
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="35" data-category="bianco-hills" />Moneda 16</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">En el molino pequeño más alto</span>: usando el propulsor para llegar al mini-molino más alto
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="36" data-category="bianco-hills" />Moneda 17</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodios 3, 4, 5, 6 y 8</span> <span class="location">Derrotar Pokey</span>: donde se encontraba Floro Piraña en el episodio 2
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="37" data-category="bianco-hills" />Moneda 18</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Derrotar Pokey</span>: en uno de los tres salientes de ladrillo en la pared blanca
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="38" data-category="bianco-hills" />Moneda 19</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Debajo del puente del gran molino</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="39" data-category="bianco-hills" />Moneda 20</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Limpiar forestano</span>: en la torre cilíndrica lleno de barro
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="40" data-category="bianco-hills" />Moneda 21</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Zona de batalla contra Floro Piraña</span>: al derrotar a Floro Piraña por segunda vez, en unas plataformas en la colina donde dormía
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="41" data-category="bianco-hills" />Moneda 22</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Rociar pájaro azul</span>: revoloteando por el pueblo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="42" data-category="bianco-hills" />Moneda 23</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Impulsarse desde un poste</span>: que tiene un montón de monedas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="43" data-category="bianco-hills" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Rociar roca verde</span>: en la colina donde dormía Floro Piraña, saltando por las nubes
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="44" data-category="bianco-hills" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Bajo el agua</span>: por la parte izquierda del molino
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="45" data-category="bianco-hills" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar O</span>: en el edificio de las dos torres
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="46" data-category="bianco-hills" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar O</span>: en el edificio arcado con dos ventanas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="47" data-category="bianco-hills" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep8">Episodio 8+</span> <span class="location">Mariposa azul</span>: comer con Yoshi en el pueblo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="48" data-category="bianco-hills" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep8">Episodio 8+</span> <span class="location">Panal de abejas</span>: comer panales y abejas con Yoshi en la zona de palmeras
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="49" data-category="bianco-hills" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep8">Episodio 8+</span> <span class="location">Limpiar forestano</span>: en una especie de patio interior de la muralla blanca, cerca del campanario
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-ricco-harbor" class="tab">
+				<h2>Puerto Espresso</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="50" data-category="ricco-harbor" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás del punto inicial, en el tejado rojo del almacén
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="51" data-category="ricco-harbor" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la pared del almacén
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="52" data-category="ricco-harbor" />Moneda 3</label>
+						<div class="item-description">
+							<span class="availability availability-ep1">Exclusivo episodio 1</span> <span class="location">Borrar M</span>: en la bodega del barco, debajo de una mancha de tinta
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="53" data-category="ricco-harbor" />Moneda 4</label>
+						<div class="item-description">
+							<span class="availability availability-ep1">Exclusivo episodio 1</span> <span class="location">Borrar M</span>: debajo del a Torre Espresso, debajo de una mancha de tinta
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="54" data-category="ricco-harbor" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en el casco del barco
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="55" data-category="ricco-harbor" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en una de las casas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="56" data-category="ricco-harbor" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la plataforma de la viga más alta, en el área más alta de más a la derecha de la fase
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="57" data-category="ricco-harbor" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en el saliente herboso de la derecha, más allá del grupo de plataformas de las vigas.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="58" data-category="ricco-harbor" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Rociar pared</span>: en el Faro Espresso, en la pared delante de la pila de cajas hay un sol azul oculto
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="59" data-category="ricco-harbor" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">En una caja</span>: debajo de la Torre Espresso, en una caja cerca de la charca y de un punto de apoyo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="60" data-category="ricco-harbor" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Rociar hélice submarino</span>: al rociar una primera hélice para que salga a flote el submarino
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="61" data-category="ricco-harbor" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">En un tablón</span>: en uno de los tablones de Torre Espresso
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="62" data-category="ricco-harbor" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">Borrar moneda roja</span>: sobre las casas de la parte superior del muelle
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="63" data-category="ricco-harbor" />Moneda 14</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: debajo de una de las plataformas rojas con flechas grandes
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="64" data-category="ricco-harbor" />Moneda 15</label>
+						<div class="item-description">
+							<span class="location">Encima de la fuente</span>: en la parte superior del muelle
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="65" data-category="ricco-harbor" />Moneda 16</label>
+						<div class="item-description">
+							<span class="location">En las vigas azules</span>: siguiendo recto despues del gancho
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="66" data-category="ricco-harbor" />Moneda 17</label>
+						<div class="item-description">
+							<span class="location">En las vigas azules</span>: Haz un triple salto desde la cubierta del barco, hay las vigas azules. Planea hacia la grúa que se mueve de un lado a otro, ve hacia el brazo de la grúa y allí hay 4 monedas de oro y una azul.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="67" data-category="ricco-harbor" />Moneda 18</label>
+						<div class="item-description">
+							<span class="location">En las vigas azules</span>: al final de la viga que está sobre el barco del punto de inicio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="68" data-category="ricco-harbor" />Moneda 19</label>
+						<div class="item-description">
+							<span class="location">En las vigas azules</span>: al final de la viga azul que apunta al mar, en la esquina opuesta al punto de inicio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="69" data-category="ricco-harbor" />Moneda 20</label>
+						<div class="item-description">
+							<span class="location">Cerca de una bandera roja</span>: fuera del puerto, junto a los indicadores de cinta amarilla
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="70" data-category="ricco-harbor" />Moneda 21</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en el edificio próximo a la columna curvada en el muelle superior.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="71" data-category="ricco-harbor" />Moneda 22</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en la base de la Torre Espresso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="72" data-category="ricco-harbor" />Moneda 23</label>
+						<div class="item-description">
+							<span class="location">Cerca del túnel de las carreras</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="73" data-category="ricco-harbor" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Sobre el tejado de la Torre Espresso</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="74" data-category="ricco-harbor" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Golpear Klamber (araña)</span>: en el barco del punto inicial.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="75" data-category="ricco-harbor" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Golpear Klamber (araña)</span>: en el barco del punto inicial, en la parte trasera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="76" data-category="ricco-harbor" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Tragar Klamber (araña)</span>: comer con Yoshi en la pared del puerto, cerca de la Torre Espresso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="77" data-category="ricco-harbor" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Derrotar Mega Blooper</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="78" data-category="ricco-harbor" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Rociar cesta de peces</span>: en el mercadillo, al lado de un forestano
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="79" data-category="ricco-harbor" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep8">Episodio 8+</span> <span class="location">Comer mariposas</span>: comer con Yoshi en el mercadillo
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-gelato-beach" class="tab">
+				<h2>Playa Gelato</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="80" data-category="gelato-beach" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: detrás del punto inicial
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="81" data-category="gelato-beach" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Grupo de monedas</span>: al final de la hilera de monedas puedes encontrar la tercera moneda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="82" data-category="gelato-beach" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">En la palmera del columpio</span>: en la copa de la palmera del columpio.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="83" data-category="gelato-beach" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: en el banco de peces, detrás del columpio
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="84" data-category="gelato-beach" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: detrás del columpio, al fondo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="85" data-category="gelato-beach" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Rociar arena</span>: la de delante e izquierda de las tablas de surf
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="86" data-category="gelato-beach" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Golpear Picocuac rojo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="87" data-category="gelato-beach" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en el pequeño saliente herboso de encima a la derecha de la cabaña azul
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="88" data-category="gelato-beach" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Grupo de monedas</span>: entre las monedas del techo de la cabaña azul.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="89" data-category="gelato-beach" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: entre el banco de peces que nada por el arrecife de coral.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="90" data-category="gelato-beach" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Rociar arena</span>: detrás del velero que se encuentra en medio de la playa
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="91" data-category="gelato-beach" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">Rociar arena</span>: entre las palmeras y el bar de los melones
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="92" data-category="gelato-beach" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">Triturador de fruta</span>: dejar caer cualquier fruta a la viga de encima del bar de los melones.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="93" data-category="gelato-beach" />Moneda 14</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: en las rocas, a la derecha del punto inicial
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="94" data-category="gelato-beach" />Moneda 15</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: debajo del bar de los melones
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="95" data-category="gelato-beach" />Moneda 16</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: a la derecha del bar de los melones, en las rocas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="96" data-category="gelato-beach" />Moneda 17</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: en el anfiteatro de ladrillo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="97" data-category="gelato-beach" />Moneda 18</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: en el cable de encima del anfiteatro.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="98" data-category="gelato-beach" />Moneda 19</label>
+						<div class="item-description">
+							<span class="location">En lo alto de un poste</span>: en lo alto del poste de madera, cerca del anfiteatro de ladrillo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="99" data-category="gelato-beach" />Moneda 20</label>
+						<div class="item-description">
+							<span class="location">En una ladera</span>: entre las rocas de la ladera de encima del bar de los melones.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="100" data-category="gelato-beach" />Moneda 21</label>
+						<div class="item-description">
+							<span class="location">En lo alto de un poste</span>: sobre las rocas, encima del poste más alto.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="101" data-category="gelato-beach" />Moneda 22</label>
+						<div class="item-description">
+							<span class="location">Encima de una cabaña</span>: sobre las monedas de oro, encima de una cabaña cerca del punto inicial
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="102" data-category="gelato-beach" />Moneda 23</label>
+						<div class="item-description">
+							<span class="location">Panal de abejas</span>: comer con Yoshi panal y abejas que hay debajo de la cabaña cerca del punto inicial
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="103" data-category="gelato-beach" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">Rociar arena</span>: donde apareció el castillo de arena
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="104" data-category="gelato-beach" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Durante el viaje en el pájaro de arena</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="105" data-category="gelato-beach" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Durante el viaje en el pájaro de arena</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="106" data-category="gelato-beach" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Durante el viaje en el pájaro de arena</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="107" data-category="gelato-beach" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">Durante el viaje en el pájaro de arena</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="108" data-category="gelato-beach" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Derrotar Picocuac azul</span>: en la copa de una palmera
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="109" data-category="gelato-beach" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Limpiar masa con zumo de Yoshi</span>: a la derecha de la cabaña de fruta azul, echar agua al brote que aparece despues.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-pinna-park" class="tab">
+				<h2>Parque Mamma-mia</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="110" data-category="pinna-park" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Mariposa azul</span>: cerca de los girasoles.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="111" data-category="pinna-park" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Rociar arena</span>: entre el cesto central y la palmera, cerca de los Girasoles.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="112" data-category="pinna-park" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">Rociar sol azul</span>: en la arena entre la palmera y el cañón.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="113" data-category="pinna-park" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: alrededor del tiovivo de Yoshi.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="114" data-category="pinna-park" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Almeja verde</span>: en la almeja verde del tiovivo de almejas, a la derecha del parque.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="115" data-category="pinna-park" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Debajo de la entrada del barco pirata</span>: en las vigas de apoyo de debajo de la entrada al barco pirata.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="116" data-category="pinna-park" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la arcada naranja de la derecha del principio.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="117" data-category="pinna-park" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Derrotar Stu Caminador (torre de enemigos)</span>: junto a la rampa baja de ladrillo de la parte de atrás de la noria.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="118" data-category="pinna-park" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la pared de la playa de detrás y debajo de la piscina inflable.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="119" data-category="pinna-park" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la pared de ladrillo a la izquierda del muro trasero de la noria.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="120" data-category="pinna-park" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en el árbol de la papaya, cerca del huevo de Yoshi.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="121" data-category="pinna-park" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">Borrar X</span>: en la pared blanca cercana a la arcada, de cara a la charca de agua central.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="122" data-category="pinna-park" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">En un saliente</span>: detrás de la entrada a la montaña rusa, en un saliente estrecho.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="123" data-category="pinna-park" />Moneda 14</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: enla pared de ladrillo curva en la entrada de la noria.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="124" data-category="pinna-park" />Moneda 15</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: en el terraplén herboso de la pared rocosa, cerca de unos plátanos.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="125" data-category="pinna-park" />Moneda 16</label>
+						<div class="item-description">
+							<span class="location">Rociar pájaro azul</span>: en el pabellón de la piña.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="126" data-category="pinna-park" />Moneda 17</label>
+						<div class="item-description">
+							<span class="location">En el barco pirata</span>: en la esquina superior del soporte del andamio del barco pirata.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="127" data-category="pinna-park" />Moneda 18</label>
+						<div class="item-description">
+							<span class="location">En el segundo barco pirata</span>: en la caja rejilla cerca del segundo barco pirata.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="128" data-category="pinna-park" />Moneda 19</label>
+						<div class="item-description">
+							<span class="location">En el segundo barco pirata</span>: sobre la caja de rejilla, en la plataforma del barco, en el segundo barco pirata.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="129" data-category="pinna-park" />Moneda 20</label>
+						<div class="item-description">
+							<span class="location">Encima de los barcos pirata</span>: por encima de los barcos piratas.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="130" data-category="pinna-park" />Moneda 21</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="131" data-category="pinna-park" />Moneda 22</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="132" data-category="pinna-park" />Moneda 23</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="133" data-category="pinna-park" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="134" data-category="pinna-park" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="135" data-category="pinna-park" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Exclusivo episodio 2</span> <span class="location">En una cesta</span>: en una cesta de la playa (requiere que un Bill Bala explote contra ella).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="136" data-category="pinna-park" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Borrar O</span>: en la pared de la izquierda, sobre la noria.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="137" data-category="pinna-park" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span><span class="location">Borrar O</span>: en el saliente derecho, sobre la noria.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="138" data-category="pinna-park" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Mariposa azul</span>: en la zona inferior de la playa, en la feria que hay a la izquierda del principio.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="139" data-category="pinna-park" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Mariposa azul</span>: cerca de los girasoles.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-sirena-beach" class="tab">
+				<h2>Playa Paradiso</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="140" data-category="sirena-beach" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Bajo el agua</span>: en el lado derecho de la orilla.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="141" data-category="sirena-beach" />Moneda 2</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En un bloque tallado</span>: enmedio de la terraza cercana a la arena.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="142" data-category="sirena-beach" />Moneda 3</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">Bajo el tejado de la cabaña de la derecha</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="143" data-category="sirena-beach" />Moneda 4</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el parterre del extremo superior al otro lado de la playa</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="144" data-category="sirena-beach" />Moneda 5</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el saliente del exterior del segundo piso en la parte de detrás del hotel</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="145" data-category="sirena-beach" />Moneda 6</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">Rociar lámpara</span>: en la fachada del hotel.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="146" data-category="sirena-beach" />Moneda 7</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">En lo alto del poste central de en medio del balcón</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="147" data-category="sirena-beach" />Moneda 8</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">En la sala del hotel a la que se llega rociando un póster de Boo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="148" data-category="sirena-beach" />Moneda 9</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">En la estantería del dormitorio espartano, sobre el almacén de las piñas</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="149" data-category="sirena-beach" />Moneda 10</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Rociar pared</span>: dormitorio inferior a la cámara de la salida del ático
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="150" data-category="sirena-beach" />Moneda 11</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Golpear mesa</span>: en el dormitorio de la moneda anterior
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="151" data-category="sirena-beach" />Moneda 12</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Al final del pasillo del ático en forma de J</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="152" data-category="sirena-beach" />Moneda 13</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En la estatuilla de la fuente del casino, a la derecha de la entrada</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="153" data-category="sirena-beach" />Moneda 14</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En las tragaperras de la izquierda de la entrada</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="154" data-category="sirena-beach" />Moneda 15</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Exclusivo episodio 5</span> <span class="location">Borrar M</span>: sobre la pared de la entrada.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="155" data-category="sirena-beach" />Moneda 16</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar calisol</span>: en la terraza.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="156" data-category="sirena-beach" />Moneda 17</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar calisol</span>: en la terraza.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="157" data-category="sirena-beach" />Moneda 18</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar calisol</span>: en la terraza.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="158" data-category="sirena-beach" />Moneda 19</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar calisol</span>: en la terraza.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="159" data-category="sirena-beach" />Moneda 20</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar M</span>: en la pared del balcón del tercer piso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="160" data-category="sirena-beach" />Moneda 21</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar M</span>: en el lado derecho de la terraza de la playa.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="161" data-category="sirena-beach" />Moneda 22</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar triángulo</span>: en la pared del rincón del 2º piso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="162" data-category="sirena-beach" />Moneda 23</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar triángulo</span>: en la pared del hall de la derecha de la entrada.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="163" data-category="sirena-beach" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar X</span>: en la pared de la derecha del segundo piso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="164" data-category="sirena-beach" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar X</span>: en la pared de la izquierda de cerca de las escaleras, en el tercer piso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="165" data-category="sirena-beach" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">En la caja del almacén de piñas</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="166" data-category="sirena-beach" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Sala contigua al almacén de piñas, detrás del Boo que está durmiendo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="167" data-category="sirena-beach" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Rociar lámpara</span>: en el suelo de la esquina de más a la derecha del tercer piso.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="168" data-category="sirena-beach" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep7">Episodio 7+</span> <span class="location">Borrar M</span>: en la pared de la cámara central del ático, cerca de la lámpara de araña.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="169" data-category="sirena-beach" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep8">Episodio 8+</span> <span class="location">Derrotar Boo</span>: en el ático.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-noki-bay" class="tab">
+				<h2>Cala del Sole</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="170" data-category="noki-bay" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Sobre el agua, detrás del punto inicial</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="171" data-category="noki-bay" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Sobre el agua, detrás del punto inicial, cerca del acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="172" data-category="noki-bay" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">Al pie del camino de monedas, debajo de la catarata tapada</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="173" data-category="noki-bay" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Sobre la caja de accesorio roja de arriba, en el acantilado verde de la derecha</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="174" data-category="noki-bay" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">En lo alto de una hilera vertical de monedas de oro, sobre la caja roja del acantilado de la derecha</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="175" data-category="noki-bay" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">En la arcada derecha, a lo largo de la ruta Palmo a Palmo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="176" data-category="noki-bay" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">En Palmo a Palmo, hacia el área de una pared parcialmente oculta y luego un Salto de Pared</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="177" data-category="noki-bay" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Palmo a Palmo, por la 2ª ruta, en un hueco</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="178" data-category="noki-bay" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">En el saliente bajo el saliente herboso, cerca de la cascada</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="179" data-category="noki-bay" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">En el nicho de la arcada de las 9 baldosas de cuadros, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="180" data-category="noki-bay" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">En el nicho de la baldosa del dibujo de espiral, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="181" data-category="noki-bay" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">En el nicho de la gran arcada, bajo la moneda anterior</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="182" data-category="noki-bay" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">En el nicho del largo y estrecho recoveco vertical, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="183" data-category="noki-bay" />Moneda 14</label>
+						<div class="item-description">
+							<span class="location">En la entrada al túnel desde la hendidura de la pared principal, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="184" data-category="noki-bay" />Moneda 15</label>
+						<div class="item-description">
+							<span class="location">En una pequeña arcada, cerca del recoveco estrecho del acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="185" data-category="noki-bay" />Moneda 16</label>
+						<div class="item-description">
+							<span class="location">En el nicho de la arcada grande bajo el acantilado del Pájaro de Oro, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="186" data-category="noki-bay" />Moneda 17</label>
+						<div class="item-description">
+							<span class="location">En la arcada grande, debajo del Pájaro de Oro, en el acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="187" data-category="noki-bay" />Moneda 18</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: a medio subir, por el acantilado de la izquierda.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="188" data-category="noki-bay" />Moneda 19</label>
+						<div class="item-description">
+							<span class="location">En el recoveco a un salto propulsor desde el saliente cercado al centro del acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="189" data-category="noki-bay" />Moneda 20</label>
+						<div class="item-description">
+							<span class="location">En la salida del túnel de encima del acantilado de la izquierda</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="190" data-category="noki-bay" />Moneda 21</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">Saliente de dentro de la 1ª cara de roca con una hendidura</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="191" data-category="noki-bay" />Moneda 22</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el pequeño hueco cuadrado de dentro de la segunda cara de roca con una gran hendidura</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="192" data-category="noki-bay" />Moneda 23</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el jarrón naranja de la Tumba del Rey</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="193" data-category="noki-bay" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el jarrón naranja de la Tumba del Rey</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="194" data-category="noki-bay" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En lo alto de la columna de la ciudad submarina</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="195" data-category="noki-bay" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En lo alto de la columna de la ciudad submarina</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="196" data-category="noki-bay" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En lo alto de la columna de la ciudad submarina</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="197" data-category="noki-bay" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep4">Episodio 4+</span> <span class="location">En lo alto de la columna de la ciudad submarina</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="198" data-category="noki-bay" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Borrar O</span>: sobre la laguna poco profunda en la base del acantilado de la derecha.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="199" data-category="noki-bay" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Episodio 6+</span> <span class="location">Borrar O</span>: a la izquierda de la cabaña Mapache de madera.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-pianta-village" class="tab">
+				<h2>Aldea Foresta</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="200" data-category="pianta-village" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: detrás del punto inicial.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="201" data-category="pianta-village" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la cara de la roca del área superior de más a la izquierda del árbol frutal.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="202" data-category="pianta-village" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">En lo alto de la cascada que sale del árbol central</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="203" data-category="pianta-village" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Bajo el camino, en el arroyo que lleva al estanque</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="204" data-category="pianta-village" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">En el extremo de más a la derecha del arroyo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="205" data-category="pianta-village" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">En la hierba alta, cerca de los enrejados de los agujeros</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="206" data-category="pianta-village" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en la plataforma de delante del punto de inicio, cerca de la plataforma del alcalde.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="207" data-category="pianta-village" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">En la copa del enorme árbol azul a la izquierda del pueblo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="208" data-category="pianta-village" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: en el lado izquierdo de la pared del baño.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="209" data-category="pianta-village" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">Borrar triángulo</span>: cerca de la fogata de la esquina, al otro lado del pueblo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="210" data-category="pianta-village" />Moneda 11</label>
+						<div class="item-description">
+							<span class="location">Borrar M</span>: en el techo de la tierra, en la salida del episodio 3.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="211" data-category="pianta-village" />Moneda 12</label>
+						<div class="item-description">
+							<span class="location">En la copa del enorme árbol en la esquina izquierda, al otro lado del pueblo</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="212" data-category="pianta-village" />Moneda 13</label>
+						<div class="item-description">
+							<span class="location">En la nariz de la estatua del forestano, en el baño</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="213" data-category="pianta-village" />Moneda 14</label>
+						<div class="item-description">
+							<span class="availability availability-ep2">Episodio 2+</span> <span class="location">En el cartel del pueblo, cerca del principio</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="214" data-category="pianta-village" />Moneda 15</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Borrar M</span>: en la plataforma del alcalde.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="215" data-category="pianta-village" />Moneda 16</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Rociar forestano</span>: a la derecha del pueblo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="216" data-category="pianta-village" />Moneda 17</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Borrar M</span>: a la izquierda del puente de cuerda, bajo la lava.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="217" data-category="pianta-village" />Moneda 18</label>
+						<div class="item-description">
+							<span class="availability availability-ep3">Episodio 3+</span> <span class="location">Rociar luna</span>: en lo alto del hongo de oro.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="218" data-category="pianta-village" />Moneda 19</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Panal de abejas</span>: Comer panal y abejas con Yoshi en el punto inicial.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="219" data-category="pianta-village" />Moneda 20</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Panal de abejas</span>: Comer panal y abejas con Yoshi debajo del enorme árbol del fondo a la izquierda.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="220" data-category="pianta-village" />Moneda 21</label>
+						<div class="item-description">
+							<span class="availability availability-ep5">Episodio 5+</span> <span class="location">Comer mariposas</span>: en la plataforma del árbol frutal, revoloteando alrededor del hongo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="221" data-category="pianta-village" />Moneda 22</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="222" data-category="pianta-village" />Moneda 23</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="223" data-category="pianta-village" />Moneda 24</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="224" data-category="pianta-village" />Moneda 25</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="225" data-category="pianta-village" />Moneda 26</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="226" data-category="pianta-village" />Moneda 27</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="227" data-category="pianta-village" />Moneda 28</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="228" data-category="pianta-village" />Moneda 29</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar forestano</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="229" data-category="pianta-village" />Moneda 30</label>
+						<div class="item-description">
+							<span class="availability availability-ep6">Exclusivo episodio 6</span> <span class="location">Rociar pájaro azul</span>: cerca de la plataforma del accesorio propulsor, a medio subir por el árbol central.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-corona-mountain" class="tab">
+				<h2>Montaña de Fuoco</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="230" data-category="corona-mountain" />Moneda 1</label>
+						<div class="item-description">
+							<span class="location">Tercera plataforma sin pinchos desde el inicio</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="231" data-category="corona-mountain" />Moneda 2</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="232" data-category="corona-mountain" />Moneda 3</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="233" data-category="corona-mountain" />Moneda 4</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="234" data-category="corona-mountain" />Moneda 5</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="235" data-category="corona-mountain" />Moneda 6</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="236" data-category="corona-mountain" />Moneda 7</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="237" data-category="corona-mountain" />Moneda 8</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="238" data-category="corona-mountain" />Moneda 9</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="mario-sunshine" data-index="239" data-category="corona-mountain" />Moneda 10</label>
+						<div class="item-description">
+							<span class="location">Durante el trayecto en barca</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

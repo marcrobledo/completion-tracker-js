@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+	<title>Metroid Prime - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de Metroid Prime en esta webapp." />
+	<meta name="keywords" content="metroid, prime, mejoras, coleccionables, banco, datos, log book, guia, nintendo, gamecube, switch, checklist" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+		.missable{
+			background-color:#ff1843;
+			color:white;
+			font-weight:bold;
+			text-transform:uppercase;
+			font-size:80%;
+			padding: 1px 4px;
+			border-radius:3px;
+			display:inline-block;
+			vertical-align:middle;
+		}
+		.checked-within .missable{
+			background-color:#b6b6ac;
+		}
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/metroid-prime/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+	<script type="text/javascript"><!--
+		const TALLON_IV_ZONES=[
+			'Fragata Espacial',
+			'Superficie de Tallon',
+			'Ruinas Chozo',
+			'Cavernas Magmoor',
+			'Phendrana',
+			'Minas de Phazon',
+			'Cráter del Impacto'
+		];
+
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('metroid-prime', [
+				{category: 'logbook', group:'missable', label:'Agrupar perdibles', groupNames:[
+					'Perdibles'
+				]},
+				{category: 'logbook', group:'location', label:'Agrupar por zona', groupNames:TALLON_IV_ZONES}
+			]);
+		});
+	--></script>
+</head>
+
+<body>
+	<header>
+		<h1>Metroid Prime - Progress Tracker App</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/total.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#missiles"><img src="resources/missile.png" class="icon" loading="lazy" /> Expansiones de misiles</a></li>
+				<li><a href="#energy-tanks"><img src="resources/energy_tank.png" class="icon" loading="lazy" /> Tanques de energía</a></li>
+				<li><a href="#power-bombs"><img src="resources/power_bomb.png" class="icon" loading="lazy" /> Bombas de energía</a></li>
+				<li><a href="#logbook"><img src="resources/logbook.png" class="icon" loading="lazy" /> Banco de datos</a></li>
+				<li><a href="#beam-combos"><img src="resources/beam_combos.png" class="icon" loading="lazy" /> Combos de carga</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>Metroid Prime</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+
+			<div id="tab-missiles" class="tab">
+				<h2 class="hide-for-mobile">Expansiones de misiles</h2>
+				<h3>Superficie de Tallon</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="0" data-category="missiles" />Expansión de misiles 1</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Túnel del Ascensor B</span> Déjate caer debajo del puente que hay y los encontrarás.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="1" data-category="missiles" />Expansión de misiles 2</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Lugar del Aterrizaje</span> Está en un pequeño camino (lleno de plantas) que hay detrás de una abertura en la pared (sólo debes entrar como Morfosfera para recogerla).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="2" data-category="missiles" />Expansión de misiles 3</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Caverna Poblada</span> Está en mitad de la caverna, recórrela en dirección a Tallon para encontrarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="3" data-category="missiles" />Expansión de misiles 4</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Lugar del Impacto de la Fragata</span> Está bajo el agua, en un hueco en la pared. Tírate al agua según llegas a esta zona y usa el Visor de Infrarrojos para verlo rápidamente.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="4" data-category="missiles" />Expansión de misiles 5</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Contenedor de Riesgo Biológico</span> Escanea los compartimentos cerrados y cuando encuentres una puerta usa un Supermisil para descubrir la expansión.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="5" data-category="missiles" />Expansión de misiles 6</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Túnel de la arboleda</span> Cuando estás rodando para coger velocidad (con la Turbosfera) tienes que lograr llegar arriba del todo. Si lo logras, pon una Bomba para poderlo coger.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="6" data-category="missiles" />Expansión de misiles 7</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Cámara del gran árbol</span> Para poder llegar a él, debes mirar con el Visor de Rayos X para localizar una plataforma invisible, saltando a ella podrás acceder a la plataforma en donde se encuentra.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="7" data-category="missiles" />Expansión de misiles 8</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Cueva de las raices</span> Debes encontrar con el Visor de Rayos X unas plataformas invisibles, salta de una a otra hasta subir a la de más arriba. El misil está escondido en la pared detrás de unas plantas que lo cubren (enfrente de la puerta roja que hay allí arriba).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="8" data-category="missiles" />Expansión de misiles 9</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Cámara del cenador</span> Debes subir hasta la parte superior por las plataformas invisibles. Una vez arriba entra por la puerta roja y lo encontrarás dentro.
+						</div>
+					</li>
+				</ul>
+
+				<h3>Ruinas Chozo</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="9" data-category="missiles" />Expansión de misiles 10</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Galería en ruinas</span> Hay una zona en la pared con piedras delante, usa un misil para abrir camino por ahí. Usando el Visor de Rayos X puedes ver la expansión.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="10" data-category="missiles" />Expansión de misiles 11</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Acceso al pasillo acuático</span> Salta a las plataformas que hay en medio del agua y dispara a la pared izquierda para encontrarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="11" data-category="missiles" />Expansión de misiles 12</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Cúpula Ardiente</span> Puedes romper un trozo de pared con una Bomba, así descubrirás un hueco para pasar como Morfosfera que te llevará hasta él.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="12" data-category="missiles" />Expansión de misiles 13</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Dinamo</span> Debes disparar un misil a una reja de metal para poderlo coger (en una sala en donde activas un generador).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="13" data-category="missiles" />Expansión de misiles 14</label>
+						<span class="location">Ruinas Chozo: Cúpula en Ruinas / Sepulcro en Ruinas (Remastered)</span> <div class="item-description">
+							Pon una Bomba en la zona de distinto color de la pared para descubrir el pasillo que te lleva a ella.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="14" data-category="missiles" />Expansión de misiles 15</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Vivero en Ruinas</span> Esta dentro del pequeño laberinto que sigues como Morfosfera. Para avanzar por el camino que te lleva a la expansión del misil, debes usar la técnica de soltar una Bomba en el aire para poder impulsarte hacia más arriba. Después de un largo camino llegarás.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="15" data-category="missiles" />Expansión de misiles 16</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Galería en ruinas</span> Tienes que hacer un salto con una Bomba de la Morfosfera en el lado derecho de la sala para poder acceder a él.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="16" data-category="missiles" />Expansión de misiles 17</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Panteón</span> Verás tres huecos, debes hacer estallar como Morfosfera una Bomba dentro de cada hueco para que se abra y poder cogerlo. Para llegar a los huecos más altos debes usar la técnica de rebotar en tus Bombas.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="17" data-category="missiles" />Expansión de misiles 18</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Plaza Principal</span> Rueda en la zona curva para alcanzar altura (usando la Turbosfera) y conseguirlo en un hueco en la pared.				
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="18" data-category="missiles" />Expansión de misiles 19</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Sala de Reunión</span> Llega a la puerta en donde están las luces rojas, desde ahí tienes que saltar a la plataforma que hay encima de la puerta, para ello salta primero encima de la luz roja. Una vez arriba usa una Bomba para abrir el camino.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="19" data-category="missiles" />Expansión de misiles 20</label>
+						<span class="location">Ruinas Chozo: Cúpula en Ruinas / Sepulcro en Ruinas (Remastered)</span> <div class="item-description">
+							Después de vencer al escarabajo metálico, coge velocidad en la curva (con la Turbosfera) para subir por el lado derecho, continúa por ahí para localizarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="20" data-category="missiles" />Expansión de misiles 21</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Dinamo</span> Debes seguir el camino que hay por los raíles magnéticos para poder llegar hasta él.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="21" data-category="missiles" />Expansión de misiles 22</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Fuente en Ruinas</span> Usa el geiser de la fuente para alcanzar la pista magnética elevada y continúa por ahí arriba.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="22" data-category="missiles" />Expansión de misiles 23</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Plaza Principal</span> Dispara a la parte central del árbol y descubrirás un hueco en donde está. 
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="23" data-category="missiles" />Expansión de misiles 24</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Cruce</span> La segunda Bomba que activa un interruptor de la Morfosfera pone en funcionamiento un pistón cerca de la puerta de entrada a la sala. Úsalo para llegar a la expansión.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="24" data-category="missiles" />Expansión de misiles 25</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Pasillo Acuático</span> Está en un pequeño hueco bajo el agua, cerca de la raíz torcida del árbol que se ve.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="25" data-category="missiles" />Expansión de misiles 26</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Horno</span> Cuando alcances las pistas magnéticas síguelas para llegar a la expansión.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="26" data-category="missiles" />Expansión de misiles 27</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Acceso a la Cámara de Entrenamiento</span> Después de haber cogido la expansión de la Bomba de Energía queda a tu derecha la puerta morada y verás unas grandes hojas en la pared, puedes pasar rodando a través de ellas como Morfosfera para conseguirla.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="27" data-category="missiles" />Expansión de misiles 28</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Plaza Principal</span> Cuando aparece el gancho puedes llegar hasta él usando el Rayo Enganche, debes girarte en el aire una vez colgado para alcanzar la plataforma en donde está.
+						</div>
+					</li>
+				</ul>
+
+				<h3>Cavernas Magmoor</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="28" data-category="missiles" />Expansión de misiles 29</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Caverna de Almacenamiento</span> Debes ir transformado en Morfosfera saltando de plataforma en plataforma hasta el camino de rejas, lo encontrarás al final del recorrido.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="29" data-category="missiles" />Expansión de misiles 30</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Orillas Candentes</span> Rompiendo unas cajas puedes seguir un camino como Morfosfera, al final del camino metálico lo encontrarás.				
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="30" data-category="missiles" />Expansión de misiles 31</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Cueva de los Triclops</span> Mira con el Visor de Rayos X para ver unas plataformas invisibles en el aire, debes saltar por ellas para llegar hasta él.
+						</div>
+					</li>
+				</ul>
+
+				<h3>Phendrana</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="31" data-category="missiles" />Expansión de misiles 32</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Laboratorio de investigación Éter</span> Desde la parte de abajo ve mirando hacia arriba, debes buscar un estrecho pasillo por donde puedes ir como Morfosfera. Sube a él y muévete lentamente para no caerte y llegar al final del recorrido.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="32" data-category="missiles" />Expansión de misiles 33</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Laboratorio de investigación Hidra</span> Lo verás dentro de un tanque, debes usar un Supermisil para que la explosión lo libere y puedas cogerlo.				
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="33" data-category="missiles" />Expansión de misiles 34</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Orillas de Phendrana</span> Salta a la repisa en donde está la entrada a la Capilla, debes disparar un Supermisil en la pared (a la izquierda de la puerta) para descubrir un punto que puedes escanear, al hacerlo abrirás una pista magnética. Síguela para llegar a la expansión.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="34" data-category="missiles" />Expansión de misiles 35</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Este de las ruinas de hielo</span> Debes ir al puente roto, crúzalo y avanza hasta el final de la plataforma y gira para encontrar por esa zona una pista magnética, debes seguirla hasta el final y vencer un enemigo para poderlo coger.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="35" data-category="missiles" />Expansión de misiles 36</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Caverna de Hielo</span> Rompe las estalactitas y al caer al agua verás que ha aparecido en un agujero creado.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="36" data-category="missiles" />Expansión de misiles 37</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Cámara Gravitatoria</span> Usa el Rayo de Plasma en la estalactita azul que hay en el centro, aparece debajo un gancho para poder pasar al otro lado (con el Rayo Enganche) y conseguirlo allí.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="37" data-category="missiles" />Expansión de misiles 38</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Control de Cuarentena</span> Ve rodando por la pista magnética y bájate en una repisa, desde ahí usa el Rayo Enganche para cruzar a otra repisa y lo podrás coger.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="38" data-category="missiles" />Expansión de misiles 39</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Orillas de Phendrana</span> Está dentro de una pequeña cueva (cerca de el portal para grabar la partida), debes abrir una entrada con el Rayo de Plasma.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="39" data-category="missiles" />Expansión de misiles 40</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Este de las ruinas de hielo</span> Tienes que disparar el Rayo de Plasma a una pared de hielo para poder pasar y cogerlo.
+						</div>
+					</li>
+				</ul>
+
+				<h3>Minas de Phazon</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="40" data-category="missiles" />Expansión de misiles 41</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Cantera Principal</span> Tienes que mover la grúa que hay arriba (usando primero el Rayo de Ondas en el circuito eléctrico y después escaneando el ordenador). Una vez hecho puedes subir como Morfosfera y alcanzar el misil en un hueco en la pared.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="41" data-category="missiles" />Expansión de misiles 42</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Laboratorio Élite</span> Cuando pones en marcha el cañón para abrir la salida, puedes moverlo para que dispare hacia la izquierda, allí abre un hueco en donde lo consigues.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="42" data-category="missiles" />Expansión de misiles 43</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Acceso al control de Élite</span> Debes disparar a una caja que creará una explosión dejándolo a la vista, para cogerlo hazte Morfosfera.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="43" data-category="missiles" />Expansión de misiles 44</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Acceso de seguridad A</span> Hay una puerta medio rota, ponle una Bomba de Energía y descubrirás el misil.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="44" data-category="missiles" />Expansión de misiles 45</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Cuarentena de Metroides A</span> Usa el Visor de Rayos X para ver unas plataformas invisibles, crúzalas y al otro lado rompe la pared con Bombas de Energía para poder pasar. Después debes cruzar con la Aracnosfera las pistas magnéticas y vuelve a usar el visor de Rayos X para poder localizarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="45" data-category="missiles" />Expansión de misiles 46</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Sala de Hongos B</span> Verás un pequeño círculo de hongos (al final de la sala), usa dentro de él una Bomba y podrás recogerla.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="46" data-category="missiles" />Expansión de misiles 47</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Cuarentena de Metroides B</span> Dispara un Supermisil a un tanque que hay al lado del grupo de ordenadores que hay en una esquina.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="47" data-category="missiles" />Expansión de misiles 48</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Acceso a la Sala de Hongos</span> Está debajo de un hongo, ve por la parte inferior como Morfosfera hasta que lo veas.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="48" data-category="missiles" />Expansión de misiles 49</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Centro de procesamiento del Phazon</span> Hay una pequeña plataforma llena de cajas, debes colocarte allí y usar una Bomba de Energía para romper la pared.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-energy-tanks" class="tab">
+				<h2 class="hide-for-mobile">Tanques de energía</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="49" data-category="energy-tanks" />Tanque de energía 1</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Ascensor de carga de la cubierta Gamma</span> Está en la parte de abajo (justo en el escalón por donde empiezas a subir), debes romper una rejilla con un misil y podrás localizarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="50" data-category="energy-tanks" />Tanque de energía 2</label>
+						<div class="item-description">
+							<span class="location">Superficie de Tallon: Túnel acuático de acceso</span> Está en la parte de arriba del túnel, para llegar debes ir dejando Bombas y subir impulsado con las explosiones.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="51" data-category="energy-tanks" />Tanque de energía 3</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Acceso del ascensor norte</span> Según consigues el Lanzamisiles (al vencer a Mecavispero) puedes abrir una puerta disparando un misil para recogerlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="52" data-category="energy-tanks" />Tanque de energía 4</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Acceso al panteón</span> Esta en una salida elevada que da a la Plaza Principal (para llegar debes hacerlo como Morfosfera por un túnel con pequeños ascensores).
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="53" data-category="energy-tanks" />Tanque de energía 5</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Horno</span> Tienes que hacer que aparezcan las plataformas en el "Núcleo de energía" (con los interruptores de Bomba para la Morfosfera), así puedes llegar a esta sala. Para salir usa las Bombas.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="54" data-category="energy-tanks" />Tanque de energía 6</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Sala de los Ancianos</span> Debes activar el interruptor de Morfosfera del centro (el blanco) y después subirte a las manos de la estatua.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="55" data-category="energy-tanks" />Tanque de energía 7</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Cámara de entrenamiento</span> Debes rodar y usar la Turbosfera en la zona curva para alcanzar un interruptor, al accionarlo aparece una pista magnética por donde puedes llegar a él.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="56" data-category="energy-tanks" />Tanque de energía 8</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Túnel del ascensor A</span> Está en la parte superior del túnel, debes hacer que tus Bombas te impulsen para cogerlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="57" data-category="energy-tanks" />Tanque de energía 9</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Estación de trabajo de Magmoor</span> Debes activar los circuitos con el Rayo de Ondas y después rodar para introducirte en las cámaras que hay alrededor de la sala.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="58" data-category="energy-tanks" />Tanque de energía 10</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Área desolada</span> Cuando has inundado la sala, puedes acceder (como Morfosfera) a una cueva en la pared a la que llegas saltando en donde la encuentras.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="59" data-category="energy-tanks" />Tanque de energía 11</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Laboratorio de investigación Éter</span> Está dentro de una urna de cristal, debes dispararle un misil para romperla y poderlo coger.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="60" data-category="energy-tanks" />Tanque de energía 12</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Camino al ascensor</span> Lo verás detrás de una pared de hielo, debes disparar con el Rayo de Plasma para derretirla y poderlo coger.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="61" data-category="energy-tanks" />Tanque de energía 13</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Compartimento de ventilación</span> Debes usar una Bomba de Energía para romper una rejilla que hay. Así podrás acceder al interior del conducto y encontrarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="62" data-category="energy-tanks" />Tanque de energía 14</label>
+						<div class="item-description">
+							<span class="location">Minas de Phazon: Acceso al centro de procesamiento</span> La consigues cuando vences al enemigo que aparece en esta sala al llegar por primera vez.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-power-bombs" class="tab">
+				<h2 class="hide-for-mobile">Bombas de energía</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="63" data-category="power-bombs" />Bomba de energía 1</label>
+						<div class="item-description">
+							<span class="location">Ruinas Chozo: Lago de Magma</span> Rompiendo la pared con una Bomba de Energía (llegas a ella usando el Rayo Enganche). Con el visor de Rayos X ves las bombas tras la pared. 
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="64" data-category="power-bombs" />Bomba de energía 2</label>
+						<div class="item-description">
+							<span class="location">Cavernas Magmoor: Sepulcro del Guerrero</span> Salta delante de la gran estatua. Pon una Bomba de Energía para que aparezca un agujero y rueda a través de él para encontrarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="65" data-category="power-bombs" />Bomba de energía 3</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Cueva de Seguridad</span> Hay un gancho circulando por el aire, engánchate a él con el Rayo Enganche y llegarás a una tubería en donde debes introducirte para encontrarlo.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="66" data-category="power-bombs" />Bomba de energía 4</label>
+						<div class="item-description">
+							<span class="location">Phendrana: Oeste de las Ruinas de Hielo</span> Hay una repisa con unos boquetes a ambos lados, verás enfrente otra repisa con unas cajas, salta allí y dispara para descubrir el camino.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div id="tab-logbook" class="tab">
+				<h2 class="hide-for-mobile">Banco de datos</h2>
+
+				<h3>Datos pirata</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="67" data-category="logbook" data-group-location="0" data-group-missable="0" data-order-missable="1"/>Datos pirata #01. La caída de Zebes</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Fragata Espacial: Contenedor de Riesgo Biológico</span><br/>
+							<em>(una vez se destruye la Fragata Espacial del inicio del juego, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="68" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #02. Samus Aran</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="69" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #03. El contacto</label><div class="item-description"><span class="location">Phendrana: Observatorio</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="70" data-category="logbook" data-group-location="1" data-group-missable="1" />Datos pirata #04. Lugar de los Artefactos</label><div class="item-description"><span class="location">Superficie de Tallon: Estación de Seguridad del Templo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="71" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #05. El análisis del Phazon</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Hidra</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="72" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #06. El programa del Phazon</label><div class="item-description"><span class="location">Phendrana: Observatorio</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="73" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #07. El estudio de metroides</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Éter</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="74" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #08. Larva parasitaria</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Hidra</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="75" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #09. Operaciones mineras</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Hidra</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="76" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #10. Tierras desocupadas</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Hidra</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="77" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #11. Fallos en la seguridad</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Hidra</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="78" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #12. Meta Ridley</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Éter</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="79" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #13. Exposición al Phazon</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Éter</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="80" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #14. Piratas de élite</label><div class="item-description"><span class="location">Minas de Phazon: Laboratorio Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="81" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #15. Cráter del impacto</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="82" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #16. Armas de Samus Aran</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="83" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #17. Pirata Omega</label><div class="item-description"><span class="location">Minas de Phazon: Laboratorio Omega</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="84" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #18. Fuerzas especiales</label><div class="item-description"><span class="location">Minas de Phazon: Cuarentena de Metroides B</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="85" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #19. El sistema de apertura</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="86" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #20. Los Artefactos</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="87" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #21. Morfología metroide</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Éter</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="88" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #22. Estudios de los Chozo</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="89" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #23. La llave</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="90" data-category="logbook" data-group-location="4" data-group-missable="1" />Datos pirata #24. Fuerzas metroides</label><div class="item-description"><span class="location">Phendrana: Laboratorio de Investigación Éter</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="91" data-category="logbook" data-group-location="5" data-group-missable="1" />Datos pirata #25. Fantasmas Chozo</label><div class="item-description"><span class="location">Minas de Phazon: Control de Élite</span></div></li>
+				</ul>
+
+				<h3>Legado Chozo</h3>
+				<ul>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="92" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #01. Los comienzos</label><div class="item-description"><span class="location">Ruinas Chozo: Entrada a las Ruinas</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="93" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #02. Armonización</label><div class="item-description"><span class="location">Ruinas Chozo: Vivero en Ruinas</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="94" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #03. Purificación</label><div class="item-description"><span class="location">Ruinas Chozo: Fuente en Ruinas</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="95" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #04. El Gusano</label><div class="item-description"><span class="location">Ruinas Chozo: Cruce</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="96" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #05. El impacto del meteoro</label><div class="item-description"><span class="location">Ruinas Chozo: Pasillo Acuático</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="97" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #06. Mal creciente</label><div class="item-description"><span class="location">Ruinas Chozo: Torre Solar</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="98" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #07. La fuente</label><div class="item-description"><span class="location">Ruinas Chozo: Panteón</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="99" data-category="logbook" data-group-location="4" data-group-missable="1" />Legado Chozo #08. El Sello</label><div class="item-description"><span class="location">Phendrana: Oeste de las Ruinas de Hielo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="100" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #09. El Gran Veneno</label><div class="item-description"><span class="location">Ruinas Chozo: Horno</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="101" data-category="logbook" data-group-location="4" data-group-missable="1" />Legado Chozo #10. El Enviado</label><div class="item-description"><span class="location">Phendrana: Cañón de Phendrana</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="102" data-category="logbook" data-group-location="1" data-group-missable="1" />Legado Chozo #11. Contención</label><div class="item-description"><span class="location">Superficie de Tallon: Templo de los Artefactos</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="103" data-category="logbook" data-group-location="1" data-group-missable="1" />Legado Chozo #12. Profecía de la luz</label><div class="item-description"><span class="location">Superficie de Tallon: Templo de los Artefactos</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="104" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #13. La Cuna</label><div class="item-description"><span class="location">Ruinas Chozo: Cruce</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="105" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #14. Infestación</label><div class="item-description"><span class="location">Ruinas Chozo: Cruce</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="106" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #15. Informe</label><div class="item-description"><span class="location">Ruinas Chozo: Sala de los Ancianos</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="107" data-category="logbook" data-group-location="2" data-group-missable="1" />Legado Chozo #16. El que brilla</label><div class="item-description"><span class="location">Ruinas Chozo: Lago de Magma</span></div></li>
+				</ul>
+
+				<h3>Criaturas</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="108" data-category="logbook" data-group-location="0" data-group-missable="0" data-order-missable="0"/>Criaturas #01. Parásito</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Fragata Espacial</span><br/>
+							Varios repartidos por la fragata.<br/>
+							<em>(una vez se destruye la Fragata Espacial del inicio del juego, no será posible escanear esta entrada) </em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="109" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #02. Torreta automática</label><div class="item-description"><span class="location">Fragata Espacial</span> y varias áreas en Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="110" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #03. Zoomer</label><div class="item-description"><span class="location">Superficie de Tallon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="111" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #04. Limer</label><div class="item-description"><span class="location">Superficie de Tallon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="112" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #05. Saco de savia</label><div class="item-description"><span class="location">Superficie de Tallon</span> y <span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="113" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #06. Flor sangrienta</label><div class="item-description"><span class="location">Superficie de Tallon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="114" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #07. Semilium</label><div class="item-description"><span class="location">Superficie de Tallon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="115" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #08. Escarba</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="116" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #09. Escarabajo</label><div class="item-description"><span class="location">Superficie de Tallon y Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="117" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #10. Escarabajo metalizado</label><div class="item-description"><span class="location">Ruinas Chozo: Cúpula en Ruinas</span> (principio) y <span class="location">Ruinas Chozo: Plaza Principal</span> (más tarde)</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="118" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #11. Avispa guerrera</label><div class="item-description"><span class="location">Ruinas Chozo</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="119" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="6"/>Criaturas #12. Avispa darnero</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Nido-Tótem</span><br/>
+							Aparecen durante la batalla contra el Mecavispero.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="120" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="8"/>Criaturas #13. Avispa espino</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Cúpula Ardiente</span><br/>
+							Aparecen durante la batalla contra el Zángano Incinerador.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="121" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #14. Nido de avispas</label><div class="item-description"><span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="122" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #15. Eyon</label><div class="item-description"><span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="123" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #16. Plazmite</label><div class="item-description"><span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="124" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #17. Shriekbat</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="125" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #18. Planta parasitaria</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="126" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #19. Mala hierba venenosa</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="127" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #20. Gorro vipéreo</label><div class="item-description"><span class="location">Superficie de Tallon</span> y <span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="128" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #21. Enredadera guadaña</label><div class="item-description"><span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="129" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #22. Sapo de piedra</label><div class="item-description"><span class="location">Ruinas Chozo: Núcleo de energía</span> y <span class="location">Lago Reflectante</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="130" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #23. Parásito metalizado</label><div class="item-description"><span class="location">Ruinas Chozo: Horno</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="131" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #24. Oculus</label><div class="item-description"><span class="location">Ruinas Chozo: Torre de la Luz</span> y <span class="location">Torre Solar</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="132" data-category="logbook" data-group-location="2" data-group-missable="1" />Criaturas #25. Puffo metalizado</label><div class="item-description"><span class="location">Ruinas Chozo: Torre de la Luz</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="133" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="5"/>Criaturas #26. Mecavispero</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Nido-Tótem</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="134" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="7"/>Criaturas #27. Zángano incinerador</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Cúpula Ardiente</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="135" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #28. Fantasma Chozo</label><div class="item-description"><span class="location">Superficie de Tallon: Arboleda</span> y <span class="location">Ruinas Chozo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="136" data-category="logbook" data-group-location="3" data-group-missable="1" />Criaturas #29. Grizby</label><div class="item-description"><span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="137" data-category="logbook" data-group-location="3" data-group-missable="1" />Criaturas #30. Terralito</label><div class="item-description"><span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="138" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #31. Puffo</label><div class="item-description"><span class="location">Minas de Phazon: Compartimento de Ventilación</span> y <span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="139" data-category="logbook" data-group-location="3" data-group-missable="1" />Criaturas #32. Triclops</label><div class="item-description"><span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="140" data-category="logbook" data-group-location="3" data-group-missable="1" />Criaturas #33. Magmoor</label><div class="item-description"><span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="141" data-category="logbook" data-group-location="3" data-group-missable="1" />Criaturas #34. Espora de charca</label><div class="item-description"><span class="location">Cavernas Magmoor</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="142" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #35. Cristalito</label><div class="item-description"><span class="location">Phendrana</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="143" data-category="logbook" data-group-location="4" data-group-missable="0" data-order-missable="11"/>Criaturas #36. Parásito de las nieves</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Phendrana: Templo de Hielo Chozo</span><br/>
+							Varios.<br/>
+							<em>(una vez conseguido el Rayo de Onda, son reemplazados por Bombus de Pulsión y no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="144" data-category="logbook" data-group-location="4" data-group-missable="0" data-order-missable="13"/>Criaturas #37. Shriekbat de hielo</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Phendrana: Oeste de las Ruinas de Hielo</span><br/>
+							Varios.<br/>
+							<em>(una vez obtenido el Visor de Infrarrojos ya no aparecen más y no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="145" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #38. Bombu de pulsión</label><div class="item-description">Varias áreas en Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="146" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #39. Bombu ruptor</label><div class="item-description">Varias áreas en Tallon IV</div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="147" data-category="logbook" data-group-location="4" data-group-missable="0" data-order-missable="14"/>Criaturas #40. Terralito de las nieves</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Phendrana: Pasaje Superior</span> y <span class="location">Phendrana: Acceso al Centro del Área de Investigación</span><br/>
+							Varios. No confundir con los Terralitos normales.<br/>
+							<em>(una vez conseguido el Visor de Infrarrojos, son reemplazados por Zángano Centinelas y no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="148" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #41. Escarabajo de hielo</label><div class="item-description"><span class="location">Phendrana</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="149" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #42. Flickerbat</label><div class="item-description"><span class="location">Phendrana</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="150" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #43. Jelzap</label><div class="item-description">Varias áreas bajo el agua en Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="151" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #44. Cría de sheegoth</label><div class="item-description"><span class="location">Phendrana</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="152" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #45. Sheegoth</label><div class="item-description"><span class="location">Phendrana</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="153" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #46. Zángano centinela</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="154" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #47. Pirata espacial</label><div class="item-description"><span class="location">Phendrana</span> y <span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="155" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #48. Pirata oscuro</label><div class="item-description"><span class="location">Phendrana</span> y <span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="156" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #49. Pirata volador</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="157" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #50. Saco aqua</label><div class="item-description"><span class="location">Superficie de Tallon: Lugar del Impacto de la Fragata</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="158" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #51. Cangrejo de Tallon</label><div class="item-description"><span class="location">Superficie de Tallon: Lugar del Impacto de la Fragata</span> (en uno de los Compartimento de Ventilación)</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="159" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #52. Tentaqua</label><div class="item-description">Varias áreas bajo el agua en Tallon IV</div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="160" data-category="logbook" data-group-location="1" data-group-missable="0" data-order-missable="16"/>Criaturas #53. Zángano aqua</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Lugar del Impacto de la Fragata: Contenedor de Riesgo Biológico</span><br/>
+							Solo hay dos.<br/>
+							<em>(una vez derrotados, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="161" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #54. Pirata aqua</label><div class="item-description"><span class="location">Superficie de Tallon: Lugar del Impacto de la Fragata</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="162" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #55. Megatorreta</label><div class="item-description"><span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="163" data-category="logbook" data-group-location="1" data-group-missable="1" />Criaturas #56. Planeador</label><div class="item-description">Varias áreas en Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="164" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #57. Soldado</label><div class="item-description"><span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="165" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #58. Soldado de ondas</label><div class="item-description"><span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="166" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #59. Soldado de hielo</label><div class="item-description"><span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="167" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #60. Soldado de plasma</label><div class="item-description"><span class="location">Minas de Phazon</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="168" data-category="logbook" data-group-location="5" data-group-missable="0" data-order-missable="17"/>Criaturas #61. Pirata de élite</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Minas de Phazon</span><br/>
+							Varios.<br/>
+							<em>(una vez derrotados todos, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="169" data-category="logbook" data-group-location="5" data-group-missable="0" data-order-missable="18"/>Criaturas #62. Élite Phazon</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Minas de Phazon: Laboratorio Élite</span><br/>
+							Solo hay uno. No confundir con Pirata Élite.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)							</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="170" data-category="logbook" data-group-location="4" data-group-missable="1" />Criaturas #63. Metroide talloniano</label><div class="item-description"><span class="location">Phendrana</span>, <span class="location">Minas de Phazon</span> y <span class="location">Cráter del Impacto: Guarida del metroide Prime</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="171" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #64. Metroide cazador</label><div class="item-description"><span class="location">Minas de Phazon</span> y <span class="location">Cráter del Impacto: Guarida del metroide Prime</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="172" data-category="logbook" data-group-location="5" data-group-missable="1" />Criaturas #65. Metroide fisión</label><div class="item-description"><span class="location">Minas de Phazon</span> y <span class="location">Cráter del Impacto</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="173" data-category="logbook" data-group-location="6" data-group-missable="1" />Criaturas #66. Ilumigek</label><div class="item-description"><span class="location">Cráter del Impacto: Túnel A del Cráter</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="174" data-category="logbook" data-group-location="0" data-group-missable="0" data-order-missable="3"/>Criaturas #67. Parásito reina</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Fragata Espacial</span><br/>
+							Jefe final de la Fragata Espacial.<br/>
+							<em>(una vez se destruye la Fragata Espacial del inicio del juego, no será posible escanear esta entrada) </em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="175" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="9"/>Criaturas #68. Flaahgra</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Cámara Solar</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="176" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="10"/>Criaturas #69. Tentáculo de Flaahgra</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Ruinas Chozo: Cámara Solar</span><br/>
+							Aparecen durante la batalla contra Flaahgra<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="177" data-category="logbook" data-group-location="4" data-group-missable="0" data-order-missable="15"/>Criaturas #70. Thardus</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Phendrana: Cueva de Cuarentena</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="178" data-category="logbook" data-group-location="5" data-group-missable="0" data-order-missable="19"/>Criaturas #71. Pirata Omega</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Minas de Phazon: Cuartel de Élite</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="179" data-category="logbook" data-group-location="1" data-group-missable="0" data-order-missable="20"/>Criaturas #72. Meta Ridley</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Superficie de Tallon: Templo de los Artefactos</span><br/>
+							Jefe, única oportunidad.<br/>
+							<em>(una vez derrotado, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="180" data-category="logbook" data-group-location="6" data-group-missable="1" />Criaturas #73. Metroide Prime</label><div class="item-description"><span class="location">Cráter del Impacto: Subcámara 1</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="181" data-category="logbook" data-group-location="6" data-group-missable="1" />Criaturas #74. Metroide Prime</label><div class="item-description"><span class="location">Cráter del Impacto: Guarida del metroide Prime</span></div></li>
+				</ul>
+
+				<h3>Investigación</h3>
+				<ul>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="182" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #01. Minicápsula de energía</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="183" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #02. Cápsula de energía</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="184" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #03. Ultracápsula de energía</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="185" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #04. Misiles (3)</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="186" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #05. Misiles (5)</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="187" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #06. Misiles (10)</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="188" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #07. Bomba de energía</label><div class="item-description">Por todas partes</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="189" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #08. Estación de guardado</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="190" data-category="logbook" data-group-location="2" data-group-missable="0" data-order-missable="2"/>Investigación #09. Estación del mapa</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Fragata Espacial</span>, <span class="location">Ruinas Chozo</span>, <span class="location">Phendrana</span> y <span class="location">Minas de Phazon</span><br/>
+							Solo hay cuatro estaciones de guardado en todo el juego.<br/>
+							<em>(una vez hayas descargado el mapa de cada estación, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="191" data-category="logbook" data-group-location="2" data-group-missable="1" />Investigación #10. Estación de misiles</label><div class="item-description"><span class="location">Ruinas Chozo</span> y <span class="location">Minas de Phazon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="192" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #11. Conector de Morfosfera</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="193" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #12. Rotogenerador</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="194" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #13. Pista magnética</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="195" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #14. Punto de enganche</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="196" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #15. Nave de combate</label><div class="item-description"><span class="location">Superficie de Tallon: Lugar del Aterrizaje</span></div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="197" data-category="logbook" data-group-location="1" data-group-missable="0" data-order-missable="4"/>Investigación #16. Escudo antirrayo</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> Por todo Tallon IV<br/>
+							Muchos repartidos por todo Tallon IV.<br/>
+							<em>(una vez han sido destruidos todos, no será posible escanear esta entrada) </em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="198" data-category="logbook" data-group-location="1" data-group-missable="1" />Investigación #17. Puerta bloqueada</label><div class="item-description">Por todo Tallon IV</div></li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="199" data-category="logbook" data-group-location="3" data-group-missable="0" data-order-missable="12"/>Investigación #18. Estalactita</label>
+						<div class="item-description">
+							<span class="missable">Perdible</span> <span class="location">Phendrana</span> y <span class="location">Cavernas Magmoor</span><br/>
+							Varias.<br/>
+							<em>(una vez destruidas todas, no será posible escanear esta entrada)</em>
+						</div>
+					</li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="200" data-category="logbook" data-group-location="4" data-group-missable="1" />Investigación #19. Zebes</label><div class="item-description"><span class="location">Phendrana: Observatorio</span></div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="201" data-category="logbook" data-group-location="4" data-group-missable="1" />Investigación #20. Tallon IV</label><div class="item-description"><span class="location">Phendrana: Observatorio</span></div></li>
+				</ul>
+
+				<h3>Artefactos</h3>
+				<ul>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="202" data-category="logbook" data-group-location="1" data-group-missable="1" />Artefactos #01. Verdad</label><div class="item-description">Superficie de Tallon: Templo de los Artefactos</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="203" data-category="logbook" data-group-location="3" data-group-missable="1" />Artefactos #02. Fuerza</label><div class="item-description">Cavernas Magmoor: Sepulcro del Guerrero</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="204" data-category="logbook" data-group-location="4" data-group-missable="1" />Artefactos #03. Ancianos</label><div class="item-description">Phendrana: Torre de Control</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="205" data-category="logbook" data-group-location="2" data-group-missable="1" />Artefactos #04. Salvaje</label><div class="item-description">Ruinas Chozo: Cámara Solar</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="206" data-category="logbook" data-group-location="2" data-group-missable="1" />Artefactos #05. Creador</label><div class="item-description">Ruinas Chozo: Cámara de Meditación</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="207" data-category="logbook" data-group-location="5" data-group-missable="1" />Artefactos #06. Guerrero</label><div class="item-description">Minas de Phazon: Laboratorio Élite</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="208" data-category="logbook" data-group-location="1" data-group-missable="1" />Artefactos #07. Chozo</label><div class="item-description">Superficie de Tallon: Arboleda</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="209" data-category="logbook" data-group-location="3" data-group-missable="1" />Artefactos #08. Naturaleza</label><div class="item-description">Cavernas Magmoor: Lago de Lava</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="210" data-category="logbook" data-group-location="4" data-group-missable="1" />Artefactos #09. Sol</label><div class="item-description">Phendrana: Templo de Hielo Chozo</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="211" data-category="logbook" data-group-location="2" data-group-missable="1" />Artefactos #10. Mundo</label><div class="item-description">Ruinas Chozo: Cámara de los Ancianos</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="212" data-category="logbook" data-group-location="4" data-group-missable="1" />Artefactos #11. Espíritu</label><div class="item-description">Phendrana: Cueva de Almacenamiento</div></li>
+					<li><label><input type="checkbox" data-tracker="metroid-prime" data-index="213" data-category="logbook" data-group-location="5" data-group-missable="1" />Artefactos #12. Recién Nacido</label><div class="item-description">Minas de Phazon: Minería de Phazon</div></li>
+				</ul>
+			</div>
+
+
+			<div id="tab-beam-combos" class="tab">
+				<h2 class="hide-for-mobile">Combos de carga</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="214" data-category="beam-combos" />Látigo de Ondas</label>
+						<div class="item-description">Ruinas Chozo: Torre de la Luz</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="215" data-category="beam-combos" />Difusor de Hielo</label>
+						<div class="item-description">Cavernas Magmoor: Túnel de la Orilla</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="metroid-prime" data-index="216" data-category="beam-combos" />Lanzallamas</label>
+						<div class="item-description">Minas de Phazon: Estación de Seguridad de la Mina</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

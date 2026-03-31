@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>The legend of Zelda: Link's Awakening - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de The legend of Zelda: Link's Awakening en esta webapp." />
+	<meta name="keywords" content="zelda, link, links, awakening, dx, corazones, caracolas, coleccionables, guia, checklist, nintendo, game, boy, color" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+.coord{
+	font-family:Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;
+	display:inline-block;
+	font-weight:bold;
+	width:44px;
+	color:white;
+	background-color:#ffc106;
+	background-color:#67b916;
+	text-align:center;
+	border-radius:3px;
+	font-size:90%;
+	cursor:pointer;
+	vertical-align:middle;
+}
+.coord:hover{
+	cursor:pointer;
+	background-color:#77c926;
+}
+
+.unica{
+	background-color:#ff1843;
+	color:white;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:80%;
+	padding: 1px 4px;
+	border-radius:3px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.checked-within .unica{
+	background-color:#b6b6ac;
+}
+
+
+.foto{
+	width:160px;
+	float:right;
+	margin-left:8px;
+	margin-bottom:4px;
+}
+
+
+
+
+@media only screen and (max-width:511px){
+	.foto{
+		width:80px;
+	}
+}
+
+
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/zelda-links-awakening/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript">
+		const MAP_KOHOLINT={
+			id:'koholint',
+			imageBackground:'resources/koholint.png',
+			imageMarker:'resources/koholint_marker.png',
+			positions:(function(){
+				const coords=new Array();
+				for(var x=0; x<16; x++){
+					for(var y=0; y<16; y++){
+						coords.push({id:(x+1)+'-'+String.fromCharCode(65+y), x:29 + x * 16, y:12 + y * 16});
+					}
+				}
+				return coords;
+			}())
+		}
+
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('zelda-links-awakening', [
+				{category:'photos', group: 'safe', label: 'Agrupar perdibles', description:'Las siguientes cinco fotos solo pueden obtenerse en momentos concretos (si te las saltas, no podrás tenerlas en tu partida).', groupNames:[
+					'Perdibles'
+				]},
+				{category:'photos', group: 'obtain', label: 'Ordenar por disponibilidad', groupNames:[
+					'Por obtención'
+				]}
+			]);
+
+			document.querySelectorAll('span.coord').forEach(function(el){
+				el.addEventListener('click', function(evt){
+					CompletionTrackerUI.showMap(MAP_KOHOLINT, this.innerText);
+				});
+			});
+		});
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>The legend of Zelda: Link's Awakening - Guía checklist interactiva de progreso</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/home.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#hearts"><img src="resources/piece_of_heart.png" class="icon" /> Piezas de corazón</a></li>
+				<li><a href="#seashells"><img src="resources/seashell.png" class="icon" /> Caracolas</a></li>
+				<li><a href="#equipment"><img src="resources/equipment.png" class="icon" /> Equipo</a></li>
+				<li><a href="#photos"><img src="resources/photographer.png" class="icon" /> Fotografías</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>The legend of Zelda: Link's Awakening</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+
+			<div id="tab-hearts" class="tab">
+				<h2 class="hide-for-mobile">Piezas de corazón</h2>
+				<p>Por todo el mapa hay esparcidas <b>12 piezas de corazón</b>. Por cada cuatro piezas, conseguirás un corazón extra de energía.</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="0" data-category="hearts" /> Pieza de corazón #1</label>
+						<div class="item-description"><span class="coord">1-K</span> Tírate por el pozo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="1" data-category="hearts" /> Pieza de corazón #2</label>
+						<div class="item-description"><span class="coord">2-I</span> Pesca el pez grande más cercano</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="2" data-category="hearts" /> Pieza de corazón #3</label>
+						<div class="item-description"><span class="coord">5-E</span> Usa la pluma para saltar a la plataforma central</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="3" data-category="hearts" /> Pieza de corazón #4</label>
+						<div class="item-description"><span class="coord">3-G</span> Métete por el tronco y usa el brazalete para levantar las calaveras</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="4" data-category="hearts" /> Pieza de corazón #5</label>
+						<div class="item-description"><span class="coord">15-M</span> Tírate por el hueco de arena central. Pon una bomba en la pared norte</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="5" data-category="hearts" /> Pieza de corazón #6</label>
+						<div class="item-description"><span class="coord">9-H</span> Tírate al agua en <span class="coord">12-D</span> y nada hacia la izquierda hasta llegar al puente del castillo. Bucea a la izquierda del puente hasta encontrar el trozo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="6" data-category="hearts" /> Pieza de corazón #7</label>
+						<div class="item-description"><span class="coord">7-I</span> Pon una bomba en la pared norte para abrir una cueva. Usa las botas de pegaso para romper los cristales. Pon una bomba en la pared noreste que suena diferente.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="7" data-category="hearts" /> Pieza de corazón #8</label>
+						<div class="item-description"><span class="coord">15-C</span> Métete en la cueva y bucea hasta encontrar el trozo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="8" data-category="hearts" /> Pieza de corazón #9</label>
+						<div class="item-description"><span class="coord">14-M</span> Pon una bomba en la grieta. Avanza hasta encontrar unos bloques agrietado, combina el arco y las bombas para destruirlos y avanza hasta encontrar el trozo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="9" data-category="hearts" /> Pieza de corazón #10</label>
+						<div class="item-description"><span class="coord">7-H</span> Empuja la tumba de abajo a la derecha hacia delante. Baja las escaleras y en la pared sur pon una bomba en el bloque agrietado y usa el gancho para avanzar</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="10" data-category="hearts" /> Pieza de corazón #11</label>
+						<div class="item-description"><span class="coord">8-A</span> Corta los arbustos de la zona superior para encontrar unas escaleras. Pon una bomba en la pared sur.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="11" data-category="hearts" /> Pieza de corazón #12</label>
+						<div class="item-description"><span class="coord">1-A</span> Busca la salida secreta de Turtle Rock que te lleva fuera.</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-seashells" class="tab">
+				<h2 class="hide-for-mobile">Caracolas</h2>
+				<p>
+					Por todo el mapa hay repartidas <b>26 caracolas</b>, aunque solo necesitas 20 para la recompensa en la Mansión Caracola en <span class="coord">11-I</span>.<br/>
+					Hay 3 caracolas que solo se pueden conseguir en momentos concretos, pero no es crítico perderlas ya que sobran.<br/>
+					Nota: una vez entregadas 20, las que aún estaban pendientes en el mapa se convertirán en rupias.
+				</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="12" data-category="seashells" /> Caracola #1</label>
+						<div class="item-description"><span class="coord">4-K</span> En un arbusto</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="13" data-category="seashells" /> Caracola #2</label>
+						<div class="item-description"><span class="coord">2-H</span> Levanta la roca con el brazalete y abre el cofre</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="14" data-category="seashells" /> Caracola #3</label>
+						<div class="item-description"><span class="coord">2-K</span> Entra en la casita pequeña y excava con la pala</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="15" data-category="seashells" /> Caracola #4</label>
+						<div class="item-description"><span class="coord">4-N</span> Cuando consigas las bombas, vuelve a la mazmorra y ve al norte, oeste y otra vez al norte y abre la grieta con bombas</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="16" data-category="seashells" /> Caracola #5</label>
+						<div class="item-description"><span class="coord">5-H</span> Corta el arbusto y excava con la pala en el mismo sitio</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="17" data-category="seashells" /> Caracola #6</label>
+						<div class="item-description"><span class="coord">10-L</span> Levanta la roca con el brazalete</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="18" data-category="seashells" /> Caracola #7</label>
+						<div class="item-description"><span class="coord">6-K</span> Excava con la pala en el hueco rodeado por plantas</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="19" data-category="seashells" /> Caracola #8</label>
+						<div class="item-description"><span class="coord">12-I</span> En un arbusto</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="20" data-category="seashells" /> Caracola #9</label>
+						<div class="item-description"><span class="coord">7-N</span> Empuja la caja dentro de la casa y ve por el camino de la izquierda</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="21" data-category="seashells" /> Caracola #10</label>
+						<div class="item-description"><span class="coord">5-K</span> Usa las botas de Pegaso contra el árbol</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="22" data-category="seashells" /> Caracola #11 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><span class="coord">11-I</span> Ve a la mansión de las caracolas teniendo exactamente 5 caracolas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="23" data-category="seashells" /> Caracola #12</label>
+						<div class="item-description"><span class="coord">3-N</span> Usa las botas de Pegaso contra el árbol</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="24" data-category="seashells" /> Caracola #13</label>
+						<div class="item-description"><span class="coord">9-K</span> Excava con la pala cerca de la estatua del búho</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="25" data-category="seashells" /> Caracola #14</label>
+						<div class="item-description"><span class="coord">10-O</span> Corta el arbusto</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="26" data-category="seashells" /> Caracola #15</label>
+						<div class="item-description"><span class="coord">16-P</span> Levanta los bloques con el brazalete</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="27" data-category="seashells" /> Caracola #16</label>
+						<div class="item-description"><span class="coord">7-P</span> Despues de haber llevado al fantasma a su tumba, levanta los jarrones de su casa con el brazalete</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="28" data-category="seashells" /> Caracola #17</label>
+						<div class="item-description"><span class="coord">9-P</span> Nada con las aletas y corta el arbusto</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="29" data-category="seashells" /> Caracola #18</label>
+						<div class="item-description"><span class="coord">11-N</span> Excava con la pala cerca de la estatua del búho</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="30" data-category="seashells" /> Caracola #19</label>
+						<div class="item-description"><span class="coord">7-K</span> Nada con las aletas y corta el arbusto</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="31" data-category="seashells" /> Caracola #20</label>
+						<div class="item-description"><span class="coord">15-K</span> Mueve uno de los armos para descubrir un subterráneo</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="32" data-category="seashells" /> Caracola #21 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><span class="coord">11-I</span> Ve a la mansión de las caracolas teniendo exactamente 10 caracolas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="33" data-category="seashells" /> Caracola #22</label>
+						<div class="item-description"><span class="coord">13-G</span> En una salida secreta de Face Shrine</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="34" data-category="seashells" /> Caracola #23</label>
+						<div class="item-description"><span class="coord">13-A</span> Levanta los bloques con el brazalete</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="35" data-category="seashells" /> Caracola #24</label>
+						<div class="item-description"><span class="coord">14-B</span> Entra en la cueva de la izquierda, pon una bomba en el hueco rodeado de agua arriba a la derecha</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="36" data-category="seashells" /> Caracola #25 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><span class="coord">9-H</span> Cuando vayas con el pájaro de la veleta, úsalo para volar por encima de los agujeros y meterte en el subterráneo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="37" data-category="seashells" /> Caracola #26</label>
+						<div class="item-description"><span class="coord">15-A</span> En Eagle's Tower déjate caer por un hueco de la izquierda en los pisos superiores</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-equipment" class="tab">
+				<h2 class="hide-for-mobile">Equipo</h2>
+				<p>Puedes aumentar la capacidad de <b>polvo mágico</b>, <b>bombas</b> y <b>flechas</b>. Hay tres salas ocultas en el mapa a las que puedes ir en cualquier orden para actualizar progresivamente tu equipo.</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="38" data-category="equipment" /> Mejora equipo #1</label>
+						<div class="item-description"><span class="coord">3-F</span> Levanta los bloques con el brazalete. Introduce polvo mágico en el caldero.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="39" data-category="equipment" /> Mejora equipo #2</label>
+						<div class="item-description"><span class="coord">10-P</span> Baja las escaleras y nada hasta llegar a la sala de mejora. Introduce polvo mágico en el caldero.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="40" data-category="equipment" /> Mejora equipo #3</label>
+						<div class="item-description"><span class="coord">5-A</span> Levanta el bloque con el brazalete. Introduce polvo mágico en el caldero.</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-photos" class="tab">
+				<h2 class="hide-for-mobile">Fotografías</h2>
+				<p>En la versión DX, cuando tengamos la pluma (y no vayamos acompañados) podremos entrar en la tienda del fotógrafo en <span class="coord">8-D</span>. Al hablar con él nos hará la primera foto y a partir de ahora podremos completar la colección del álbum que se compone de <b>12 fotos</b>.<br/>Hay cinco fotos que solo pueden obtenerse en momentos concretos (si te las saltas, no podrás tenerlas en tu partida).</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="41" data-category="photos" data-group-safe="0" data-order-safe="0" data-order-obtain="0" /> Foto #1</label>
+						<div class="item-description">
+							<img src="resources/photo01.png" class="foto foto-01" loading="lazy" />Habla con el fotógrafo por primera vez en <span class="coord">8-D</span><br style="clear:both; display:block;" /><br/>
+							<img src="resources/photo01b.png" class="foto foto-01b" /><b>Foto alternativa</b> <span class="unica">Única oportunidad</span><br/>Para obtener una foto alternativa (que sustituye la normal), contéstale NO a todo lo que te pregunte.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="42" data-category="photos" data-group-safe="1" data-order-obtain="1" /> Foto #2</label>
+						<div class="item-description"><img src="resources/photo02.png" class="foto foto-02" loading="lazy" />Acércate al poste de Bow-wow en <span class="coord">2-K</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="43" data-category="photos" data-group-safe="1" data-order-obtain="2" /> Foto #3</label>
+						<div class="item-description"><img src="resources/photo03.png" class="foto foto-03" loading="lazy" />Acércate a la ventana de la casa de Ulrira en <span class="coord">2-L</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="44" data-category="photos" data-group-safe="0" data-order-safe="2" data-order-obtain="4" /> Foto #4 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><img src="resources/photo04.png" class="foto foto-04" loading="lazy" />Cuando vayas con Marin, ve al acantilado de <span class="coord">1-P</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="45" data-category="photos" data-group-safe="0" data-order-safe="3" data-order-obtain="5" /> Foto #5 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><img src="resources/photo05.png" class="foto foto-05" loading="lazy" />Cuando vayas con Marin, tírate por el agujero de <span class="coord">1-K</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="46" data-category="photos" data-group-safe="0" data-order-safe="4" data-order-obtain="6" /> Foto #6 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><img src="resources/photo06.png" class="foto foto-06" loading="lazy" />Cuando vayas con Marin, acércate a la veleta de <span class="coord">3-J</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="47" data-category="photos" data-group-safe="1" data-order-obtain="11" /> Foto #7</label>
+						<div class="item-description"><img src="resources/photo07.png" class="foto foto-07" loading="lazy" />Roba un objeto en la tienda en <span class="coord">4-J</span><br/><br/>Nota: perderás una vida si vuelves a la tienda y a partir de entonces los personajes te llamarán Thief (ladrón). Por ello, es mejor dejar esta foto para el final, y conseguirla tras hacer copia de la partida.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="48" data-category="photos" data-group-safe="1" data-order-obtain="7" /> Foto #8</label>
+						<div class="item-description"><img src="resources/photo08.png" class="foto foto-08" loading="lazy" />Despues de conseguir la lupa habla con el pescador en <span class="coord">11-O</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="49" data-category="photos" data-group-safe="1" data-order-obtain="8" /> Foto #9</label>
+						<div class="item-description"><img src="resources/photo09.png" class="foto foto-09" loading="lazy" />Despues de conseguir la lupa entra en la casa de Zora en <span class="coord">14-M</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="50" data-category="photos" data-group-safe="0" data-order-safe="1" data-order-obtain="3" /> Foto #10 <span class="unica">Única oportunidad</span></label>
+						<div class="item-description"><img src="resources/photo10.png" class="foto foto-10" loading="lazy"/>Antes de abrir la puerta levadiza del castillo Kanalet, acércate a <span class="coord">10-H</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="51" data-category="photos" data-group-safe="1" data-order-obtain="9" /> Foto #11</label>
+						<div class="item-description"><img src="resources/photo11.png" class="foto foto-11" loading="lazy" />Despues de ayudar al fantasma, vuelve a su tumba en <span class="coord">5-G</span></div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-links-awakening" data-index="52" data-category="photos" data-group-safe="1" data-order-obtain="10" /> Foto #12</label>
+						<div class="item-description"><img src="resources/photo12.png" class="foto foto-12" loading="lazy" />Camina por el puente en <span class="coord">14-A</span></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

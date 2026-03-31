@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+	<title>The legend of Zelda: A link to the past - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de The legend of Zelda: A link to the past en esta webapp." />
+	<meta name="keywords" content="zelda, link, past, snes, gba, hearts, bottles, nintendo, checklist" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/zelda-a-link-to-the-past/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+	<script type="text/javascript"><!--
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('zelda-alttp');
+		});
+	--></script>
+</head>
+
+<body>
+	<header>
+		<h1>The legend of Zelda: A link to the past - Progress Tracker App</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/shield.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#hearts"><img src="resources/piece_of_heart.png" class="icon" loading="lazy" /> Piezas de corazón</a></li>
+				<li><a href="#bottles"><img src="resources/bottle.png" class="icon" loading="lazy" /> Botellas</a></li>
+				<li><a href="#equipment"><img src="resources/equipment.png" class="icon" loading="lazy" /> Equipo</a></li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>The legend of Zelda: A link to the past</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+			<div id="tab-hearts" class="tab">
+				<h2 class="hide-for-mobile">Piezas de corazón</h2>
+				<p>Por todo el mapa hay esparcidas <b>24 piezas de corazón</b>. Por cada cuatro piezas, conseguirás un corazón extra de energía.</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="0" data-category="hearts" /> Pieza de corazón 1</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Bosque Perdido</span> entrando al norte desde la casa del Adivino de la Fortuna, seguir camino hasta encontrar nuevo arbustos formando un cuadrado. Levantar el arbusto del medio.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="1" data-category="hearts" /> Pieza de corazón 2</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Pueblo Kakariko</span> tirarse por el agujero al noroeste (se accede tirándose dede la zona elevada)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="2" data-category="hearts" /> Pieza de corazón 3</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Pueblo Kakariko</span> bajar las escaleras dentro de la casa gris con tejado verde
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="3" data-category="hearts" /> Pieza de corazón 4</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: en el juego del laberinto</span> completar el minijuego del laberinto en menos de 15 segundos (se accede saliendo por el sur de Pueblo Kakariko y poniendo bomba en grieta dentro de la casa de los hermanos enfadados)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="4" data-category="hearts" /> Pieza de corazón 5</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Ruinas del Pantano</span> al entrar hay dos palancas, tirar la palanca de la derecha para drenar el agua del estanque (en el exterior), donde está la Pieza de corazón
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="5" data-category="hearts" /> Pieza de corazón 6</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Desierto Misterioso</span> en una cueva al noroeste, poner bomba en pared de abajo en la sala del anciano
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="6" data-category="hearts" /> Pieza de corazón 7</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Santuario</span> al oeste de la entrada del Santuario, usar Botas de Pegaso para chocarse contra una pila de rocas que oculta una cueva
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="7" data-category="hearts" /> Pieza de corazón 8</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Palacio del Desierto</span> saliendo del Palacio por la puerta que hay abajo del todo a la izquierda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="8" data-category="hearts" /> Pieza de corazón 9</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Cataratas de Zora</span> nadar hacia el sur con las aletas, bajar la primera catarata para encontrar la pieza al oeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="9" data-category="hearts" /> Pieza de corazón 10</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Montaña de la Muerte</span> dejarse caer por el agujero que hay al oeste del portal que te lleva al Mundo Oscuro para acceder a una cueva
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="10" data-category="hearts" /> Pieza de corazón 11</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Montaña de la Muerte</span> usar Espejo Mágico enmedio de dos círculos más claros al oeste del portal que te lleva al Mundo Oscuro
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="11" data-category="hearts" /> Pieza de corazón 12</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Casa de los Leñadores</span> chocarse con las Botas de Pegaso contra el árbol diferente al resto cerca de la cabaña
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="12" data-category="hearts" /> Pieza de corazón 13</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Pirámide de Ganon</span> bajar dos escaleras desde la parte superior de la Pirámide
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="13" data-category="hearts" /> Pieza de corazón 14</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Cataratas Zora</span> usar Espejo Mágico en Mundo Oscuro: Lago de Hylia en un círculo de piedras al noreste del lago
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="14" data-category="hearts" /> Pieza de corazón 15</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Bosquecillo Tenebroso</span> usar Espejo Mágico al sur del bosquecillo en un círculo formado por tres flores
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="15" data-category="hearts" /> Pieza de corazón 16</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Pueblo Kakariko</span> cavar en el minijuego de la pala (al sur del pueblo) hasta que aparezca
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="16" data-category="hearts" /> Pieza de corazón 17</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Cementerio</span> usar Espejo Mágico en la parte elevada de unas escaleras en la parte superior del cementerio del Mundo Oscuro
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="17" data-category="hearts" /> Pieza de corazón 18</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Montaña de la Muerte</span> en la base de la montaña hay un bloque grande que bloquea la entrada de una cueva. Dentro de la cueva, usa el Gancho y la Capa Mágica para atravesar los obstáculos.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="18" data-category="hearts" /> Pieza de corazón 19</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Pueblo Kakariko</span> en uno de los cofres del Juego de los Cofres (en la casa de la izquierda)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="19" data-category="hearts" /> Pieza de corazón 20</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Casa de los Herreros</span> (al este de Pueblo Kakariko) usar el Martillo para golpear todos los pivotes que hay frente la casa
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="20" data-category="hearts" /> Pieza de corazón 21</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo Oscuro: Gruta de las Marismas</span> entrar por la entrada alternativo a la gruta por la estatua de la izquierda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="21" data-category="hearts" /> Pieza de corazón 22</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Desierto Misterioso</span> desde el punto de vuelo 6, levantar la roca de la derecha para encontrar un portal que te lleva al Mundo Oscuro. Entrar en el portal y usar el Espejo Mágico al noreste para volver al Mundo de la Luz y encontrar una gran roca que oculta una cueva.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="22" data-category="hearts" /> Pieza de corazón 23</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Montaña de la Muerte</span> al oeste de la Roca de la Tortuga, levantar roca grande que oculta una cueva. Usar Medallón Helada dentro de la cueva para desvelar un camino que lleva a una grieta en la pared en la que hay que poner una Bomba.<br/>
+							Seguir poniendo bombas hasta llegar al exterior y usar Espejo Mágico para volver al Mundo de la Luz.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="23" data-category="hearts" /> Pieza de corazón 24</strong></label>
+						<div class="item-description">
+							<span class="location">Mundo de la Luz: Roca de la Tortuga</span> saliendo al exterior por el Sótano 2, usar Espejo Mágico al este para volver al Mundo de la Luz y encontrar una cueva con enemigos que hay que derrotar
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-bottles" class="tab">
+				<h2 class="hide-for-mobile">Botellas</h2>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="24" data-category="bottles" /> Botella 1</label>
+						<div class="item-description"><span class="location">Mundo de la Luz: Pueblo Kakariko</span> Comprar al vendedor</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="25" data-category="bottles" /> Botella 2</label>
+						<div class="item-description"><span class="location">Mundo de la Luz: Pueblo Kakariko</span> Cofre entrando por la puerta trasera del bar</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="26" data-category="bottles" /> Botella 3</label>
+						<div class="item-description"><span class="location">Mundo de la Luz: Lago Hylia</span> Bucear debajo del puente norte</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-alttp" data-index="27" data-category="bottles" /> Botella 4</label>
+						<div class="item-description">
+							(requisitos: haber llevado la rana a la tienda del herrero del Mundo de la Luz, haber reunido a los dos hermanos y conseguir la Espada Templada)<br/>
+							En el <span class="location">Mundo Oscuro</span>, sal del <span class="location">Pueblo Kakariko</span> por la derecha. En el interior de la casa medio derrumbada (tienda del herrero en el Mundo de la Luz) hay un cofre azul.<br/>
+							Haz que el cofre te siga. Llévalo a <span class="location">Mundo de la Luz: Desierto del Misterio</span> (suroeste del mapa) y entrégalo al hombre mudo que está sentado al lado de un cartel.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-equipment" class="tab">
+				<h2 class="hide-for-mobile">Equipo</h2>
+				<ul>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="28" data-category="equipment" /> Bolsa bombas (hasta 50)</label><div class="item-description"><span class="location">Lago Hylia: Estanque de la Felicidad</span> arrojar rupias</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="29" data-category="equipment" /> Bolsa flechas (hasta 70)</label><div class="item-description"><span class="location">Lago Hylia: Estanque de la Felicidad</span> arrojar rupias</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="30" data-category="equipment" /> Bumerán mágico</label><div class="item-description"><span class="location">Cataratas Zora: Cascada de los Deseos</span> arrojar bumerán</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="31" data-category="equipment" /> Escudo grande</label><div class="item-description"><span class="location">Cataratas Zora: Cascada de los Deseos</span> arrojar Escudo del luchador</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="32" data-category="equipment" /> Espada templada</label><div class="item-description">llevar rana del <span class="location">Mundo Oscuro</span> a <span class="location">Mundo de la Luz: Casa del Herrero</span></div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="33" data-category="equipment" /> Espada oro</label><div class="item-description"><span class="location">Mundo Oscuro: Estanque Misterioso</span> arrojar Espada templada (se accede poniendo súperbomba en un muro de la Pirámide)</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="34" data-category="equipment" /> Súperbomba</label><div class="item-description"><span class="location">Mundo oscuro: Casa de Link</span> (requisito: completar Mazmorra 6)</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="35" data-category="equipment" /> Flechas de plata</label><div class="item-description"><span class="location">Mundo Oscuro: Estanque Misterioso</span> arrojar Arco y flechas (se accede poniendo súperbomba en un muro de la Pirámide)</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="36" data-category="equipment" /> Medallón helada</label><div class="item-description"><span class="location">Mundo de la luz: oeste de Torre de Hera</span> usar Libro de Mudora en monolito de piedra</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="37" data-category="equipment" /> Medallón llamarada</label><div class="item-description">usar Espejo Mágico en <span class="location">Mundo Oscuro</span> usar Libro de Mudora en monolito de piedra en una zona elevada del <span class="location">Mundo de la Luz</span> que solo puede accederse usando el Espejo Mágico en el <span class="location">Mundo Oscuro</span> detrás de pivotes morados al oeste de lo que sería la entrada del Desierto Misterioso</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="38" data-category="equipment" /> Medallón temblor</label><div class="item-description"><span class="location">Mundo Oscuro: Lago del Mal Agüero</span> arrojar calavera, roca o arbusto en el círculo de piedras</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="39" data-category="equipment" /> Armadura azul</label><div class="item-description"><span class="location">Mundo Oscuro: Palacio de Hielo</span></div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="40" data-category="equipment" /> Armadura roja</label><div class="item-description"><span class="location">Mundo Oscuro: Torre de Ganon</span></div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="41" data-category="equipment" /> Capa mágica</label><div class="item-description"><span class="location">Mundo de la Luz: Cementerio</span> levantar rocas oscuras alrededor de una tumba</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="42" data-category="equipment" /> Champiñón</label><div class="item-description"><span class="location">Mundo de la Luz: Bosque Perdido</span></div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="43" data-category="equipment" /> Polvos mágicos</label><div class="item-description"><span class="location">Mundo de la Luz: Casa de la bruja</span> entregar champiñón a bruja</div></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="44" data-category="equipment" /> Pala</label></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="45" data-category="equipment" /> Ocarina</label></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="46" data-category="equipment" /> Pájaro</label></li>
+					<li><label><input type="checkbox" data-tracker="zelda-alttp" data-index="47" data-category="equipment" /> Vara de Byrna</label><div class="item-description"><span class="location">Mundo Oscuro: Montaña de la Muerte</span> usar capa mágica en camino de pinchos en una cueva</div></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>

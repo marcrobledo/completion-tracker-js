@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+	<title>Completion Tracker JS</title>
+
+	<meta charset="UTF-8"/>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+
+	<meta name="description" content="A library for quickly building video game progress tracker apps." />
+	<meta name="keywords" content="video game progress tracker, game tracking library, web app development, game tracker tool, progress tracking library, build trackers quickly, game progress app" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjMjY5MWZmIiBwYWludC1vcmRlcj0ic3Ryb2tlIGZpbGwgbWFya2VycyIgcng9IjIiIHJ5PSIyIi8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuODgiIGQ9Im00LjIgNy4xOSAyLjg1IDIuODkgNS4xNC01LjEiLz48L3N2Zz4=" />
+
+	<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+body{
+	background-color: #2a2f2b;
+	font-size:15px;
+	font-family: 'Open Sans', sans-serif;
+	margin:24px 0;
+	color:white;
+}
+
+a{color:#ffb87a}
+a:hover{color: #fff}
+.text-center{text-align:center}
+
+
+
+header{
+	padding: 16px;
+	color: #2691ff;
+}
+header svg{
+	max-height:64px;
+	vertical-align:middle;
+}
+header h1{
+	text-align:center;
+	margin:0;
+	line-height:0;
+	font-size:250%;
+}
+
+
+nav{text-align:center}
+nav label{
+	display:inline-block;
+	padding: 6px 18px;
+	border-radius: 80px;
+}
+nav label:hover{cursor:pointer}
+nav label:has(input:checked){background-color:#202320}
+input[type=radio]{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	appearance:none;
+	width: 16px;
+	height: 16px;
+	background-color:transparent;
+	border-radius:16px;
+	display:inline-block;
+	vertical-align:middle;
+	position:relative;
+	border: 2px solid #fff;
+	outline:none;
+	margin: -2px 4px 0 0;
+	transition: border-color .2s;
+}
+input[type=radio]:checked, input[type=radio]:hover{
+	cursor:pointer;
+	border-color:#2691ff;
+}
+input[type=radio]:checked{
+	background-color:#2691ff;
+}
+
+
+
+
+
+
+
+.wrapper{
+	max-width:960px;
+	margin:0 auto;
+	box-sizing:border-box;
+}
+p{
+	line-height:1.6;
+	text-align:justify;
+}
+.github-icon{max-width:20px; max-height:20px; vertical-align:middle}
+hr{
+	border:none;
+	border-bottom:1px dotted white;
+}
+#game-grid{
+	display: grid;
+	list-style:none;
+	margin:0;
+	padding:0;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 24px;
+	max-width:100%;
+}
+#game-grid li{text-align:center}
+#game-grid a{
+	display:inline-block;
+	line-height:0;
+}
+
+#game-grid a img{
+	box-shadow: #1e211f 0 0 16px;
+	transition: all .2s;
+	border-radius:3px;
+	max-width:100%;
+}
+#game-grid a img:hover{
+	box-shadow: #5f6a61 0 0 12px 4px;
+	filter: brightness(110%);
+}
+
+
+
+footer{
+	margin-top:32px;
+	color: #515752;
+	font-size: 85%;
+}
+footer a{color: #757d76}
+
+@media only screen and (max-width:1023px){
+	.wrapper{
+		max-width:auto;
+		margin:0 20px;
+	}
+}
+
+@media only screen and (max-width:871px){
+	body{font-size: 14px}
+	#game-grid{grid-template-columns: repeat(3, 1fr)}
+}
+@media only screen and (max-width:639px){
+	body{font-size: 13px}
+	#game-grid{grid-template-columns: repeat(2, 1fr)}
+}
+@media only screen and (max-width:599px){
+	header{padding: 8px}
+	header svg{
+		max-height:48px;
+		vertical-align:middle;
+	}
+	header h1{font-size:200%}
+}
+@media only screen and (max-width:479px){
+	header svg{
+		max-height:32px;
+		vertical-align:middle;
+	}
+	header h1{font-size:175%}
+}
+
+	</style>
+</head>
+<script type="text/javascript"><!--
+	function refreshLanguage(){
+		const checkedInput=document.querySelector('input[name=language]:checked');
+		const lang=checkedInput? checkedInput.value : 'en';
+
+		document.querySelectorAll('.section-lang').forEach(function(section){
+			section.style.display=section.lang===lang? 'block' : 'none';
+		})
+	}
+
+	window.addEventListener('load', function(evt){
+		if(!document.querySelector('input[name=language]:checked')){
+			let defaultLang='en';
+			if(typeof navigator.language==='string'){
+				const guessedLang=navigator.language.toLowerCase().substr(0,2);
+				if(guessedLang==='en' || guessedLang==='es'){
+					defaultLang=guessedLang;
+				}
+			}
+
+			document.querySelector('input[name=language][value='+defaultLang+']').checked=true;
+		}
+		
+		refreshLanguage();
+
+		document.querySelectorAll('input[name=language]').forEach(function(checkbox){
+			checkbox.addEventListener('change', refreshLanguage);
+		});
+	});
+--></script>
+
+<body>
+<header>
+	<h1>
+		<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#2691ff" paint-order="stroke fill markers"/><rect width="8.5" height="8.5" x="3.75" y="3.75" fill="#fff" paint-order="stroke fill markers" rx=".75" ry=".75"/><path fill="none" stroke="#2691ff" stroke-width=".99" d="m6 7.56 1.51 1.5 2.75-2.64"/></svg>
+		Completion Tracker JS
+	</h1>
+</header>
+<nav>
+	<label><input type="radio" name="language" value="en" /> English</label>
+	<label><input type="radio" name="language" value="es" /> Spanish</label>
+</nav>
+<main>
+	<div class="wrapper">
+		<section class="section-lang" lang="en">
+			<p>
+				<strong>Completion Tracker JS</strong> is a JavaScript library designed to easily create interactive web lists.<br/>
+				It offers a simple and easily integrable solution, allowing anyone to quickly build their own progress tracking web app.
+			</p>
+			<p>
+				Initially, I developed it solely for personal use because I enjoy achieving 100% completion in my favorite games that I replay, and I needed a practical solution to ensure I wasn't missing any collectibles <small>(until then, I had been using pen and paper!)</small>.<br/>
+				After finishing it, I decided to release it to the public in case it might be useful to someone else.
+			</p>
+			<p>
+				You'll find more information about the library and its usage instructions on its <a href="https://github.com/marcrobledo/completion-tracker-js" target="_blank"><svg width="98" height="96" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"/></svg> GitHub	repository</a>.
+			</p>
+		</section>
+		<section class="section-lang" lang="es" style="display:none">
+			<p>
+				<strong>Completion Tracker JS</strong> es una librería JavaScript diseñada para poder crear listas interactivas web fácilmente.<br/>
+				Ofrece una solución simple y de fácil integración, permitiendo a cualquiera crear rápidamente su propia webapp de seguimiento de progreso.
+			</p>
+			<p>
+				En un principio, la desarrollé únicamente para uso personal porque me gusta obtener el 100% de mis juegos favoritos que rejuego y necesitaba una solución práctica para controlar que no me dejaba ningún coleccionable <small>(¡hasta entonces usaba lápiz y papel!)</small>.<br/>
+				Después de terminarla, decidí liberarla al público por si a alguien le pudiera ser útil.
+			</p>
+			<p>
+				Encontrarás más información sobre la librería y sus instrucciones de uso (en inglés) en su <a href="https://github.com/marcrobledo/completion-tracker-js" target="_blank"><svg width="98" height="96" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" class="github-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"/></svg> repositorio de GitHub</a>.
+			</p>
+		</section>
+		<hr/>
+		<section class="section-lang" lang="en">
+			<p>
+				To demonstrate its potential, here are the implementations I created for personal use with my favorite games (in Spanish):
+			</p>
+		</section>
+		<section class="section-lang" lang="es" style="display:none">
+			<p>
+				Para demostrar su potencial, aquí están las implementaciones que hice para uso personal de mis juegos favoritos:
+			</p>
+		</section>
+		<section>
+			<!-- GAMES GRID -->
+			<ul id="game-grid">
+				<li><a href="zelda-a-link-to-the-past/"><img src="zelda-a-link-to-the-past/resources/cover.jpg" loading="lazy" alt="The legend of Zelda: A link to the past" /></a></li>
+				<li><a href="zelda-links-awakening/"><img src="zelda-links-awakening/resources/cover.jpg" loading="lazy" alt="The legend of Zelda: Link's Awakening" /></a></li>
+				<li><a href="zelda-wind-waker/"><img src="zelda-wind-waker/resources/cover.jpg" loading="lazy" alt="The legend of Zelda: Wind Waker" /></a></li>
+				<li><a href="zelda-twilight-princess/"><img src="zelda-twilight-princess/resources/cover.jpg" loading="lazy" alt="The legend of Zelda: Twilight Princess" /></a></li>
+				<li><a href="zelda-skyward-sword/"><img src="zelda-skyward-sword/resources/cover.jpg" loading="lazy" alt="The legend of Zelda: Skyward Sword" /></a></li>
+				<li><a href="metroid-prime/"><img src="metroid-prime/resources/cover.jpg" loading="lazy" alt="Metroid Prime" /></a></li>
+				<li><a href="animal-crossing-new-leaf/"><img src="animal-crossing-new-leaf/resources/cover.jpg" loading="lazy" alt="Animal Crossing: New Leaf" /></a></li>
+				<li><a href="super-mario-sunshine/"><img src="super-mario-sunshine/resources/cover.jpg" loading="lazy" alt="Super Mario Sunshine" /></a></li>
+			</ul>
+		</section>
+	</div>
+</main>
+<footer>
+	<div class="wrapper text-center">
+		built with <a href="https://github.com/marcrobledo/completion-tracker-js" target="_blank">Completion Tracker JS</a> by <a href="https://www.marcrobledo.com" target="_blank">Marc Robledo</a>
+	</div>
+</footer>
+</body></html>

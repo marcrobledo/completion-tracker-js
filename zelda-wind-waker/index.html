@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>The legend of Zelda: Wind Waker - Checklist de progreso</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Controla tu progreso de los coleccionables de The legend of Zelda: Wind Waker en esta webapp." />
+	<meta name="keywords" content="zelda, wind, waker, corazones, botellas, figuritas, mapas, coleccionables, guia, checklist, nintendo, game, cube, wii u" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="manifest" href="manifest.json"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./resources/app_icon_114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./resources/app_icon_144.png" />
+	<link rel="apple-touch-icon" href="./resources/app_icon_192.png" />
+
+	<!-- cache -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link type="text/css" rel="stylesheet" href="../assets/style.css" media="all"/>
+	<style type="text/css">
+.coord{
+	font-family:Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;
+	display:inline-block;
+	font-weight:bold;
+	width:44px;
+	color:#685b3c;
+	background-color:#cec6b2;
+	text-align:center;
+	border-radius:3px;
+	font-size:90%;
+}
+.coord:hover{
+	cursor:pointer;
+	opacity:.7;
+}
+
+span.gc, span.hd, span.missable{
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:80%;
+	padding: 1px 4px;
+	border-radius:3px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.missable{
+	background-color:#ff1843;
+	color:white;
+}
+
+span.gc{
+	background-color:#6540e8;
+	color:white;
+}
+span.hd{
+	background-color:#299bff;
+	color:white;
+}
+sup.gc, sup.hd{
+	font-weight:bold;
+}
+sup.gc{
+	color:#6540e8;
+}
+sup.hd{
+	color:#299bff;
+}
+
+.checked-within .missable{
+	background-color:#b6b6ac;
+}
+
+
+	</style>
+
+	<script type="text/javascript">
+		/* cache service worker */
+		if (navigator.serviceWorker && window.location.hostname === 'www.marcrobledo.com'){
+			if (location.protocol === 'http:')
+				location.href = window.location.href.replace('http:', 'https:');
+			else if (location.protocol === 'https:')
+				navigator.serviceWorker.register('/completion-tracker-js/zelda-wind-waker/_cache_service_worker.js', { scope: '/completion-tracker-js/' }); /* using absolute paths to avoid unexpected behaviour in GitHub Pages */
+		}
+	</script>
+	<script type="text/javascript">
+		const MAP_GREAT_SEA={
+			id:'great-sea',
+			imageBackground:'resources/great_sea_chart.jpg',
+			imageMarker:'resources/great_sea_chart_marker.png',
+			positions:[
+				{id:'A-1', x:11 + 70 * 0, y:11 + 60 * 0},
+				{id:'A-2', x:11 + 70 * 1, y:11 + 60 * 0},
+				{id:'A-3', x:11 + 70 * 2, y:11 + 60 * 0},
+				{id:'A-4', x:11 + 70 * 3, y:11 + 60 * 0},
+				{id:'A-5', x:11 + 70 * 4, y:11 + 60 * 0},
+				{id:'A-6', x:11 + 70 * 5, y:11 + 60 * 0},
+				{id:'A-7', x:11 + 70 * 6, y:11 + 60 * 0},
+				{id:'B-1', x:11 + 70 * 0, y:11 + 66 * 1},
+				{id:'B-2', x:11 + 70 * 1, y:11 + 66 * 1},
+				{id:'B-3', x:11 + 70 * 2, y:11 + 66 * 1},
+				{id:'B-4', x:11 + 70 * 3, y:11 + 66 * 1},
+				{id:'B-5', x:11 + 70 * 4, y:11 + 66 * 1},
+				{id:'B-6', x:11 + 70 * 5, y:11 + 66 * 1},
+				{id:'B-7', x:11 + 70 * 6, y:11 + 66 * 1},
+				{id:'C-1', x:11 + 70 * 0, y:11 + 66 * 2},
+				{id:'C-2', x:11 + 70 * 1, y:11 + 66 * 2},
+				{id:'C-3', x:11 + 70 * 2, y:11 + 66 * 2},
+				{id:'C-4', x:11 + 70 * 3, y:11 + 66 * 2},
+				{id:'C-5', x:11 + 70 * 4, y:11 + 66 * 2},
+				{id:'C-6', x:11 + 70 * 5, y:11 + 66 * 2},
+				{id:'C-7', x:11 + 70 * 6, y:11 + 66 * 2},
+				{id:'D-1', x:11 + 70 * 0, y:11 + 66 * 3},
+				{id:'D-2', x:11 + 70 * 1, y:11 + 66 * 3},
+				{id:'D-3', x:11 + 70 * 2, y:11 + 66 * 3},
+				{id:'D-4', x:11 + 70 * 3, y:11 + 66 * 3},
+				{id:'D-5', x:11 + 70 * 4, y:11 + 66 * 3},
+				{id:'D-6', x:11 + 70 * 5, y:11 + 66 * 3},
+				{id:'D-7', x:11 + 70 * 6, y:11 + 66 * 3},
+				{id:'E-1', x:11 + 70 * 0, y:12 + 66 * 4},
+				{id:'E-2', x:11 + 70 * 1, y:12 + 66 * 4},
+				{id:'E-3', x:11 + 70 * 2, y:12 + 66 * 4},
+				{id:'E-4', x:11 + 70 * 3, y:12 + 66 * 4},
+				{id:'E-5', x:11 + 70 * 4, y:12 + 66 * 4},
+				{id:'E-6', x:11 + 70 * 5, y:12 + 66 * 4},
+				{id:'E-7', x:11 + 70 * 6, y:12 + 66 * 4},
+				{id:'F-1', x:11 + 70 * 0, y:11 + 66 * 5},
+				{id:'F-2', x:11 + 70 * 1, y:11 + 66 * 5},
+				{id:'F-3', x:11 + 70 * 2, y:11 + 66 * 5},
+				{id:'F-4', x:11 + 70 * 3, y:11 + 66 * 5},
+				{id:'F-5', x:11 + 70 * 4, y:11 + 66 * 5},
+				{id:'F-6', x:11 + 70 * 5, y:11 + 66 * 5},
+				{id:'F-7', x:11 + 70 * 6, y:11 + 66 * 5},
+				{id:'G-1', x:11 + 70 * 0, y:12 + 66 * 6},
+				{id:'G-2', x:11 + 70 * 1, y:12 + 66 * 6},
+				{id:'G-3', x:11 + 70 * 2, y:12 + 66 * 6},
+				{id:'G-4', x:11 + 70 * 3, y:12 + 66 * 6},
+				{id:'G-5', x:11 + 70 * 4, y:12 + 66 * 6},
+				{id:'G-6', x:11 + 70 * 5, y:12 + 66 * 6},
+				{id:'G-7', x:11 + 70 * 6, y:12 + 66 * 6}
+			]
+		};
+
+		window.addEventListener('load', function(evt){
+			CompletionTrackerUI.initialize('zelda-wind-waker', [
+				{category: 'figurines', group:'safe', label:'Agrupar perdibles', description:'Estas figuritas solo se pueden conseguir en momentos concretos.', groupNames:[
+					'Perdibles'
+				]}
+			]);
+
+			document.querySelectorAll('span.coord').forEach(function(el){
+				el.addEventListener('click', function(evt){
+					CompletionTrackerUI.showMap(MAP_GREAT_SEA, this.innerText);
+				});
+			});
+		});
+	</script>
+	<script type="text/javascript" src="../assets/app.js"></script>
+	<script type="text/javascript" src="../completion-tracker.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>The legend of Zelda: Wind Waker - Guía checklist interactiva de progreso</h1>
+		<div id="topbar">
+			<button id="btn-menu-toggle">
+				<svg id="topbar-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"/></svg>
+				<span id="topbar-title"></span>
+			</button>
+			<button id="btn-filters-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m1 13h2a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zm8-3a1 1 0 1 0-2 0v9a1 1 0 1 0 2 0zM12 2a1 1 0 0 1 1 1v4h2a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h2V3a1 1 0 0 1 1-1m9 13h2a1 1 0 1 0 0-2h-6a1 1 0 1 0 0 2h2v6a1 1 0 1 0 2 0zM20 2a1 1 0 0 0-1 1v7a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+			</button>
+		</div>
+	</header>
+	<div id="wrapper">
+		<nav>
+			<div class="text-center"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+			<ul>
+				<li><a href="#home"><img src="resources/app_icon_144.png" class="icon" loading="lazy" /> Inicio</a></li>
+				<li><a href="#bottles"><img src="resources/bottle.png" class="icon" loading="lazy" /> Botellas</a></li>
+				<li><a href="#hearts"><img src="resources/piece_of_heart.png" class="icon"loading="lazy"  /> Piezas de corazón</a></li>
+				<li><a href="#equipment"><img src="resources/bomb_upgrade.png" class="icon" loading="lazy" /> Mejoras equipo</a></li>
+				<li><a href="#maps-treasure"><img src="resources/chart_treasure.png" class="icon" loading="lazy" /> Mapas del tesoro</a></li>
+				<li><a href="#maps-special"><img src="resources/chart_special.png" class="icon" loading="lazy" /> Mapas especiales</a></li>
+				<li><a href="#figurines"><img src="resources/figurines.png" class="icon" loading="lazy" /> Figuritas</a></li>
+				<li><a href="#tingle"><img src="resources/tingle_gold.png" class="icon" loading="lazy" /> Estatuas Tingle</a></li>
+			</ul>
+		</nav>
+
+
+		<div id="content">
+			<div id="tab-home" class="tab">
+				<h2 class="hide-for-mobile">Inicio</h2>
+				<div id="container-cover"><img src="resources/cover.jpg" class="cover" loading="lazy" /></div>
+
+				<div id="container-progress">
+					<div class="container-progress-title">Progreso total</div>
+					<div id="container-total-progress-bar"></div>
+					<div>
+						<span id="container-total-counter"></span><small> / <span id="container-total-total"></span> <span class="text-muted">(<span id="container-total-percentage"></span><small>%</small>)</span></small>
+					</div>
+					<div class="text-center">
+						<button id="btn-transfer-progress"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:16px" viewBox="0 0 64 24"><path fill-rule="evenodd" d="M1 4.9A3 3 0 0 1 4 2h16a3 3 0 0 1 3 2.9V14a3 3 0 0 1-3 2.9h-7v3h3.5a1 1 0 1 1 0 2h-9a1 1 0 1 1 0-2H11v-3H4A3 3 0 0 1 1 14V5ZM4 4c-.6 0-1 .5-1 .9V14c0 .4.4.9 1 .9h16c.6 0 1-.5 1-.9V5c0-.4-.4-.9-1-.9H4Z" clip-rule="evenodd"/><path d="M39.3 10.3a1 1 0 0 0 1.4 1.4l4-4a1 1 0 0 0 0-1.4l-4-4a1 1 0 1 0-1.4 1.4L41.6 6H28a1 1 0 1 0 0 2h13.6l-2.3 2.3ZM44 16H30.4l2.3-2.3a1 1 0 1 0-1.4-1.4l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.4-1.4L30.4 18H44a1 1 0 1 0 0-2ZM56 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path fill-rule="evenodd" d="M49 20c0 1.5 1 3 2.7 3h8.6c1.6 0 2.7-1.5 2.7-3V4c0-1.5-1-3-2.7-3h-8.6C50.1 1 49 2.5 49 4v16Zm2.7 1c-.2 0-.7-.3-.7-1V4c0-.7.5-1 .7-1h8.6c.2 0 .7.3.7 1v16c0 .7-.5 1-.7 1h-8.6Z" clip-rule="evenodd"/></svg> <span>Transferir</span></button>
+					</div>
+				</div>
+				<p>
+					Esta webapp permite llevar un control de tu progreso de los coleccionables en <strong>The legend of Zelda: Wind Waker</strong>.<br/>
+					Está libre de <em>spoilers</em> grandes, diseñada para los que quieren obtener todos los coleccionables y completar el juego al 100%.
+				</p>
+			</div>
+
+
+
+			<div id="tab-bottles" class="tab">
+				<h2 class="hide-for-mobile">Botellas</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" disabled checked /> Botella #1</label>
+						<div class="item-description">
+							Obligada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="0" data-category="bottles" /> Botella #2</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla Bomba</span>: (despues de completar la Cueva del Dragón) derrotar enemigos dentro del submarino
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="1" data-category="bottles" /> Botella #3</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (haber rescatado a Abril) durante la noche, hablar con la chica rubia cerca de la tienda de Zunari (el esquimal), luego esconderse hasta que la chica se acerque a la caja fuerte de Zunari, volver a hablar con ella y contestar siempre la primera respuesta
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="2" data-category="bottles" /> Botella #4</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: comprar en la tienda de Terry por 500 rupias
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-hearts" class="tab">
+				<h2 class="hide-for-mobile">Piezas de corazón</h2>
+				<!-- <p>...</p> -->
+
+				<h3>Islas importantes</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="7" data-category="hearts" /> Pieza de Corazón #5</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: bombas) completar el minijuego de Salvatore (se encuentra en la puerta en frente de la escuela)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="8" data-category="hearts" /> Pieza de Corazón #6</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: completar el minijuego del escondite de los niños
+							<div class="spoiler">
+								<ul>
+									<li>hablar con la Señorita María (profesora de la escuela) durante el día</li>
+									<li>hablar con los niños delante de la escuela</li>
+									<li>Escondite 1: detrás de la lápida donde baila Rafael (va vestido de Elvis)</li>
+									<li>Escondite 2: detrás de la Tienda de Bombas</li>
+									<li>Escondite 3: detrás de un arbusto pasando por el arco detrás de la escuela</li>
+									<li>Escondite 4: en la copa del árbol en frente de la Tienda de Bombas (rodar contra él para hacerlo caer)</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="9" data-category="hearts" /> Pieza de Corazón #7</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: ganar la subasta en la Casa de Subastas por la noche (el objeto que aparece esa noche es aleatorio)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="10" data-category="hearts" /> Pieza de Corazón #8</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: Cámara Cromográfica) reunir a Linda y Antón
+							<div class="spoiler">
+								<ul>
+									<li>hablar con Linda (chica vestida de naranja delante de la escuela)</li>
+									<li>hacer foto de cuerpo completo a Linda con la Cámara Cromográfica</li>
+									<li>esperar a que llegue Antón (chico que la espía) y se ponga a mirarla</li>
+									<li>hablar con Antón y enseñarle la foto de Linda</li>
+									<li>hablar con Linda</li>
+									<li>al día siguiente, hablar con la pareja reunida en la cafetería</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="11" data-category="hearts" /> Pieza de Corazón #9</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: completar la secuencia de intercambio de objetos con los Goron mercaderes de Zunari (esquimal de la tienda):
+							<div class="spoiler">
+								<ul>
+									<li><span class="coord">B-4</span> <span class="location">Isla Taura</span>: Flor de Pueblo</li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Flor de Pueblo &rarr; Flores de Mar</li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Flores de Mar &rarr; Flor del Sur</li>
+									<li><span class="coord">E-6</span> <span class="location">Isla Bomba</span>: Flor del Sur &rarr; Banderín de la Luna</li>
+									<li><span class="coord">E-6</span> <span class="location">Isla Bomba</span>: Banderín de la Luna &rarr; Fuente de la Doncella</li>
+									<li><span class="coord">B-2</span> <span class="location">Islas Madre e Hija</span>: Fuente de la Doncella &rarr; Banderín de Saldo</li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Banderín de Saldo &rarr; Banderín de Héroe</li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Banderín de Héroe &rarr; Efigie de Cartero</li>
+									<li><span class="coord">B-2</span> <span class="location">Islas Madre e Hija</span>: Efigie de Cartero &rarr; Gran Mercader</li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Gran Mercader &rarr; Pieza de Corazón</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="12" data-category="hearts" /> Pieza de Corazón #10</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: haber rescatado a Abril) entregar Carta de Mo a Dolores (la niña rica de la mansión)
+							<div class="spoiler">
+								<ul>
+									<li>hablar con Dolores para conseguir la Carta de Dolores</li>
+									<li>meter Carta de Dolores en un buzón</li>
+									<li>volver a la mansión y mirar la conversación entre el Orni y el Padre de Dolores</li>
+									<li>hablar con el Orni en la cafetería para conseguir la Carta del Moblin</li>
+									<li>entregar Carta del Moblin a Dolores en la mansión</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="13" data-category="hearts" /> Pieza de Corazón #11</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: Flechas de Fuego) encender el faro con una Flecha de Fuego durante la noche
+							<div class="spoiler">
+								<ul>
+									<li>subir por la escalera de mano que da al molino</li>
+									<li>pulsar interruptor que activa el molino</li>
+									<li>subir al molino (entrando por la puerta que hay en la base de este)</li>
+									<li>subir a las aspas que giran</li>
+									<li>disparar Flecha de Fuego al mecanismo</li>
+									<li>hablar dos veces con Chapó (el que hombre vestido de amarillo cerca de la entrada superior del molino)</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="14" data-category="hearts" /> Pieza de Corazón #12</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: haber encendido el faro) recoger cofre en el puerto (se llega cambiando el viento y usando la Hoja Deku)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="15" data-category="hearts" /> Pieza de Corazón #13</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: colocar objetos decorativos (se compran en la tienda) en los 14 pedestales marrones repartidos por el exterior y hablar con el hombre que hay sentado en el banco a la izquierda de la tienda
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="17" data-category="hearts" /> Pieza de Corazón #15</label>
+						<div class="item-description">
+							<span class="coord">B-6</span> <span class="location">Isla del Dragón</span>: superar los tres récords del minijuego de lanzar cartas en la Central de Correos
+							<div class="spoiler">
+								<ul>
+									<li>hablar con Novi (humano que hay en la entrada de la isla)</li>
+									<li>completar el minijuego de lanzar cartas (arriba del todo en el interior de la Central de Correos)</li>
+									<li>salir y volver a entrar a la Central de Correos </li>
+									<li>con Novi trabajando en al Central de Correos, completar el minijuego de lanzar cartas de nuevo para conseguir una carta</li>
+									<li>meter la carta en un buzón y esperar un día para recibir la Pieza de Corazón</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="18" data-category="hearts" /> Pieza de Corazón #16</label>
+						<div class="item-description">
+							<span class="coord">B-6</span> <span class="location">Isla del Dragón</span>: entregar 20 Plumas Doradas a un Orni vigilante en la Central de Correos y abrir el buzón al día siguiente
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="28" data-category="hearts" /> Pieza de Corazón #26</label>
+						<div class="item-description">
+							<span class="coord">F-6</span> <span class="location">Isla del Bosque</span>: (requisito: completar Bosques Prohibidos) abrir el buzón
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="29" data-category="hearts" /> Pieza de Corazón #27</label>
+						<div class="item-description">
+							<span class="coord">F-6</span> <span class="location">Isla del Bosque</span>: (requisito: Botella vacía) regar y revivir brotes de Árbol Deku repartidos por el mar con Agua del Bosque
+							<div class="spoiler">
+								Llenar una Botella con Agua del Bosque (se encuentra donde está el Árbol Deku) y visitar las siguientes islas donde se encuentran los brotes.					
+								<ul>
+									<li><span class="coord">A-2</span> <span class="location">Isla Estrella</span></li>
+									<li><span class="coord">B-2</span> <span class="location">Islas Madre e Hija (en la isla Hija)</span></li>
+									<li><span class="coord">C-5</span> <span class="location">Isla del Hada del Este</span></li>
+									<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span></li>
+									<li><span class="coord">E-1</span> <span class="location">Isla de la Aguja</span></li>
+									<li><span class="coord">E-5</span> <span class="location">Isla de Quién</span></li>
+									<li><span class="coord">F-3</span> <span class="location">Isla Tiburón</span></li>
+									<li><span class="coord">F-7</span> <span class="location">Islas Conectadas</span></li>
+								</ul>
+								Se debe hacer en menos de 20<sup class="gc">GC</sup> o 30<sup class="hd">HD</sup> minutos.
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="30" data-category="hearts" /> Pieza de Corazón #28</label>
+						<div class="item-description">
+							<span class="gc">Exclusivo GC</span>
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: (requisito: Escudo Espejo) completar 50 plantas en la Cripta de los Monstruos (se encuentra bajo la cabeza gigante de piedra, llegando con la Hoja Deku desde la cima de la montaña)<br/>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="31" data-category="hearts" /> Pieza de Corazón #29</label>
+						<div class="item-description">
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: (requisito: Brazaletes de Fuerza y Cebo Multiuso) hacer que un cerdo gigante desentierre una Pieza de Corazón
+							<div class="spoiler">
+								<ul>
+									<li>levantar el cerdo gigante y llevarlo abajo, cruzando el puente</li>
+									<li>lanzarlo para que caiga en la tierra más oscura</li>
+									<li>darle un Cebo Multiuso para que desentierre la Pieza de Corazón</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="32" data-category="hearts" /> Pieza de Corazón #30</label>
+						<div class="item-description">
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: (requisito: espada) completar desafío de golpear 100/300/500 veces del Viejo Orca
+						</div>
+					</li>
+				</ul>
+
+				<h3>Islas pequeñas</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="3" data-category="hearts" /> Pieza de Corazón #1</label>
+						<div class="item-description">
+							<span class="coord">A-1</span> <span class="location">Isla del Diablo</span>: abrir la celda de la sala al sureste de PB
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="6" data-category="hearts" /> Pieza de Corazón #4</label>
+						<div class="item-description">
+							<span class="coord">B-3</span> <span class="location">Isla Calabaza</span>: (requisito: bombas) completar el minijuego del cañón de Salvatore
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="16" data-category="hearts" /> Pieza de Corazón #14</label>
+						<div class="item-description">
+							<span class="coord">B-5</span> <span class="location">Isla de la Huella</span>: meterse agachado en la semiesfera blanca y azul y buscar el cofre en la cueva
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="19" data-category="hearts" /> Pieza de Corazón #17</label>
+						<div class="item-description">
+							<span class="coord">B-7</span> <span class="location">Andamio de vuelo</span>: (requisito: Barra de Magia doble) superar el récord del minijuego de Orville y Wilbur (se necesitará que el viento apunte al noroeste)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="20" data-category="hearts" /> Pieza de Corazón #18</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: (requisito: obtener una mejora de bolsa de Rupias) recibir carta en el buzón acerca de nueva mercancía y comprar en la Tienda de Terry por 950 rupias
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="23" data-category="hearts" /> Pieza de Corazón #21</label>
+						<div class="item-description">
+							<span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: subir la roca que tiene una escalera en espiral, cambiar la dirección del viento al noroeste y usar la Hoja Deku para planear hacia una pequeña plataforma en esa dirección
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="25" data-category="hearts" /> Pieza de Corazón #23</label>
+						<div class="item-description">
+							<span class="coord">E-1</span> <span class="location">Isla de la Aguja</span>: (requisito: Fruto de Ajinjín) derrotar los Cóndor de las islas con flechas y usar un Fruto de Ajinjín para llevar una gaviota hacia el interruptor encima de la piedra en forma de aguja
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="27" data-category="hearts" /> Pieza de Corazón #25</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla Bomba</span>: (requisito: bombas) avanzar por el agujero que aparece al destruir la roca de la cima con una bomba, colocando los gusanos en interruptores
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="33" data-category="hearts" /> Pieza de Corazón #31</label>
+						<div class="item-description">
+							<span class="coord">G-3</span> <span class="location">Isla de la Tierra</span>: (requisito: Fruto de Ajinjín) usar un Fruto de Ajinjín para controlar una gaviota y llegar con ella a la Pieza de Corazón en la cima de la isla
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="34" data-category="hearts" /> Pieza de Corazón #32</label>
+						<div class="item-description">
+							<span class="coord">G-5</span> <span class="location">Islas Cuadri</span>: trepar hasta la cima de la isla tirando de los bloques
+						</div>
+					</li>
+				</ul>
+			
+				<h3>Derrotando enemigos</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="4" data-category="hearts" /> Pieza de Corazón #2</label>
+						<div class="item-description">
+							<span class="coord">A-2</span> <span class="location">Isla Estrella</span>: (requisito: bombas) derrotar los enemigos dentro de un agujero al destruir una roca con una bomba
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="22" data-category="hearts" /> Pieza de Corazón #20</label>
+						<div class="item-description">
+							<span class="coord">C-3</span> <span class="location">Isla de Tingle</span>: (requisito: bumerán) derrotar el Oftalos (calamar gigante) que aparece al acercarse al grupo de gaviotas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="5" data-category="hearts" /> Pieza de Corazón #3</label>
+						<div class="item-description">
+							<span class="coord">A-6</span> <span class="location">Archipiélago Osa Mayor</span>: (requisito: bumerán) derrotar el Oftalos (calamar gigante) que aparece al acercarse al grupo de gaviotas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="21" data-category="hearts" /> Pieza de Corazón #19</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: (requisito: bombas) destruir la flota de barcos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="26" data-category="hearts" /> Pieza de Corazón #24</label>
+						<div class="item-description">
+							<span class="coord">E-3</span> <span class="location">Isla Cabeza de Piedra</span>: (requisito: bombas) destruir los cañones de las Atalayas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="24" data-category="hearts" /> Pieza de Corazón #22</label>
+						<div class="item-description">
+							<span class="coord">D-4</span> <span class="location">Islas del Seis</span>: derrotar los enemigos dentro del submarino
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="35" data-category="hearts" /> Pieza de Corazón #33</label>
+						<div class="item-description">
+							<span class="coord">G-7</span> <span class="location">Archipiélago Casiopea</span>: derrotar los enemigos dentro del submarino
+						</div>
+					</li>
+				</ul>
+			
+				<h3>Desenterrando tesoros</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="54" data-category="hearts" /> Pieza de Corazón #28</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span>
+							<span class="coord">G-4</span> <span class="location">Islas del Dos</span>: Mapa del Tesoro #46
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="36" data-category="hearts" /> Pieza de Corazón #34</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: Mapa del Tesoro #2
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="37" data-category="hearts" /> Pieza de Corazón #35</label>
+						<div class="item-description">
+							<span class="coord">F-4</span> <span class="location">Isla del Hada del Sur</span>: Mapa del Tesoro #4
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="38" data-category="hearts" /> Pieza de Corazón #36</label>
+						<div class="item-description">
+							<span class="coord">D-7</span> <span class="location">Isla del Hada Custodiada</span>: Mapa del Tesoro #5
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="39" data-category="hearts" /> Pieza de Corazón #37</label>
+						<div class="item-description">
+							<span class="coord">A-5</span> <span class="location">Isla de la Luna</span>: Mapa del Tesoro #11
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="40" data-category="hearts" /> Pieza de Corazón #38</label>
+						<div class="item-description">
+							<span class="coord">G-5</span> <span class="location">Islas Cuadri</span>: Mapa del Tesoro #15
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="41" data-category="hearts" /> Pieza de Corazón #39</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla Bomba</span>: Mapa del Tesoro #20
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="42" data-category="hearts" /> Pieza de Corazón #40</label>
+						<div class="item-description">
+							<span class="coord">F-1</span> <span class="location">Isla Rombo</span>: Mapa del Tesoro #23
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="43" data-category="hearts" /> Pieza de Corazón #41</label>
+						<div class="item-description">
+							<span class="coord">B-5</span> <span class="location">Isla de la Huella</span>: Mapa del Tesoro #30
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="44" data-category="hearts" /> Pieza de Corazón #42</label>
+						<div class="item-description">
+							<span class="coord">F-6</span> <span class="location">Isla del Bosque</span>: Mapa del Tesoro #31
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="45" data-category="hearts" /> Pieza de Corazón #43</label>
+						<div class="item-description">
+							<span class="coord">G-7</span> <span class="location">Archipiélago Casiopea</span>: Mapa del Tesoro #33
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="46" data-category="hearts" /> Pieza de Corazón #44</label>
+						<div class="item-description">
+							<span class="coord">D-1</span> <span class="location">Islas del Tres</span>: Mapa del Tesoro #38
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-equipment" class="tab">
+				<h2 class="hide-for-mobile">Mejoras equipo</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="47" data-category="equipment" /> Bolsa de Rupias más grande #1</label>
+						<div class="item-description">
+							<span class="coord">A-3</span> <span class="location">Isla del Hada del Norte</span>: (requisito: completar Bosques Prohibidos) encontrar Gran Hada dentro del agujero
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="48" data-category="equipment" /> Bolsa de Rupias más grande #2</label>
+						<div class="item-description">
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: (requisito: Bombas) encontrar Gran Hada cruzando el puente de la parte superior del pueblo con la Hoja Deku y destruyendo la roca con una Bomba
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="49" data-category="equipment" /> Saco de Bombas más grande #1</label>
+						<div class="item-description">
+							<span class="coord">C-5</span> <span class="location">Isla del Hada del Este</span>: (requisito: Bombas) encontrar Gran Hada destruyendo la roca con una Bomba
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="50" data-category="equipment" /> Saco de Bombas más grande #2</label>
+						<div class="item-description">
+							<span class="coord">F-4</span> <span class="location">Isla Triángulo del Sur</span>: (requisito: Bombas) encontrar Gran Hada destruyendo la barricada con una Bomba
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="51" data-category="equipment" /> Barra de Magia doble</label>
+						<div class="item-description">
+							<span class="coord">G-4</span> <span class="location">Islas del Dos</span>: derrotar el Oftalos (calamar gigante) que aparece al acercarse al grupo de gaviotas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="52" data-category="equipment" /> Carcaj de Flechas más grande #1</label>
+						<div class="item-description">
+							<span class="coord">C-1</span> <span class="location">Isla del Hada del Oeste</span>: (requisito Martillo) encontrar Gran Hada activando el interruptor con el Martillo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="53" data-category="equipment" /> Carcaj de Flechas más grande #2</label>
+						<div class="item-description">
+							<span class="coord">D-7</span> <span class="location">Isla del Hada Custodiada</span>: (requisito Martillo) encontrar Gran Hada activando los interruptores con el Martillo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="55" data-category="equipment" /> Ataque Huracán</label>
+						<div class="item-description">
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: entregar 10 Blasones de Guerrero al Viejo Orca
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="56" data-category="equipment" /> Aura Mágica</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: completar la secuencia de intercambio de objetos con los Goron mercaderes de Zunari (esquimal de la tienda):
+							<ul>
+								<li><span class="coord">B-4</span> <span class="location">Isla Taura</span>: Flor de Pueblo</li>
+								<li><span class="coord">E-6</span> <span class="location">Isla Bomba</span>: Flor de Pueblo &rarr; Flores de Mar</li>
+								<li><span class="coord">D-2</span> <span class="location">Islas Pez Volador</span>: Flores de Mar &rarr; Flor del Sur</li>
+								<li><span class="coord">B-2</span> <span class="location">Islas Madre e Hija</span>: Flor del Sur &rarr; Molinete</li>
+								<li>entregar Molinete a Zunari</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="60" data-category="equipment" /> Amuleto del Héroe</label>
+						<div class="item-description">
+							<span class="gc">GC</span> <span class="coord">B-4</span> <span class="location">Isla Taura</span>: entregar 40 Collares de la Felicidad a la profesora de la escuela<br/>
+							<span class="hd">HD</span> <span class="coord">G-2</span> <span class="location">Isla Initia</span>: completar 50 plantas en la Cripta de los Monstruos (se encuentra bajo la cabeza gigante de piedra, llegando con la Hoja Deku desde la cima de la montaña)
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="57" data-category="equipment" /> Cupón de Elogios</label>
+						<div class="item-description">
+							<span class="location">Tienda de Terry</span>: conseguir 30 puntos en la Tienda de Terry
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="58" data-category="equipment" /> Cupón de Relleno</label>
+						<div class="item-description">
+							<span class="location">Tienda de Terry</span>: conseguir 60 puntos en la Tienda de Terry
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="59" data-category="equipment" /> Pociones verdes en la Farmacia Chuchu</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: entregar 15 jugos de chuchu verde en la Farmacia Chuchu
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="257" data-category="equipment" /> Pociones azules en la Farmacia Chuchu</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: entregar 15 jugos de chuchu azul en la Farmacia Chuchu
+							<div class="spoiler">
+								Solo se puede obtener un jugo por cada uno de los únicos 22 Chuchus azules del juego:
+								<ul>
+									<li><span class="coord">A-2</span> <span class="location">Isla Estrella</span>: (requisito: Bombas) debajo de una roca</li>
+									<li><span class="coord">A-3</span> <span class="location">Isla del Hada del Norte</span>: cerca de una palmera</li>
+									<li><span class="coord">A-5</span> <span class="location">Isla de la Luna</span>: cerca del cofre (&times;2)</li>
+									<li><span class="coord">A-7</span> <span class="location">Isla de las Torres</span>: (requisito: Gancho) usar Gancho en palmeras para llegar al otro extremo de la isla</li>
+									<li><span class="coord">B-2</span> <span class="location">Islas Madre e Hija</span>: en la isla Hija</li>
+									<li><span class="coord">B-3</span> <span class="location">Isla Calabaza</span>: en la arena debajo del puente de madera</li>
+									<li><span class="coord">B-5</span> <span class="location">Isla de la Huella</span>: cerca de la estatua de Chuchu en el noreste</li>
+									<li><span class="coord">C-1</span> <span class="location">Isla del Hada del Oeste</span>: cerca de una palmera</li>
+									<li><span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: (requisito: Bombas) en el último pilar</li>
+									<li><span class="coord">C-3</span> <span class="location">Isla de Tingle</span>: cerca del letrero de madera</li>
+									<li><span class="coord">C-5</span> <span class="location">Isla del Hada del Este</span>: cerca de una palmera</li>
+									<li><span class="coord">D-7</span> <span class="location">Isla del Hada Custodiada</span>: cerca de una palmera</li>
+									<li><span class="coord">E-1</span> <span class="location">Isla de la Aguja</span>: en la isla circular</li>
+									<li><span class="coord">E-3</span> <span class="location">Isla Cabeza de Piedra</span>: detrás de la cabeza de piedra</li>
+									<li><span class="coord">E-7</span> <span class="location">Isla de los Nidos</span>: (requisito: Gancho) usar Gancho en estaca de madera encima de la puerta de metal y subir</li>
+									<li><span class="coord">F-1</span> <span class="location">Isla Rombo</span>: (requisito: Gancho) usar gancho desde Mascarón Rojo en una palmera para llegar a una mini isla, y volverlo a usar en las dos siguientes palmeras</li>
+									<li><span class="coord">F-3</span> <span class="location">Isla Tiburón</span>: usar el torbellino para ascender con la Hoja Deku y llegar al punto más alto de la isla</li>
+									<li><span class="coord">F-4</span> <span class="location">Isla del Hada del Sur</span>: cerca de una palmera</li>
+									<li><span class="coord">F-7</span> <span class="location">Islas Conectadas</span>: (requisito: Flechas de Fuego) sortear el camino que hay al meterse en el agujero, el Chuchu azul está al salir al exterior</li>
+									<li><span class="coord">G-1</span> <span class="location">Isla Herradura</span>: cerca del segundo hoyo (solo durante la noche)</li>
+									<li><span class="coord">G-5</span> <span class="location">Islas Cuadri</span>: cerca del cofre</li>
+									<li><span class="coord">G-6</span> <span class="location">Zona de Regatas</span>: subir al punto más alto de la isla de la meta y planear con la Hoja Deku a la islita de enfrente</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="258" data-category="equipment" /> Sopa de la abuela</label>
+						<div class="item-description">
+							<span class="coord">G-2</span> <span class="location">Isla Initia</span>: curar a tu abuela con una hada embotellada
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-maps-treasure" class="tab">
+				<h2 class="hide-for-mobile">Mapas del tesoro</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="61" data-category="maps-treasure" /> Mapa del Tesoro #1</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla del Bosque</span>: (requisito: Bumerán) abrir cofre en Bosques Prohibidos P2<br/>
+							Recompensa: 200 Rupias en <span class="coord">A-5</span> Isla de la Luna
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="62" data-category="maps-treasure" /> Mapa del Tesoro #2</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: haber rescatado a Abril) entregar 20 Colgantes Macabros al Padre de Dolores en la mansión<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">C-2</span> Isla de los Pilares
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="63" data-category="maps-treasure" /> Mapa del Tesoro #3</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla del Bosque</span>: planear con la Hoja Deku hacia la islita que hay enfrente de la entrada del Gran Árbol Deku<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-5</span> Isla del Hada del Este
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="64" data-category="maps-treasure" /> Mapa del Tesoro #4</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: comprar en la Tienda de Terry por 900 Rupias<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">F-4</span> Isla del Hada del Sur
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="65" data-category="maps-treasure" /> Mapa del Tesoro #5</label>
+						<div class="item-description">
+							<span class="coord">A-4</span> <span class="location">Isla del Viento</span>: derrotar todos los enemigos y destruir las estatuas de las paredes (con el Gancho y las Botas de Plomo) de la sala circular al oeste de S1 en el Templo del Viento<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">D-7</span> Isla del Hada Custodiada
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="66" data-category="maps-treasure" /> Mapa del Tesoro #6</label>
+						<div class="item-description">
+							<span class="coord">D-5</span> <span class="location">Torre de los Dioses</span>: (requisito: Arco del Héroe) abrir cofre en PB<br/>
+							Recompensa: 200 Rupias en <span class="coord">D-4</span> Islas del Seis
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="67" data-category="maps-treasure" /> Mapa del Tesoro #7</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: completar el minijuego de Salvatore (se encuentra en la puerta en frente de la escuela) por segunda vez<br/>
+							Recompensa: 200 Rupias en <span class="coord">A-2</span> Isla Estrella
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="68" data-category="maps-treasure" /> Mapa del Tesoro #8</label>
+						<div class="item-description">
+							<span class="coord">G-1</span> <span class="location">Isla Herradura</span>: derrotar los enemigos que hay en el agujero (accesible introduciendo las nueces gigantes en los agujeros, lanzándolas por encima de las raíces y dirigiéndolas a los agujeros con la Hoja Deku)<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-1</span> Isla del Hada del Oeste
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="69" data-category="maps-treasure" /> Mapa del Tesoro #9</label>
+						<div class="item-description">
+							<span class="coord">A-5</span> <span class="location">Isla de la Luna</span>: derrotar enemigos del submarino<br/>
+							Recompensa: 200 Rupias en <span class="coord">G-1</span> Isla Herradura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="70" data-category="maps-treasure" /> Mapa del Tesoro #10</label>
+						<div class="item-description">
+							<span class="coord">A-5</span> <span class="location">Isla de la Luna</span>: abrir cofre encima de la isla en forma de luna<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-3</span> Isla de Tingle
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="71" data-category="maps-treasure" /> Mapa del Tesoro #11</label>
+						<div class="item-description">
+							<span class="coord">B-6</span> <span class="location">Isla del Dragón</span>: (requisito: Garra) abrir cofre en Cueva del Dragón PB<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">A-5</span> Isla de la Luna
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="72" data-category="maps-treasure" /> Mapa del Tesoro #12</label>
+						<div class="item-description">
+							<span class="coord">G-3</span> <span class="location">Isla de la Tierra</span>: derrotar los enemigos que hay en la sala al suroeste de S2 del Templo de la Tierra (se accede haciendo desaparecer una pared con el Escudo Espejo)<br/>
+							Recompensa: 200 Rupias en <span class="coord">F-2</span> Islas del Cinco
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="73" data-category="maps-treasure" /> Mapa del Tesoro #13</label>
+						<div class="item-description">
+							<span class="coord">G-4</span> <span class="location">Islas del Dos</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa Secreto en <span class="coord">A-7</span> Isla de las Torres
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="74" data-category="maps-treasure" /> Mapa del Tesoro #14</label>
+						<div class="item-description">
+							<span class="coord">G-3</span> <span class="location">Isla de la Tierra</span>: derrotar enemigos del submarino<br/>
+							Recompensa: 200 Rupias en <span class="coord">D-5</span> Torre de los Dioses
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="75" data-category="maps-treasure" /> Mapa del Tesoro #15</label>
+						<div class="item-description">
+							<span class="coord">E-6</span> <span class="location">Isla del Bosque</span>: abrir cofre en Bosques Prohibidos S1<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">G-5</span> Islas Cuadri
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="76" data-category="maps-treasure" /> Mapa del Tesoro #16</label>
+						<div class="item-description">
+							<span class="coord">A-6</span> <span class="location">Archipiélago Osa Mayor</span>: derrotar los tres Invocantis que hay en las Atalayas<br/>
+							Recompensa: 200 Rupias en <span class="coord">F-3</span> Isla Tiburón
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="77" data-category="maps-treasure" /> Mapa del Tesoro #17</label>
+						<div class="item-description">
+							<span class="coord">B-3</span> <span class="location">Isla Calabaza</span>: completar el minijuego del cañón de Salvatore por segunda vez<br/>
+							Recompensa: 200 Rupias en <span class="coord">F-5</span> Isla del Hielo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="78" data-category="maps-treasure" /> Mapa del Tesoro #18</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: ganar la subasta en la Casa de Subastas por la noche (el objeto que aparece esa noche es aleatorio)<br/>
+							Recompensa: 1 Rupia en <span class="coord">B-4</span> Isla Taura
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="79" data-category="maps-treasure" /> Mapa del Tesoro #19</label>
+						<div class="item-description">
+							<span class="coord">B-1</span> <span class="location">Islas del Cuatro</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa Isleño de Corazones en <span class="coord">B-7</span> Andamio de Vuelo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="80" data-category="maps-treasure" /> Mapa del Tesoro #20</label>
+						<div class="item-description">
+							<span class="coord">G-3</span> <span class="location">Isla de la Tierra</span>: derrotar todos los Floormaster (manos) de una sala (en la que había una llave pequeña) de S1 del Templo de la Tierra<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">E-6</span> Isla Bomba
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="81" data-category="maps-treasure" /> Mapa del Tesoro #21</label>
+						<div class="item-description">
+							<span class="coord">D-3</span> <span class="location">Islas del Uno</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa de Círculos de Luz en <span class="coord">D-3</span> Islas del Uno
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="82" data-category="maps-treasure" /> Mapa del Tesoro #22</label>
+						<div class="item-description">
+							<span class="coord">A-3</span> <span class="location">Isla del Hada del Norte</span>: derrotar enemigos del submarino<br/>
+							Recompensa: 200 Rupias en <span class="coord">B-3</span> Isla Calabaza
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="83" data-category="maps-treasure" /> Mapa del Tesoro #23</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: bombas) completar el minijuego de Salvatore (se encuentra en la puerta en frente de la escuela) con 19 bombas o menos<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">F-1</span> Isla Rombo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="84" data-category="maps-treasure" /> Mapa del Tesoro #24</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: Caja Cromográfica) entregar una foto de Don Obturo y Misae a las mujeres chismosas (delante de la tienda de Zunari, el esquimal)<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-4</span> Isla del Hada del Norte
+							<div class="spoiler">
+								<ul>
+									<li>subirse a las aspas del molino y esperar a que dé casi una vuelta completa</li>
+									<li>entrar por el balcón que se ve al otro lado</li>
+									<li>entrar por el agujero agachándote</li>
+									<li>bajar las escaleras y hacer la foto</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="85" data-category="maps-treasure" /> Mapa del Tesoro #25</label>
+						<div class="item-description">
+							<span class="coord">F-7</span> <span class="location">Islas Conectadas</span>: (requisito: Flechas de Fuego) sortear el camino de raíces que hay al meterse en el agujero que hay en unas islas<br/>
+							Recompensa: 200 Rupias en <span class="coord">A-1</span> Isla del Diablo
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="86" data-category="maps-treasure" /> Mapa del Tesoro #26</label>
+						<div class="item-description">
+							<span class="coord">D-4</span> <span class="location">Islas del Seis</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa de Calamares en <span class="coord">C-4</span> Isla Triángulo del Norte
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="87" data-category="maps-treasure" /> Mapa del Tesoro #27</label>
+						<div class="item-description">
+							<span class="coord">E-5</span> <span class="location">Isla de Quién</span>: (requisito: Gancho) trepar la isla por las palmeras con el Gancho<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-7</span> Archipiélago Orión
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="88" data-category="maps-treasure" /> Mapa del Tesoro #28</label>
+						<div class="item-description">
+							<span class="coord">G-1</span> <span class="location">Isla Herradura</span>: introducir las nueces gigantes en los agujeros, lanzándolas por encima de las raíces y dirigiéndolas a los agujeros con la Hoja Deku<br/>
+							Recompensa: 200 Rupias en <span class="coord">E-1</span> Isla de la Aguja
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="89" data-category="maps-treasure" /> Mapa del Tesoro #29</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: Caja Cromográfica) meterse por el balcón que se accede desde las aspas del molino y abrir los dos cofres<br/>
+							Recompensa: 200 Rupias en <span class="coord">B-2</span> Islas Madre e Hija
+							<div class="spoiler">
+								<ul>
+									<li>subirse a las aspas del molino y esperar a que dé casi una vuelta completa</li>
+									<li>entrar por el balcón que se ve al otro lado</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="90" data-category="maps-treasure" /> Mapa del Tesoro #30</label>
+						<div class="item-description">
+							<span class="coord">D-5</span> <span class="location">Torre de los Dioses</span>: en la sala con dos plataformas colgantes con cadenas en P1, poner bomba en la pared agrietada, avanzar y tocar Melodía del Viento encima de la baldosa especial<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">B-5</span> Isla de la Huella
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="91" data-category="maps-treasure" /> Mapa del Tesoro #31</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: (requisito: Caja Cromográfica) entregar una foto de la luna llena al chico que hay sentado en los escalones<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">F-6</span> Isla del Bosque
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="92" data-category="maps-treasure" /> Mapa del Tesoro #32</label>
+						<div class="item-description">
+							<span class="coord">D-1</span> <span class="location">Islas del Tres</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa Marino de Corazones en <span class="coord">G-6</span> Zona de Regatas
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="93" data-category="maps-treasure" /> Mapa del Tesoro #33</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: hacer una foto de cuerpo completo a la mujer al lado de la Farmacia Chuchu y entregársela<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">G-7</span> Archipiélago Casiopea
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="94" data-category="maps-treasure" /> Mapa del Tesoro #34</label>
+						<div class="item-description">
+							hablar con los buzos que pueden aparecer aleatoriamente por el Mar<br/>
+							Recompensa: 200 Rupias en <span class="coord">D-6</span> Isla Triángulo del Este
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="95" data-category="maps-treasure" /> Mapa del Tesoro #35</label>
+						<div class="item-description">
+							<span class="coord">A-4</span> <span class="location">Isla del Viento</span>: en la sala al suroeste de S1 del Templo del Viento, romper las cinco baldosas agrietadas con las Botas de Plomo y derrotar todos los enemigos que aparecen<br/>
+							Recompensa: 200 Rupias en <span class="coord">B-2</span> Isla de Hierro
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="96" data-category="maps-treasure" /> Mapa del Tesoro #36</label>
+						<div class="item-description">
+							<span class="coord">F-5</span> <span class="location">Isla del Hielo</span>: (requisito: Flechas de Fuego) derretir hielo que cubre el cofre en el exterior de la isla<br/>
+							Recompensa: 200 Rupias en <span class="coord">E-7</span> Isla de los Nidos
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="97" data-category="maps-treasure" /> Mapa del Tesoro #37</label>
+						<div class="item-description">
+							<span class="coord">C-2</span> <span class="location">Isla de los Pilares</span>: entrar por el agujero que hay al destruir las rocas de la isla, encender las antorchas y derrotar los enemigos<br/>
+							Recompensa: 200 Rupias en <span class="coord">C-6</span> Isla del Volcán
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="98" data-category="maps-treasure" /> Mapa del Tesoro #38</label>
+						<div class="item-description">
+							<span class="coord">B-4</span> <span class="location">Isla Taura</span>: ganar la subasta en la Casa de Subastas por la noche (el objeto que aparece esa noche es aleatorio)<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">D-1</span> Islas del Tres
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="99" data-category="maps-treasure" /> Mapa del Tesoro #39</label>
+						<div class="item-description">
+							<span class="coord">B-6</span> <span class="location">Isla del Dragón</span>: (requisito: Garra) abrir cofre en Cueva del Dragón P1<br/>
+							Recompensa: 200 Rupias en <span class="coord">B-6</span> Isla del Dragón
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="100" data-category="maps-treasure" /> Mapa del Tesoro #40</label>
+						<div class="item-description">
+							<span class="coord">F-4</span> <span class="location">Isla del Hada del Sur</span>: (requisito: Bombas) destruir los cañones de las tres Atalayas<br/>
+							Recompensa: 200 Rupias en <span class="coord">G-3</span> Isla de la Tierra
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="101" data-category="maps-treasure" /> Mapa del Tesoro #41</label>
+						<div class="item-description">
+							<span class="coord">F-2</span> <span class="location">Islas del Cinco</span>: (requisito: haber rescatado a Abril) destruir las embarcaciones y cañones<br/>
+							Recompensa: Mapa de las Grandes Hadas en <span class="coord">B-2</span> Islas del Cuatro
+						</div>
+					</li>
+				</ul>
+				<p>Los siguientes Mapas del Tesoro solo aparecen en la versión <span class="hd">HD</span>:</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="252" /> Mapa del Tesoro #42</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span> <span class="coord">B-4</span> <span class="location">Isla Taura</span>: entregar 3 Colgantes Macabros a Dampa (el marinero con bigote vestido de azul que está cerca de la Tienda de Bombas) y completar minijuego de encontrar los cerditos<br/>
+							Recompensa: 100 Rupias en <span class="coord">A-4</span> Isla del Viento
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="253" /> Mapa del Tesoro #43</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span> <span class="coord">G-1</span> <span class="location">Isla Herradura</span>: derrotar enemigos en Atalaya<br/>
+							Recompensa: 100 Rupias en <span class="coord">G-2</span> Isla Initia
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="254" /> Mapa del Tesoro #44</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span> <span class="coord">C-7</span> <span class="location">Archipiélago Orión</span>: derrotar enemigos en Atalaya<br/>
+							Recompensa: 100 Rupias en <span class="coord">F-4</span> Isla Triángulo del Sur
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="255" /> Mapa del Tesoro #45</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span> <span class="coord">B-4</span> <span class="location">Isla Taura</span>: entregar 40 Collares de la Felicidad a la profesora de la escuela<br/>
+							Recompensa: 200 Rupias en <span class="coord">A-6</span> Archipiélago Osa Mayor
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="256" /> Mapa del Tesoro #46</label>
+						<div class="item-description">
+							<span class="hd">Exclusivo HD</span> <span class="coord">B-5</span> <span class="location">Isla de la Huella</span>: (requisito: Gancho) derrotar enemigos en agujero que se encuentra en el islote con el árbol raro<br/>
+							Recompensa: Pieza de Corazón en <span class="coord">G-4</span> Islas del Dos
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-maps-special" class="tab">
+				<h2 class="hide-for-mobile">Mapas especiales</h2>
+				<!-- <p>...</p> -->
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="102" data-category="maps-special" /> Mapa de Tingle</label>
+						<div class="item-description"><span class="coord">B-4</span> <span class="location">Isla Taura</span>: sacar a Tingle de la celda</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="103" data-category="maps-special" /> Mapa de Terry</label>
+						<div class="item-description">(requisito: Bombas) recibir carta en el buzón</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="104" data-category="maps-special" /> Mapa A-lu-ci-nante</label>
+						<div class="item-description">(requisito: Espada Maestra) recibir carta en el buzón</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="105" data-category="maps-special" /> Mapa del Barco Fantasma</label>
+						<div class="item-description"><span class="coord">F-1</span> <span class="location">Isla Rombo</span>: (requisito: Gancho) trepar hasta la cima y resolver laberinto de las vasijas en el interior del agujero</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="106" data-category="maps-special" /> Mapa de Submarinos</label>
+						<div class="item-description"><span class="coord">G-6</span> <span class="location">Zona de Regatas</span>: (requisito: Bumerán) subir a la plataforma de la meta y planear con la Hoja Deku hasta una plataforma con un agujero. Golpear los tres interruptores con el Bumerán.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="107" data-category="maps-special" /> Mapa de Círculos de Luz</label>
+						<div class="item-description"><span class="coord">D-3</span> <span class="location">Isla del Uno</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #21 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="108" data-category="maps-special" /> Mapa Secreto</label>
+						<div class="item-description"><span class="coord">G-4</span> <span class="location">Islas del Dos</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #13 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="109" data-category="maps-special" /> Mapa Marino de Corazones</label>
+						<div class="item-description"><span class="coord">D-1</span> <span class="location">Islas del Tres</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #32 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="110" data-category="maps-special" /> Mapa Isleño de Corazones</label>
+						<div class="item-description"><span class="coord">B-1</span> <span class="location">Islas del Cuatro</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #19 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="111" data-category="maps-special" /> Mapa de las Grandes Hadas</label>
+						<div class="item-description"><span class="coord">F-2</span> <span class="location">Islas del Cinco</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #41 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="112" data-category="maps-special" /> Mapa de Calamares</label>
+						<div class="item-description"><span class="coord">D-4</span> <span class="location">Islas del Seis</span>: derrotar las embarcaciones y cañones para conseguir mapa del tesoro #26 que lleva a este mapa</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="113" data-category="maps-special" /> Mapa de Plataformas<sup class="gc">GC</sup>/Atalayas <sup class="hd">HD</span></label>
+						<div class="item-description"><span class="coord">B-7</span> <span class="location">Andamio de Vuelo</span>: derrotar enemigos dentro del submarino</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-figurines" class="tab">
+				<h2 class="hide-for-mobile">Figuritas</h2>
+
+				<h3>Sala océano</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="114" data-category="figurines" data-group-safe="1" /> Tingle</label>
+						<div class="item-description">En la Isla de Tingle.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="115" data-category="figurines" data-group-safe="1" /> Zingle</label>
+						<div class="item-description">En Isla de Tingle. Uno de los que giran la torre.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="116" data-category="figurines" data-group-safe="1" /> David Jr.</label>
+						<div class="item-description">En Isla de Tingle. Uno de los que giran la torre.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="117" data-category="figurines" data-group-safe="0" data-order-safe="12" /> <span class="missable">Perdible</span> Mingle</label>
+						<div class="item-description">
+							<span class="gc">GC</span> SOLO SE PUEDE CONSEGUIR ANTES DE COMPLETAR LA COLECCIÓN DE FIGURITAS. En Isla Initia, haz la mini-quest de Tingle usando el Tinglevisor de GBA y aparecerá Mingle en la Isla de Tingle, al lado de las estatuas de oro.<br/>
+							<span class="hd">HD</span> No es perdible en la versión HD. Mingle aparecerá al conseguir las cinco estatuas de oro de Tingle.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="118" data-category="figurines" data-group-safe="1" /> Terry</label>
+						<div class="item-description">El dueño de la tienda-barca, en varias islas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="119" data-category="figurines" data-group-safe="1" /> Hada</label>
+						<div class="item-description">Una de las hadas pequeñas que te curan.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="120" data-category="figurines" data-group-safe="1" /> Luis Escamas</label>
+						<div class="item-description">El pez que completa las regiones del mapa general. Hazle la foto cuando salte del agua.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="121" data-category="figurines" data-group-safe="1" /> Don Avisto</label>
+						<div class="item-description">El hombre que siempre está mirando por el catalejo, en varias islas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="122" data-category="figurines" data-group-safe="1" /> Trejo</label>
+						<div class="item-description">El dueño de la Zona de Regatas <span class="coord">G-6</span>.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="123" data-category="figurines" data-group-safe="0" data-order-safe="6" /> <span class="missable">Perdible</span> Tetra</label>
+						<div class="item-description">Hazle la foto cuando estáis juntos en Hyrule, antes de meteros por las escaleras. Al conseguir la figurita de Tetra también se consiguen las de los seis piratas de su tripulación.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="124" data-category="figurines" data-group-safe="0" data-order-safe="60" /> <span class="missable">Perdible</span> Maco</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="125" data-category="figurines" data-group-safe="0" data-order-safe="61" /> <span class="missable">Perdible</span> Nico</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="126" data-category="figurines" data-group-safe="0" data-order-safe="62" /> <span class="missable">Perdible</span> Zuco</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="127" data-category="figurines" data-group-safe="0" data-order-safe="63" /> <span class="missable">Perdible</span> Nati</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="128" data-category="figurines" data-group-safe="0" data-order-safe="64" /> <span class="missable">Perdible</span> Séneca</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="129" data-category="figurines" data-group-safe="0" data-order-safe="65" /> <span class="missable">Perdible</span> Gonzo</label>
+						<div class="item-description">Uno de los piratas de la tripulación de Tetra. Se consigue haciendo la foto perdible de Tetra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="130" data-category="figurines" data-group-safe="1" /> Equipo Nautilus</label>
+						<div class="item-description">Los submarinistas que aparecen aleatoriamente por el mar.<br/>
+	La foto debe cubrir todo el barco.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="131" data-category="figurines" data-group-safe="1" /> Salvatore</label>
+						<div class="item-description">El dueño del minijuego de los barcos de Isla Taura o de los cañones en Isla Calabaza.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="132" data-category="figurines" data-group-safe="1" /> Mercader itinerante</label>
+						<div class="item-description">Cualquiera de los Goron mercaderes repartidos en algunas islas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="133" data-category="figurines" data-group-safe="1" /> Grandes Hadas</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: gibosa menguante).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="134" data-category="figurines" data-group-safe="1" /> Reina de las Hadas</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: luna menguante).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="135" data-category="figurines" data-group-safe="1" /> Rey de Hyrule</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: gibosa creciente).<br/>Al entregarla, también se consigue la figurita de Princesa Zelda.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="136" data-category="figurines" data-group-safe="1" /> Link y Mascarón Rojo</label>
+						<div class="item-description">Esta figurita se consigue únicamente al conseguir todas las otras figuritas.<br/>
+						En <span class="gc">GC</span> obtener esta figurita bloquea la obtención de la de Mingle si no se consigue antes.</div>
+					</li>
+				</ul>
+
+				<h3>Sala Taura</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="137" data-category="figurines" data-group-safe="1" /> Vanessa</label>
+						<div class="item-description">Mujer cerca de la Farmacia Chuchu. Es muy creída.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="138" data-category="figurines" data-group-safe="1" /> Misae</label>
+						<div class="item-description">Mujer que está detrás de la Farmacia Chuchu</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="139" data-category="figurines" data-group-safe="1" /> Garrickson</label>
+						<div class="item-description">Hombre que viste un peto rojo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="140" data-category="figurines" data-group-safe="1" /> Antón</label>
+						<div class="item-description">El chico que está enamorado de Linda, y la espía de lejos (antes de que les reúnas).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="141" data-category="figurines" data-group-safe="1" /> Chapó</label>
+						<div class="item-description">El que está cerca del molino/faro del pueblo y lleva un gorro amarillo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="142" data-category="figurines" data-group-safe="1" /> Maruja y Clotilde</label>
+						<div class="item-description">Las mujeres chafarderas que están cerca de la Sala de Subastas. Cualquiera de las dos vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="143" data-category="figurines" data-group-safe="1" /> Zunari</label>
+						<div class="item-description">El esquimal dueño de la tienda de souvenirs.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="144" data-category="figurines" data-group-safe="1" /> Don Obturo</label>
+						<div class="item-description">El dueño de la Tienda de fotografías que te da la cámara.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="145" data-category="figurines" data-group-safe="1" /> Rafael</label>
+						<div class="item-description">El chico “Elvis” que no para de bailar delante de la tumba.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="146" data-category="figurines" data-group-safe="1" /> Violeta y Margarita</label>
+						<div class="item-description">Las niñas que cuchichean cerca del puerto (a veces están dentro de la escuela). Cualquiera de las dos vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="147" data-category="figurines" data-group-safe="1" /> Señorita María</label>
+						<div class="item-description">Profesora de la escuela con pelo rosa.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="148" data-category="figurines" data-group-safe="1" /> Abejas Asesinas</label>
+						<div class="item-description">Los niños que están delante de la escuela. Cualquiera de ellos vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="149" data-category="figurines" data-group-safe="1" /> Padre de Felicitas</label>
+						<div class="item-description">El hombre rico que luego se vuelve pobre y está en el puerto.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="150" data-category="figurines" data-group-safe="1" /> Felicitas</label>
+						<div class="item-description">La niña rubia rica que luego se vuelve pobre y está cerca de la tienda de Zunari.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="151" data-category="figurines" data-group-safe="1" /> Dolores</label>
+						<div class="item-description">La niña pobre que luego se vuelve rica con orejas de conejo. En la casa encima de la Sala de Subastas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="152" data-category="figurines" data-group-safe="1" /> Padre de Dolores</label>
+						<div class="item-description">El hombre pobre que luego se vuelve rico con sombrero. En la casa encima de la Sala de Subastas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="153" data-category="figurines" data-group-safe="1" /> Linda</label>
+						<div class="item-description">Chica que viste de naranja cerca de la escuela.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="154" data-category="figurines" data-group-safe="1" /> Candi</label>
+						<div class="item-description">El marinero calvo con coleta. A veces en el puerto, y otras en la cafetería.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="155" data-category="figurines" data-group-safe="1" /> Bellota</label>
+						<div class="item-description">El marinero con gorra roja cerca de la Tienda de Bombas que cuida los cerdos.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="156" data-category="figurines" data-group-safe="1" /> Quejo</label>
+						<div class="item-description">El marinero de amarillo en el puerto.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="157" data-category="figurines" data-group-safe="1" /> Gómez</label>
+						<div class="item-description">El marinero de amarillo que está arriba en la muralla cerca de la escuela.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="158" data-category="figurines" data-group-safe="1" /> Cameo</label>
+						<div class="item-description">Chico sentado en las escaleras cerca de la Farmacia Chuchu.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="159" data-category="figurines" data-group-safe="1" /> Dr. von Schnitzel</label>
+						<div class="item-description">Dueño de la Farmacia Chuchu.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="160" data-category="figurines" data-group-safe="1" /> Don Polvorín</label>
+						<div class="item-description">Dueño de la Tienda de Bombas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="161" data-category="figurines" data-group-safe="1" /> Gossack</label>
+						<div class="item-description">El tímido que está dentro de la cafetería.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="162" data-category="figurines" data-group-safe="1" /> Lilian</label>
+						<div class="item-description">La dueña de la cafetería.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="163" data-category="figurines" data-group-safe="1" /> Sam</label>
+						<div class="item-description">El hombre que está sentado en un banco mirando al mar que quiere adornar Taura.</div>
+					</li>
+				</ul>
+
+				<h3>Sala Initia</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="164" data-category="figurines" data-group-safe="1" /> Pablo</label>
+						<div class="item-description">El hombre miedoso que por la noche se encierra en su casa.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="165" data-category="figurines" data-group-safe="1" /> Viejo Orca</label>
+						<div class="item-description">El viejo que te enseña a dominar la espada.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="166" data-category="figurines" data-group-safe="1" /> Viejo Añil</label>
+						<div class="item-description">El viejo de cabeza gigante que vive encima del Viejo Orca.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="167" data-category="figurines" data-group-safe="1" /> Helena</label>
+						<div class="item-description">La mujer de rosa que lleva un jarrón en la cabeza.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="168" data-category="figurines" data-group-safe="1" /> Abuela de Link</label>
+						<div class="item-description">La abuela de Link. Está en tu casa.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="169" data-category="figurines" data-group-safe="1" /> Abril</label>
+						<div class="item-description">La hermana de Link. Se consigue haciendo foto a la Abuela de Link.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="170" data-category="figurines" data-group-safe="1" /> Juanito</label>
+						<div class="item-description">El niño de amarillo que se le cae el moco.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="171" data-category="figurines" data-group-safe="1" /> Joselito</label>
+						<div class="item-description">El otro niño que hay en la isla.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="172" data-category="figurines" data-group-safe="1" /> Abraham</label>
+						<div class="item-description">Marido de la Señora Rosa y padre de Juanito y Joselito. Cuida los cerdos.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="173" data-category="figurines" data-group-safe="1" /> Señora Rosa</label>
+						<div class="item-description">La mujer gordita con delantal, madre de Juanito y Joselito.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="174" data-category="figurines" data-group-safe="1" /> Cerdo salvaje</label>
+						<div class="item-description">Cualquier cerdo de cualquier tamaño o color vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="175" data-category="figurines" data-group-safe="1" /> Gaviota</label>
+						<div class="item-description">En varias islas hay gaviotas volando.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="176" data-category="figurines" data-group-safe="1" /> Cangrejo</label>
+						<div class="item-description">En varias islas hay cangrejos en la playa.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="177" data-category="figurines" data-group-safe="1" /> Yabú</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: cuarto menguante).</div>
+					</li>
+				</ul>
+
+				<h3>Sala Diablos</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="178" data-category="figurines" data-group-safe="1" /> Ferrus</label>
+						<div class="item-description">Los guerreros con armadura (de cualquier color) que llevan espada y con escudo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="179" data-category="figurines" data-group-safe="1" /> Ferrus</label>
+						<div class="item-description">Los guerreros con armadura (de cualquier color) que llevan mandoble y sin escudo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="180" data-category="figurines" data-group-safe="1" /> Ferrus</label>
+						<div class="item-description">Los guerreros con armadura roja y con capa roja. Están en la planta 50 de la Cripta de los Monstruos (requiere Escudo Espejo), en la última visita al castillo de Hyrule y protegiendo la puerta de Alter Ganon en la Torre de Ganon.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="181" data-category="figurines" data-group-safe="1" /> Stalfos</label>
+						<div class="item-description">Los esqueletos que se descomponen (y la calavera empieza a saltar) al derrotarlos.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="182" data-category="figurines" data-group-safe="1" /> Moblin</label>
+						<div class="item-description">Los jabalíes grandes con lanzas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="183" data-category="figurines" data-group-safe="1" /> Polillántula</label>
+						<div class="item-description">Enemigos que son como bichos polilla (algunos llevan alas) que se encuentran en los Bosques Prohibidos</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="184" data-category="figurines" data-group-safe="1" /> Invocantis</label>
+						<div class="item-description">Enemigo con cabeza de pájaro y túnica que flota y lanza bolas de fuego.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="185" data-category="figurines" data-group-safe="0" data-order-safe="0" /> <span class="missable">Perdible</span> Oftalos</label>
+						<div class="item-description">Cualquiera de los seis calamares gigantes que hay repartidos por el mar.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="186" data-category="figurines" data-group-safe="0" data-order-safe="2" /> <span class="missable">Perdible</span> Gohma</label>
+						<div class="item-description">Durante el segundo encuentro en la Torre de Ganon (si juegas con el traje Initia, podrás hacerlo en el primer encuentro en la Cueva del Dragón).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="187" data-category="figurines" data-group-safe="0" data-order-safe="3" /> <span class="missable">Perdible</span> Vilipendulia</label>
+						<div class="item-description">Durante el segundo encuentro en la Torre de Ganon (si juegas con el traje Initia, podrás hacerlo en el primer encuentro en los Bosques Perdidos).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="188" data-category="figurines" data-group-safe="1" /> Deus Probatur</label>
+						<div class="item-description">Jefe de la Torre de los Dioses. Puedes sacar la fotografía cuando le derrotas, ya que se queda pegado a la pared.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="189" data-category="figurines" data-group-safe="0" data-order-safe="4" /> <span class="missable">Perdible</span> Ganon fantasma</label>
+						<div class="item-description">La silueta de Ganondorf en negro que lanza bolas de luz.Aparece en la segunda visita a Isla del Diablo y varias veces en la Torre de Ganon.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="190" data-category="figurines" data-group-safe="0" data-order-safe="5" /> <span class="missable">Perdible</span> Kranos</label>
+						<div class="item-description">Jefe en la segunda visita a la Isla del Diablo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="191" data-category="figurines" data-group-safe="0" data-order-safe="8" /> <span class="missable">Perdible</span> Fati Triputis</label>
+						<div class="item-description">Jefe del Templo de la Tierra. Puedes hacerle la foto en la Torre de Ganon también.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="192" data-category="figurines" data-group-safe="0" data-order-safe="9" /> <span class="missable">Perdible</span> Invocantis rojo</label>
+						<div class="item-description">Mini-jefe del Templo del Viento. CUIDADO, este Invocantis es diferente a los otros. Es más grande, viste de rojo y puede invocar a otros Invocantis normales.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="193" data-category="figurines" data-group-safe="0" data-order-safe="10" /> <span class="missable">Perdible</span> Verminus</label>
+						<div class="item-description">Jefe del Templo del Viento. Puedes hacerle la foto en la Torre de Ganon también.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="194" data-category="figurines" data-group-safe="0" data-order-safe="11" /> <span class="missable">Perdible</span> Alter Ganon</label>
+						<div class="item-description">El jefe previo a Ganondorf (el que es una marioneta, una araña y una serpiente). Con hacerle una foto a la cabeza en su forma de marioneta vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="195" data-category="figurines" data-group-safe="1" /> Ganondorf</label>
+						<div class="item-description">El jefe final. Pictografía legendaria (fase lunar: luna llena) o hacerle una foto en la lucha final, grabar y salir.</div>
+					</li>
+				</ul>
+
+				<h3>Sala Mazmorras</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="196" data-category="figurines" data-group-safe="1" /> Abrojo</label>
+						<div class="item-description">Bolas de color negro con pinchos naranjas que se pegan a Link.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="197" data-category="figurines" data-group-safe="1" /> Armos</label>
+						<div class="item-description">Pequeñas estatuas con un ojo que saltan.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="198" data-category="figurines" data-group-safe="1" /> Armos max</label>
+						<div class="item-description">Versiones grandes de los Armos que tienen boca (donde se les mete una bomba).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="199" data-category="figurines" data-group-safe="1" /> Boko baba</label>
+						<div class="item-description">Las plantas carnívoras.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="200" data-category="figurines" data-group-safe="1" /> Bokoblin</label>
+						<div class="item-description">Criaturas de tamaño medio que parecen Goblins.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="201" data-category="figurines" data-group-safe="1" /> Bubble roja y Bubble azul</label>
+						<div class="item-description">Calaveras que vuelan que tienen llamas de un color.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="202" data-category="figurines" data-group-safe="1" /> Chuchu</label>
+						<div class="item-description">Los bichos “de plastilina” de muchos colores. Por las noches salen en casi todas las playas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="203" data-category="figurines" data-group-safe="1" /> Cóndor de las islas</label>
+						<div class="item-description">Pájaros de tamaño medio con la cola de color verde y amarillo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="204" data-category="figurines" data-group-safe="1" /> Floormaster</label>
+						<div class="item-description">Las manos que si te cogen te llevan al principio de la mazmorra.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="205" data-category="figurines" data-group-safe="1" /> Keese y keese de fuego</label>
+						<div class="item-description">Murciélagos.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="206" data-category="figurines" data-group-safe="1" /> Megalopendra</label>
+						<div class="item-description">Criaturas parecidas a un ciempiés que se hacen bola.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="207" data-category="figurines" data-group-safe="1" /> Miniblin</label>
+						<div class="item-description">Pequeños goblins que suelen atacar en grupo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="208" data-category="figurines" data-group-safe="1" /> Octorok</label>
+						<div class="item-description">Puplos que lanzan rocas o bombas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="209" data-category="figurines" data-group-safe="1" /> Peahat</label>
+						<div class="item-description">&quot;Piñas voladoras&quot;.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="210" data-category="figurines" data-group-safe="1" /> Poe</label>
+						<div class="item-description">Fantasma.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="211" data-category="figurines" data-group-safe="1" /> Rata</label>
+						<div class="item-description">Ratas que se encuentran en muchos sitios.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="212" data-category="figurines" data-group-safe="1" /> Redead</label>
+						<div class="item-description">Zombis que al gritar paran el tiempo y se abrazan a tí.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="213" data-category="figurines" data-group-safe="1" /> Gyorg</label>
+						<div class="item-description">Tiburones que se encuentran en el mar.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="214" data-category="figurines" data-group-safe="1" /> Seahat</label>
+						<div class="item-description">Versiones marítimas de los Peahat que se encuentran en el mar.</div>
+					</li>
+				</ul>
+
+				<h3>Sala Vientos</h3>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="215" data-category="figurines" data-group-safe="1" /> Novi</label>
+						<div class="item-description">El único humano en la Isla del Dragón, arriba del todo. Te deja jugar al minijuego de las cartas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="216" data-category="figurines" data-group-safe="1" /> Zubatt y Bashitt</label>
+						<div class="item-description">Dos de los guerreros Orni que protegen la isla donde viven (van con lanzas). Cualquiera de los dos vale.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="217" data-category="figurines" data-group-safe="1" /> Patriarca de los Orni</label>
+						<div class="item-description">El jefe de los Orni y padre de Komali.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="218" data-category="figurines" data-group-safe="1" /> Odli</label>
+						<div class="item-description">Se consigue al hacer foto a Patriarca de los Orni.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="219" data-category="figurines" data-group-safe="1" /> Skett y Gakutt</label>
+						<div class="item-description">Los escoltas del Patriarca.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="220" data-category="figurines" data-group-safe="1" /> Joskitt</label>
+						<div class="item-description">Es el Orni que quiere Plumas doradas para su novia.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="221" data-category="figurines" data-group-safe="1" /> Ilari</label>
+						<div class="item-description">Un Orni que está fuera en las maderas del piso superior que se va volando si hablas con él (luego siempre vuelve). La foto se la puedes hacer abajo desde el barco.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="222" data-category="figurines" data-group-safe="1" /> Koboli</label>
+						<div class="item-description">Un Orni alto y estirado.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="223" data-category="figurines" data-group-safe="0" data-order-safe="7" /> <span class="missable">Perdible</span> Kogoli</label>
+						<div class="item-description">Antes de tocar la Melodía del Espíritu de la Tierra a Medli (despues se irá para siempre): durante el día está fuera en las maderas del piso superior, durante la noche está dentro de la Central de Correos. La foto se la puedes hacer abajo desde el barco.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="224" data-category="figurines" data-group-safe="1" /> Komali</label>
+						<div class="item-description">Hijo del Patriarca.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="225" data-category="figurines" data-group-safe="1" /> Medli</label>
+						<div class="item-description">Niña orni con el harpa (la que te acompaña por el Templo de la Tierra y luego se queda a vivir allí).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="226" data-category="figurines" data-group-safe="1" /> Namali</label>
+						<div class="item-description">Uno de los Orni que lleva una carpeta.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="227" data-category="figurines" data-group-safe="1" /> Pachili</label>
+						<div class="item-description">Uno de los Orni que lleva una carpeta.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="228" data-category="figurines" data-group-safe="1" /> Orville</label>
+						<div class="item-description">Lleva el minijuego de vuelo en el Andamio de Vuelo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="229" data-category="figurines" data-group-safe="1" /> Wilbur</label>
+						<div class="item-description">Hermano de Orville. En el Andamio de Vuelo.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="230" data-category="figurines" data-group-safe="1" /> Valú</label>
+						<div class="item-description">El dragón gigante que habita encima de la Isla del Dragón. Debes hacerle la foto a la cabeza desde fuera, aléjandote un poco con el barco bastará.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="231" data-category="figurines" data-group-safe="0" data-order-safe="1" /> <span class="missable">Perdible</span> Céfiro y Cyclos</label>
+						<div class="item-description">Son las criaturas que aparecen en los tornados grandes y que tienes que derrotar para conseguir la Melodía del Tornado. Pero antes de acabar con ellos debes hacerles una foto (a cualquiera de los dos).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="232" data-category="figurines" data-group-safe="1" /> Laruto</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: cuarto creciente).</div>
+					</li>
+				</ul>
+
+				<h3>Sala Bosques</h3>
+				<p>(nota: todos los kologs excepto Nyatoh se pueden encontrar en la Isla del Bosque antes de completar los Bosques Prohibidos)</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="233" data-category="figurines" data-group-safe="1" /> Makore</label>
+						<div class="item-description">El kolog del violín que te acompaña por el Templo del Viento.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="234" data-category="figurines" data-group-safe="1" /> Árbol Deku</label>
+						<div class="item-description">Dentro de la Isla del Bosque es el árbol gigantesco. La foto debe incluir toda su cara.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="235" data-category="figurines" data-group-safe="1" /> Nyatoh</label>
+						<div class="item-description">El kolog que lleva la Farmacia Chuchu dentro de la Isla del Bosque.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="236" data-category="figurines" data-group-safe="1" /> Labla</label>
+						<div class="item-description">Kolog que se encuentra en las Islas Pez Volador.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="237" data-category="figurines" data-group-safe="1" /> Aliso</label>
+						<div class="item-description">Kolog que se encuentra en las Islas Conectadas.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="238" data-category="figurines" data-group-safe="1" /> Roblo</label>
+						<div class="item-description">Kolog que se encuentra en la Isla Estrella.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="239" data-category="figurines" data-group-safe="1" /> Nogla</label>
+						<div class="item-description">Kolog que se encuentra en la Isla de Quién (la que consigues con Escritura del chalé).</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="240" data-category="figurines" data-group-safe="1" /> Ramín</label>
+						<div class="item-description">Kolog que se encuentra en las Islas Madre e Hija.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="241" data-category="figurines" data-group-safe="1" /> Abel</label>
+						<div class="item-description">Kolog que se encuentra en la Isla Tiburón.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="242" data-category="figurines" data-group-safe="1" /> Olmo</label>
+						<div class="item-description">Kolog que se encuentra en la Isla de la Aguja.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="243" data-category="figurines" data-group-safe="1" /> Celti</label>
+						<div class="item-description">Kolog que se encuentra en la Isla del Hada del Este.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="244" data-category="figurines" data-group-safe="1" /> Armando Mangialavoro</label>
+						<div class="item-description">El escultor que hace las figuritas en Isla del Bosque.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="245" data-category="figurines" data-group-safe="1" /> Otakki</label>
+						<div class="item-description">El aficionado a las figuritas que se une al club en Isla del Bosque.</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="246" data-category="figurines" data-group-safe="1" /> Fado</label>
+						<div class="item-description">Comprar Pictografía legendaria en Isla Taura en tienda de Don Obturo durante la noche (fase lunar: luna creciente).</div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="tab-tingle" class="tab">
+				<h2 class="hide-for-mobile">Estatuas Tingle</h2>
+				<p>
+					<span class="gc">GC</span> Las Estatuas Tingle las encontrarás usando el Tinglevisor y comprando una Bomba Tingle por 10 rupias (conectando la consola a la <abbr title="Game Boy Advance">GBA</abbr>).<br/>
+					<span class="hd">HD</span> El Tinglevisor ha sido eliminado, se puede usar una bomba normal para encontrar las Estatuas Tingle.
+				</p>
+				<ul>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="247" data-category="tingle" /> Tingle Draconiano</label>
+						<div class="item-description">
+							<span class="coord">B-6</span> <span class="location">Cueva del dragón</span>: Ve a la sala principal de PB (la que tiene los puentes de madera y los murciélagos de fuego). Súbete a la plataforma que sube y baja con la lava (la que está debajo de la jaula). Desde esa plataforma salta al noreste hacia el borde con los dientes y una puerta, preferiblemente cuando la plataforma se mueve. Métete en la puerta y sigue por el camino hasta que llegues a un punto que tienes que usar la garra. En esa sala hay una plataforma sin salida, ahí es donde se debe colocar la bomba de Tingle para que aparezca el cofre con la estatua.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="248" data-category="tingle" /> Tingle Prohibido</label>
+						<div class="item-description">
+							<span class="coord">F-6</span> <span class="location">Bosques prohibidos</span>: Tírate al sótano hasta llegar a una sala donde hay una flor-barca que debes usar. Soplando viento con la Hoja Deku, ve hacia el norte y entra por la puerta que hay. Esta es la sala con la choza en el centro, que tiene un montón de hojas delante de tí y algunos Peahats. Nada más entrar mira a tu derecha y verás una pequeña isleta, ahí debes colocar la Bomba Tingle.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="249" data-category="tingle" /> Tingle Divino</label>
+						<div class="item-description">
+							<span class="coord">D-5</span> <span class="location">Torre de los Dioses</span>: En la sala que hay detrás de la boca que echaba agua hay un Beamos (estatua que lanza rayos) y más adelante unas plataformas que se mueven hacia arriba y abajo para poder llegar a la puerta arriba del todo. En vez de ir a esa puerta, colócate en la última plataforma móvil y ponte mirando en dirección a la estatua y verás una plataforma estática en el aire. Ahí es donde debes usar la Bomba Tingle.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="250" data-category="tingle" /> Tingle Terrestre</label>
+						<div class="item-description">
+							<span class="coord">G-3</span> <span class="location">Templo de la Tierra</span>: La estatua está en la primera sala del sótano. En esta sala hay un gran puente de madera con calaveras azules (que si te tocan no te dejan usar objetos). Si te colocas en el puente según entras a la sala y miras a la izquierda verás una plataforma en la que puedes llegar con la Hoja Deku. Si sigues el camino con la Hoja llegarás a un punto sin salida donde debes usar la Bomba Tingle y aparecerá el cofre con la estatua.
+						</div>
+					</li>
+					<li>
+						<label><input type="checkbox" data-tracker="zelda-wind-waker" data-index="251" data-category="tingle" /> Templo del Viento</label>
+						<div class="item-description">
+							<span class="coord">A-4</span> <span class="location">Templo del Viento</span>: En la sala donde con Makore plantaste semillas para ir subiendo y luego las manos lo secuestraban (casi al principio de la mazmorra). Si te tiras abajo del todo en esta sala hay como unas garras que no paran de revivir. El cofre con la estatua está aquí abajo, más o menos en el centro tendrás que usar la Bomba Tingle.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body></html>
